@@ -1,4 +1,0 @@
-#!/bin/sh
-
-
-hugo --cleanDestinationDir && git add docs && git commit -m "update docs" && git push
