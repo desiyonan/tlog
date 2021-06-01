@@ -1,6 +1,0 @@
-[submodule "themes/erblog"]
-	path = themes/erblog
-	url = https://github.com/ertuil/erblog
-[submodule "themes/PaperMod"]
-	path = themes/PaperMod
-	url = https://github.com/adityatelange/hugo-PaperMod.git
