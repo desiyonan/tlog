@@ -1,0 +1,43 @@
+baseURL = "https://desiyonan.gitee.io/"
+languageCode = "zh-cn"
+title = "DnF's Blog"
+theme = "erblog"
+uglyURLs = true
+watch = true
+
+
+[params]
+  description = "DnF Hugo Site"
+  author = "DnF"
+  GitHubUser = "desiyonan"
+
+[[menu.main]]
+    url = "/home/"
+    name = "Files"
+    weight = 6
+
+[[menu.main]]
+    url = "/dl/"
+    name = "Download"
+    weight = 7
+
+[[menu.footer]]
+    identifier = "home"
+    name = "home"
+    url = "/"
+    weight = 1
+
+[[menu.footer]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 2
+[[menu.main]]
+    url = "/zone/"
+    name = "Zone"
+    weight = 1
+
+[[menu.main]]
+    url = "/gallery/"
+    name = "Gallery"
+    weight = 2
