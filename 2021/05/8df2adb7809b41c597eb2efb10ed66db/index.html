@@ -6,10 +6,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>Hugo&#43;Github 搭建个人网站 | DnF&#39;s Zone</title>
-<meta name="keywords" content="" />
+<meta name="keywords" content="web, blog, hugo, github, markdown" />
 <meta name="description" content="简介
 这是我的第一篇博客，这篇文章主要讲述了我搭建个人网站，以及如何自动构建发布静态页面的过程。">
-<meta name="author" content="">
+<meta name="author" content="DnF">
 <link rel="canonical" href="http://zone.desiyonan.tech/2021/05/8df2adb7809b41c597eb2efb10ed66db/" />
 <link crossorigin="anonymous" href="/assets/css/stylesheet.min.2d6dbfc6e0f8a1db1c9d082a76dc11d094328cf63f247bbc2421dfaa7f2bb170.css" integrity="sha256-LW2/xuD4odscnQgqdtwR0JQyjPY/JHu8JCHfqn8rsXA=" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
@@ -29,6 +29,7 @@
 <meta property="og:url" content="http://zone.desiyonan.tech/2021/05/8df2adb7809b41c597eb2efb10ed66db/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-05-31T20:25:48&#43;08:00" />
 <meta property="article:modified_time" content="2021-05-31T20:25:48&#43;08:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Hugo&#43;Github 搭建个人网站"/>
@@ -64,13 +65,17 @@
   "name": "Hugo\u002bGithub 搭建个人网站",
   "description": "简介 这是我的第一篇博客，这篇文章主要讲述了我搭建个人网站，以及如何自动构建发布静态页面的过程。\n",
   "keywords": [
-    
+    "web", "blog", "hugo", "github", "markdown"
   ],
   "articleBody": "简介 这是我的第一篇博客，这篇文章主要讲述了我搭建个人网站，以及如何自动构建发布静态页面的过程。\n前言 最近正好整理记录的笔记，之前写的比较随意，不太好整理，而且之前早就想搭建自己的个人博客网站，正好这次刚好又时间折腾折腾。 搭建静态网站的框架网上比较多，文档和教程大部分也比较全，这次就直接选择口碑比较好也容易的 Hugo 在 Github 下搭建一个。\n安装 Hugo 在 Win10 下使用命令安装：\nPS D:\\ scoop install hugo Updating Scoop... ... Creating shim for 'hugo'. 'hugo' (0.80.0) was installed successfully! 验证安装:\nPS D:\\ hugo version Hugo Static Site Generator v0.80.0/extended windows/amd64 BuildDate: unknown 这里的Scoop是 Win10 平台下的软件包管理工具之一，非常方便，感兴趣可在 GitHub或CodeChina 上查看。\n更多的安装方式和文档可以参看Hugo 官方安装教程.\n新建站点 新建站点项目\nPS D:\\ hugo new site tech-blog Congratulations! Your new Hugo site is created in D:\\tech-blog. Just a few more steps and you're ready to go: 1. Download a theme into the same-named folder. Choose a theme from https://themes.gohugo.io/ or create your own with the \"hugo new theme \" command. 2. Perhaps you want to add some content. You can add single files with \"hugo new \\.\". 3. Start the built-in live server via \"hugo server\". Visit https://gohugo.io/ for quickstart guide and full documentation. 配置一款主题\nHugo主题提供了大量模板，这里用的主题是 PaperMod，详细文档(安装、配置)可以在Github上查看。\n更多的主题可以在 Hugo 主题 上查看\nPS D:\\cd tech-blog PS D:\\tech-bloggit init PS D:\\tech-bloggit submodule add https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod --depth=1 PS D:\\tech-bloggit submodule update --init --recursive 修改配置文件 config.toml 或者 config.yaml，.toml格式配置可参考官方文档，.\\config.yaml基本内容如下\nbaseurl: \"http://zone.desiyonan.tech\" title: \"DnF's Zone\" defaultContentLanguage: zh hasCJKLanguage: true theme: PaperMod # 主题 params: AuthorName: \"DnF\" GitHubUser: \"desiyonan\" 启动本地服务器\nPS D:\\tech-bloghugo server -D Start building sites … | EN -------------------+----- Pages | 12 Paginator pages | 0 Non-page files | 0 Static files | 1 Processed images | 0 Aliases | 2 Sitemaps | 1 Cleaned | 0 Built in 35 ms Watching for changes in D:\\tech-blog\\{archetypes，content，data，layouts，static，themes} Watching for config changes in D:\\tech-blog\\config.yaml Environment: \"development\" Serving pages from memory Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender Web Server is available at http://localhost:1313/ (bind address 127.0.0.1) Press Ctrl+C to stop 现在可以直接访问 http://localhost:1313/ 查看站点，不过要看文章具体效果可以先新建测试文章\nPS D:\\tech-bloghugo new post/test.md D:\\tech-blog\\content\\post\\test.md created PS D:\\tech-blog'## Test' | out-file -a -e utf8 .\\content\\post\\test.md 访问 http://localhost:1313/post/test 就可以看到测试效果\n最后基本仓库的初始化\nPS D:\\tech-bloggit commit -am \"init\" PS D:\\tech-bloggit remote add origin  PS D:\\tech-bloggit push -u origin master 配置 Github Pages 基本框架已经搭建完成，需要能够在公网直接访问网页还需要配置 Github Pages。\n看了网上不少的博客，大部分都是在本地编辑 .md 文档，完成后通过 hugo 命令构建输出，最后再把输出的 public 目录推送到 Github 上。\n再尝试了一两次后太繁琐了，而且也不是我想要的效果，最后在知乎上看到最理想的效果：在本地编辑 .md 文档后推送到直接仓库后就可以通过公网看到效果。详细可以看知乎上的文章，说明的很清楚，重复的字也懒得码了，这里简单说明下大致流程和需要注意的地方。\n流程的大致原理:\n简单的说就是：\n 建两个仓库: 一个放文档源码，一个放构建后的页面代码 给源码仓库添加 Action，当推送 master 代码时自动构建页面，再推送到页面仓库  需要注意：\n 放构建后的静态页面的仓库需要配置 Github Pages 两个仓库需要一对 SSH 密钥，源码仓库配置私钥，页面仓库配置公钥 Github Action配置需要根据实际情况改动下  以下是我的改动后 Action 配置内容\nname: Deploy Hugo Site to Github Pages on Master Branch on: push: branches: - master jobs: build-deploy: runs-on: ubuntu-18.04 steps: - uses: actions/checkout@v1  # v2 does not have submodules option now with: submodules: true - name: Setup Hugo uses: peaceiris/actions-hugo@v2 with: hugo-version: '0.83.1' extended: true - name: Build run: hugo --minify - name: Deploy uses: peaceiris/actions-gh-pages@v3 with: deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }} # 这里的 ACTIONS_DEPLOY_KEY 则是上面设置 Private Key的变量名 external_repository: desiyonan/zone # Pages 远程仓库 publish_dir: \"public\" keep_files: false # remove existing files publish_branch: master  # deploying branch commit_message: ${{ github.event.head_commit.message }} 不同的点：\nwith: submodules: true 因为之前配置主题时是到了 git submodule，所以这里必要有，不然构建后没有主题。\n其次\nexternal_repository: desiyonan/zone # Pages 远程仓库 publish_dir: \"public\" external_repository 是放页面仓库，publish_dir 是构建后需要推送的目录，hugo 默认的构建目录就是 public，具体配置看下 config.toml 或者 config.yaml 下有没有\npublishdir: xxxx 不复杂，摸索个把小时就行了。两个仓库的关联配置到此位置，还需要最后一步配置页面仓库的Github Pages\n打开对应 Github 仓库页面，找到 Setting 页签，然后可以在侧边栏看到 Pages 设置\n需要配置的主要是 Source 选择分支和目录，自定义域名可以通过 Custom domain 配置，域名配置不是必须，如果配置了还需要新增 static/CNAME 文件，文件内容就是自定义的域名，中途改了几次域名就是没改文件导致访问不了网站。\nPS D:\\tech-blogcat static\\CNAME zone.desiyonan.tech 至此，耗时两天，一个完整的自动化部署个人博客终于搭建完了，网站的美化后面再一步步来。\n相关链接  Hugo homepage Hugo Install Hugo Docs Hugo Themes Theme PaperMod PaperMod - Github Hugo Config Scoop Github Scoop Codechina Hugo Gitee - Blog 使用Hugo搭建博客 - Blog Hugo Deploy Action  ",
   "wordCount" : "1661",
   "inLanguage": "zh-cn",
   "datePublished": "2021-05-31T20:25:48+08:00",
   "dateModified": "2021-05-31T20:25:48+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "DnF"
+  },
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "http://zone.desiyonan.tech/2021/05/8df2adb7809b41c597eb2efb10ed66db/"
@@ -164,6 +169,31 @@
             </span>
         </div>
         <ul id="menu">
+            <li>
+                <a href="http://zone.desiyonan.tech/search" title="搜索">
+                    <span>搜索</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://zone.desiyonan.tech/categories" title="分类">
+                    <span>分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://zone.desiyonan.tech/tags" title="标签">
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://zone.desiyonan.tech/series" title="系列">
+                    <span>系列</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://zone.desiyonan.tech/archive" title="归档">
+                    <span>归档</span>
+                </a>
+            </li>
         </ul>
     </nav>
 </header>
@@ -175,9 +205,32 @@
     <h1 class="post-title">
       Hugo&#43;Github 搭建个人网站
     </h1>
-    <div class="post-meta">May 31, 2021
+    <div class="post-meta">May 31, 2021&nbsp;·&nbsp;DnF
 </div>
-  </header> 
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <div class="details">Table of Contents</div>
+        </summary>
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e7%ae%80%e4%bb%8b" aria-label="简介">简介</a></li>
+                <li>
+                    <a href="#%e5%89%8d%e8%a8%80" aria-label="前言">前言</a></li>
+                <li>
+                    <a href="#%e5%ae%89%e8%a3%85-hugo" aria-label="安装 Hugo">安装 Hugo</a></li>
+                <li>
+                    <a href="#%e6%96%b0%e5%bb%ba%e7%ab%99%e7%82%b9" aria-label="新建站点">新建站点</a></li>
+                <li>
+                    <a href="#%e9%85%8d%e7%bd%ae-github-pages" aria-label="配置 Github Pages">配置 Github Pages</a></li>
+                <li>
+                    <a href="#%e7%9b%b8%e5%85%b3%e9%93%be%e6%8e%a5" aria-label="相关链接">相关链接</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
   <div class="post-content"><h2 id="简介">简介<a hidden class="anchor" aria-hidden="true" href="#简介">#</a></h2>
 <p>这是我的第一篇博客，这篇文章主要讲述了我搭建个人网站，以及如何自动构建发布静态页面的过程。</p>
 <h2 id="前言">前言<a hidden class="anchor" aria-hidden="true" href="#前言">#</a></h2>
@@ -345,6 +398,13 @@ zone.desiyonan.tech
 <!-- raw HTML omitted -->
 </div>
   <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://zone.desiyonan.tech/tags/web/">web</a></li>
+      <li><a href="http://zone.desiyonan.tech/tags/blog/">blog</a></li>
+      <li><a href="http://zone.desiyonan.tech/tags/hugo/">hugo</a></li>
+      <li><a href="http://zone.desiyonan.tech/tags/github/">github</a></li>
+      <li><a href="http://zone.desiyonan.tech/tags/markdown/">markdown</a></li>
+    </ul>
   </footer>
 </article>
     </main>
