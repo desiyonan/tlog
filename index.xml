@@ -7,6 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Mon, 31 May 2021 20:25:48 +0800</lastBuildDate><atom:link href="http://zone.desiyonan.tech/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>相册</title>
+      <link>http://zone.desiyonan.tech/photo/</link>
+      <pubDate>Fri, 04 Jun 2021 16:49:54 +0800</pubDate>
+      
+      <guid>http://zone.desiyonan.tech/photo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>关于我</title>
       <link>http://zone.desiyonan.tech/about/</link>
       <pubDate>Thu, 03 Jun 2021 16:34:54 +0800</pubDate>
