@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Series on DnF&#39;s Zone</title>
-    <link>http://zone.desiyonan.tech/series/</link>
+    <link>https://zone.desiyonan.tech/series/</link>
     <description>Recent content in Series on DnF&#39;s Zone</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 31 May 2021 20:25:48 +0800</lastBuildDate><atom:link href="http://zone.desiyonan.tech/series/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 31 May 2021 20:25:48 +0800</lastBuildDate><atom:link href="https://zone.desiyonan.tech/series/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>hugo</title>
-      <link>http://zone.desiyonan.tech/series/hugo/</link>
+      <link>https://zone.desiyonan.tech/series/hugo/</link>
       <pubDate>Mon, 31 May 2021 20:25:48 +0800</pubDate>
       
-      <guid>http://zone.desiyonan.tech/series/hugo/</guid>
+      <guid>https://zone.desiyonan.tech/series/hugo/</guid>
       <description></description>
     </item>
     
