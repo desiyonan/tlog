@@ -2,13 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://zone.desiyonan.tech/</loc>
-    <lastmod>2021-06-08T19:52:10+08:00</lastmod>
+    <loc>https://zone.desiyonan.tech/categories/</loc>
+    <lastmod>2021-06-16T16:13:33+08:00</lastmod>
   </url><url>
-    <loc>https://zone.desiyonan.tech/2021/06/20210608875210/</loc>
-    <lastmod>2021-06-08T19:52:10+08:00</lastmod>
+    <loc>https://zone.desiyonan.tech/</loc>
+    <lastmod>2021-06-16T16:13:33+08:00</lastmod>
+  </url><url>
+    <loc>https://zone.desiyonan.tech/tags/http/</loc>
+    <lastmod>2021-06-16T16:13:33+08:00</lastmod>
+  </url><url>
+    <loc>https://zone.desiyonan.tech/tags/java/</loc>
+    <lastmod>2021-06-16T16:13:33+08:00</lastmod>
   </url><url>
     <loc>https://zone.desiyonan.tech/post/</loc>
+    <lastmod>2021-06-16T16:13:33+08:00</lastmod>
+  </url><url>
+    <loc>https://zone.desiyonan.tech/2021/06/202106161641333/</loc>
+    <lastmod>2021-06-16T16:13:33+08:00</lastmod>
+  </url><url>
+    <loc>https://zone.desiyonan.tech/tags/</loc>
+    <lastmod>2021-06-16T16:13:33+08:00</lastmod>
+  </url><url>
+    <loc>https://zone.desiyonan.tech/categories/web/</loc>
+    <lastmod>2021-06-16T16:13:33+08:00</lastmod>
+  </url><url>
+    <loc>https://zone.desiyonan.tech/2021/06/20210608875210/</loc>
     <lastmod>2021-06-08T19:52:10+08:00</lastmod>
   </url><url>
     <loc>https://zone.desiyonan.tech/photo/</loc>
@@ -21,9 +39,6 @@
     <lastmod>2021-06-02T17:40:57+08:00</lastmod>
   </url><url>
     <loc>https://zone.desiyonan.tech/tags/blog/</loc>
-    <lastmod>2021-05-31T20:25:48+08:00</lastmod>
-  </url><url>
-    <loc>https://zone.desiyonan.tech/categories/</loc>
     <lastmod>2021-05-31T20:25:48+08:00</lastmod>
   </url><url>
     <loc>https://zone.desiyonan.tech/tags/github/</loc>
@@ -44,13 +59,7 @@
     <loc>https://zone.desiyonan.tech/series/</loc>
     <lastmod>2021-05-31T20:25:48+08:00</lastmod>
   </url><url>
-    <loc>https://zone.desiyonan.tech/tags/</loc>
-    <lastmod>2021-05-31T20:25:48+08:00</lastmod>
-  </url><url>
     <loc>https://zone.desiyonan.tech/tags/web/</loc>
-    <lastmod>2021-05-31T20:25:48+08:00</lastmod>
-  </url><url>
-    <loc>https://zone.desiyonan.tech/categories/web/</loc>
     <lastmod>2021-05-31T20:25:48+08:00</lastmod>
   </url><url>
     <loc>https://zone.desiyonan.tech/archive/</loc>
