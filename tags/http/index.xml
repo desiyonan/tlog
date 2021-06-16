@@ -13,7 +13,7 @@
       
       <guid>https://zone.desiyonan.tech/2021/06/202106161641333/</guid>
       <description>&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
-&lt;p&gt;主要记录了使用 &lt;code&gt;spring&lt;/code&gt; 重定向时遇到的问题，以及对 &lt;code&gt;HTTP&lt;/code&gt; &lt;code&gt;3xx&lt;/code&gt; 中重定向状态码意义解读记录。&lt;/p&gt;
+&lt;p&gt;主要记录了使用 &lt;code&gt;spring&lt;/code&gt; 重定向时遇到的问题，以及重新熟悉 &lt;code&gt;HTTP&lt;/code&gt; &lt;code&gt;3xx&lt;/code&gt; 中重定向状态码的意义。&lt;/p&gt;
 &lt;p&gt;`&lt;/p&gt;</description>
     </item>
     
