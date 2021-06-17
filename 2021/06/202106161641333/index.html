@@ -70,7 +70,7 @@
   "keywords": [
     "http", "java"
   ],
-  "articleBody": "简介 主要记录了使用 spring 重定向时遇到的问题，以及重新熟悉 HTTP 3xx 中重定向状态码的意义。\n`\n`\n前言 最近接手的一个项目需要在 POST 接口中处理逻辑，完成后让浏览器重定向到首页，请求方式需要变成 GET 。 然而折腾了两三个小时还是没找到问题原应，最后发现是返回的状态码有问题。\n一般情况下，在 Spring下重定向到页面时会使用 ModelAndView，也就是这样：\n@PostMapping(\"handle\") public String handle(){ // do something ...  return “redirect:/”; } 这种类似的情况下返回的是：\nPOST http://localhost:8080/tdh-portal/cas HTTP/1.1 302 Found Content-Language: zh-CN Location: http://localhost:8080/ Content-Length: 0 Server: Jetty(9.4.z-SNAPSHOT) Response code: 302 (Found); Time: 119ms; Content length: 0 bytes 也不知道从哪里复制了一段代码 😂 ，主要部分如下：\n@PostMapping(\"handle\") public ResponseEntity handle(){ // do something ...  return ResponseEntity .status(HttpStatus.TEMPORARY_REDIRECT) .header(HttpHeaders.LOCATION, \"/\") .build(); } 响应信息则是这样\nPOST http://localhost:8080/handle HTTP/1.1 307 Temporary Redirect Set-Cookie: JSESSIONID=node0123krmz4upibb18jz7ov4us1pw1.node0;Path=/ Expires: Thu, 01 Jan 1970 00:00:00 GMT Location: / Content-Length: 0 Server: Jetty(9.4.z-SNAPSHOT) Response code: 307 (Temporary Redirect); Time: 4916ms; Content length: 0 bytes 可以\n延伸  HTTP Redirections  ",
+  "articleBody": "简介 主要记录了使用 spring 重定向时遇到的问题，以及重新熟悉 HTTP 3xx 中重定向状态码的意义。\n`\n`\n前言 最近接手的一个项目需要在 POST 接口中处理逻辑，完成后让浏览器重定向到首页，请求方式需要变成 GET 。\n然而折腾了两三个小时还是没找到问题原应，最后发现是返回的状态码有问题。\n一般情况下，在 Spring下重定向到页面时会使用 ModelAndView，也就是这样：\n@PostMapping(\"handle\") public String handle(){ // do something ...  return “redirect:/”; } 这种类似的情况下返回的是：\nPOST http://localhost:8080/tdh-portal/cas HTTP/1.1 302 Found Content-Language: zh-CN Location: http://localhost:8080/ Content-Length: 0 Server: Jetty(9.4.z-SNAPSHOT) Response code: 302 (Found); Time: 119ms; Content length: 0 bytes 也不知道从哪里复制了一段代码 😂 ，主要部分如下：\n@PostMapping(\"handle\") public ResponseEntity handle(){ // do something ...  return ResponseEntity .status(HttpStatus.TEMPORARY_REDIRECT) .header(HttpHeaders.LOCATION, \"/\") .build(); } 响应信息则是这样\nPOST http://localhost:8080/handle HTTP/1.1 307 Temporary Redirect Set-Cookie: JSESSIONID=node0123krmz4upibb18jz7ov4us1pw1.node0;Path=/ Expires: Thu, 01 Jan 1970 00:00:00 GMT Location: / Content-Length: 0 Server: Jetty(9.4.z-SNAPSHOT) Response code: 307 (Temporary Redirect); Time: 4916ms; Content length: 0 bytes 可以\n延伸  HTTP Redirections  ",
   "wordCount" : "317",
   "inLanguage": "zh-cn",
   "datePublished": "2021-06-16T16:13:33+08:00",
@@ -238,7 +238,7 @@
 <p>`</p>
 <p>`</p>
 <h2 id="前言">前言<a hidden class="anchor" aria-hidden="true" href="#前言">#</a></h2>
-<p>最近接手的一个项目需要在 <code>POST</code> 接口中处理逻辑，完成后让浏览器重定向到首页，请求方式需要变成 <code>GET</code> 。
+<p>最近接手的一个项目需要在 <code>POST</code> 接口中处理逻辑，完成后让浏览器重定向到首页，请求方式需要变成 <code>GET</code> 。<br>
 然而折腾了两三个小时还是没找到问题原应，最后发现是返回的状态码有问题。</p>
 <p>一般情况下，在 <code>Spring</code>下重定向到页面时会使用 <code>ModelAndView</code>，也就是这样：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">    <span style="color:#a6e22e">@PostMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;handle&#34;</span><span style="color:#f92672">)</span>
@@ -285,8 +285,8 @@ Response code: 307 (Temporary Redirect); Time: 4916ms; Content length: 0 bytes
 <ol>
 <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Redirections" title="HTTP 的重定向">HTTP Redirections</a></li>
 </ol>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!-- footer -->
+<!-- links -->
 </div>
   <footer class="post-footer">
     <ul class="post-tags">

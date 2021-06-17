@@ -23,8 +23,8 @@
       <pubDate>Tue, 08 Jun 2021 19:52:10 +0800</pubDate>
       
       <guid>https://zone.desiyonan.tech/2021/06/20210608875210/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;
-&lt;h2 id=&#34;简介----omit-in-toc---&#34;&gt;简介 &lt;!-- raw HTML omitted --&gt;&lt;/h2&gt;
+      <description>&lt;!-- TOC off --&gt;
+&lt;h2 id=&#34;简介----omit-in-toc---&#34;&gt;简介 &lt;!-- omit in toc --&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;.java&lt;/code&gt; 文件编译后的 &lt;code&gt;.class&lt;/code&gt; 文件内容究竟是怎样的？&lt;code&gt;JVM&lt;/code&gt; 又是如果识别并加载 &lt;code&gt;.class&lt;/code&gt; 文件的&lt;/p&gt;</description>
     </item>
     
