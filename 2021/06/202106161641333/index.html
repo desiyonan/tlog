@@ -11,7 +11,7 @@
 主要记录了使用 spring 重定向时遇到的问题，以及重新熟悉 HTTP 3xx 中重定向状态码的意义。">
 <meta name="author" content="DnF">
 <link rel="canonical" href="https://zone.desiyonan.tech/2021/06/202106161641333/" />
-<link crossorigin="anonymous" href="/assets/css/stylesheet.min.edf8cd83d69d0005cf6214efc42ea577bf92cc19b6608d962afa43b8f6c9ec75.css" integrity="sha256-7fjNg9adAAXPYhTvxC6ld7&#43;SzBm2YI2WKvpDuPbJ7HU=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.9445355f596ee58055c201d32b7c93581eac8f2ace5b4cabc73d79c100438abc.css" integrity="sha256-lEU1X1lu5YBVwgHTK3yTWB6sjyrOW0yrxz15wQBDirw=" rel="preload stylesheet" as="style">
 <link rel="preload" href="https://raw.desiyonan.tech/img/2021/06/Photo.jfif" as="image">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
     onload="hljs.initHighlightingOnLoad();"></script>
@@ -249,8 +249,8 @@
 </code></pre></div><p>这种类似的情况下返回的是：</p>
 <div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http"><span class="err">POST http://localhost:8080/tdh-portal/cas
 </span><span class="err">
-</span><span class="err"></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">302</span> <span class="ne">Found</span>
-<span class="n">Content-Language</span><span class="o">:</span> <span class="l">zh-CN</span>
+</span><span class="hl"><span class="err"></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">302</span> <span class="ne">Found</span>
+</span><span class="n">Content-Language</span><span class="o">:</span> <span class="l">zh-CN</span>
 <span class="n">Location</span><span class="o">:</span> <span class="l">http://localhost:8080/</span>
 <span class="n">Content-Length</span><span class="o">:</span> <span class="l">0</span>
 <span class="n">Server</span><span class="o">:</span> <span class="l">Jetty(9.4.z-SNAPSHOT)</span>
@@ -270,8 +270,8 @@
 </code></pre></div><p>响应信息则是这样</p>
 <div class="highlight"><pre class="chroma"><code class="language-http" data-lang="http"><span class="err">POST http://localhost:8080/handle
 </span><span class="err">
-</span><span class="err"></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">307</span> <span class="ne">Temporary Redirect</span>
-<span class="n">Set-Cookie</span><span class="o">:</span> <span class="l">JSESSIONID=node0123krmz4upibb18jz7ov4us1pw1.node0;Path=/</span>
+</span><span class="hl"><span class="err"></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">307</span> <span class="ne">Temporary Redirect</span>
+</span><span class="n">Set-Cookie</span><span class="o">:</span> <span class="l">JSESSIONID=node0123krmz4upibb18jz7ov4us1pw1.node0;Path=/</span>
 <span class="n">Expires</span><span class="o">:</span> <span class="l">Thu, 01 Jan 1970 00:00:00 GMT</span>
 <span class="n">Location</span><span class="o">:</span> <span class="l">/</span>
 <span class="n">Content-Length</span><span class="o">:</span> <span class="l">0</span>

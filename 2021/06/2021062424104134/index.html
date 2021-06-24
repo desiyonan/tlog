@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>ThreadGroup 线程池 | DnF&#39;s Zone</title>
+<meta name="keywords" content="" />
+<meta name="description" content="简介
+本文了解 ThreadGroup 的作用和特性，而且为什么有且只有一个 system ThreadGroup。">
+<meta name="author" content="DnF">
+<link rel="canonical" href="https://zone.desiyonan.tech/2021/06/2021062424104134/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.9445355f596ee58055c201d32b7c93581eac8f2ace5b4cabc73d79c100438abc.css" integrity="sha256-lEU1X1lu5YBVwgHTK3yTWB6sjyrOW0yrxz15wQBDirw=" rel="preload stylesheet" as="style">
+<link rel="preload" href="https://raw.desiyonan.tech/img/2021/06/Photo.jfif" as="image">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://zone.desiyonan.tech/favicon.svg">
+<link rel="icon" type="image/png" sizes="16x16" href="https://zone.desiyonan.tech/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="https://zone.desiyonan.tech/favicon.svg">
+<link rel="apple-touch-icon" href="https://zone.desiyonan.tech/apple-touch-icon.png">
+<link rel="mask-icon" href="https://zone.desiyonan.tech/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.83.1" />
+<meta property="og:title" content="ThreadGroup 线程池" />
+<meta property="og:description" content="简介
+本文了解 ThreadGroup 的作用和特性，而且为什么有且只有一个 system ThreadGroup。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zone.desiyonan.tech/2021/06/2021062424104134/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-06-24T22:41:34&#43;08:00" />
+<meta property="article:modified_time" content="2021-06-24T22:41:34&#43;08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ThreadGroup 线程池"/>
+<meta name="twitter:description" content="简介
+本文了解 ThreadGroup 的作用和特性，而且为什么有且只有一个 system ThreadGroup。"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://zone.desiyonan.tech/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "ThreadGroup 线程池",
+      "item": "https://zone.desiyonan.tech/2021/06/2021062424104134/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "ThreadGroup 线程池",
+  "name": "ThreadGroup 线程池",
+  "description": "简介 本文了解 ThreadGroup 的作用和特性，而且为什么有且只有一个 system ThreadGroup。\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "简介 本文了解 ThreadGroup 的作用和特性，而且为什么有且只有一个 system ThreadGroup。\n前言 今天同事突然问我线程组ThreadGroup 与线程池ThreadPool有什么区别？又有啥作用？\n说实话，确实自己理解的不够清晰，讨论过后整理记录下自己的理解\n各自的意义 字面意义：\n 线程池：(空闲的)线程放在一起管理 线程组：对线程进行分组管理  从定义上看：\n 线程池是一种池化实现，为了重复利用空闲的线程资源，避免系统频繁创建线程造成的大量资源消耗。 线程组是一个抽象集合，为了统一方便管理多个线程。  当然线程池也可以理解为一类线程的集合，不过这类集合与线程组同样是有区别的：\n 线程池是空闲的线程的集合 线程组是所有未结束的线程和未销毁的线程组的集合  各自的作用 线程池的作用上面已经说过了，是为了减小系统频繁创建线程带来的资源消耗，\n而线程组为了统一方便的管理组内多个线程提供很多方法：\n   返回类型 方法 描述     void suspend() 暂停所有线程   void resume() 恢复所有线程   void stop() 停止所有线程   void interrupt() 中断所有线程     注： 由于线程安全问题，suspend()、resume() 和 stop() 都已经被标记过时了。\n class ThreadGroup implements Thread.UncaughtExceptionHandler { private final ThreadGroup parent; // ...  Thread threads[]; // ...  ThreadGroup groups[]; // ... methods } 从以上属性中能看出这些特性:\n 线程组都有一个父组 一个线程组由多个线程和多个子组组成  它的相关构造函数\n/** * Creates an empty Thread group that is not in any Thread group. * This method is used to create the system Thread group. */ private ThreadGroup() { // called from C code  this.name = \"system\"; this.maxPriority = Thread.MAX_PRIORITY; this.parent = null; } 由此可见JVM启动时会创建一个默认名为 system 的线程组，由这个线程组一直往下创建Thread和ThreadGroup，\n能够想象这形成的是一个树结构，根节点便是这个system的线程组。\n守护线程组(Daemon) 线程组提供了多个方法管理线程，而且ThreadGroup 和 Thread 都有daemon属性，但是他们的意义是不一样的，\n也就是说ThreadGroup.setDaemon(boolean)并不能批量设置组能得线程为守护线程（之前理解错了 😂）。\n在源码上有一段说明：\n205 206 207 208 209 210 211 212 213 214 215 216 217 218 219 220 221 222 223 224 225 226  /** * Changes the daemon status of this thread group. *  * First, the {@code checkAccess} method of this thread group is * called with no arguments; this may result in a security exception. *  * A daemon thread group is automatically destroyed when its last * thread is stopped or its last thread group is destroyed. * * @param daemon if {@code true}, marks this thread group as * a daemon thread group; otherwise, marks this * thread group as normal. * @throws SecurityException if the current thread cannot modify * this thread group. * @see java.lang.SecurityException * @see java.lang.ThreadGroup#checkAccess() * @since 1.0 */ public final void setDaemon(boolean daemon) { checkAccess(); this.daemon = daemon; }   大致意义就是线程组的 daemon 属性表示当它内部没有 active 的线程时，它会自动销毁。\n当一个 Thread 结束时，他会从他所属的那个 ThreadGroup 中脱离:\n/** * Causes this thread to begin execution; the Java Virtual Machine * calls the {@code run} method of this thread. *  * The result is that two threads are running concurrently: the * current thread (which returns from the call to the * {@code start} method) and the other thread (which executes its * {@code run} method). *  * It is never legal to start a thread more than once. * In particular, a thread may not be restarted once it has completed * execution. * * @throws IllegalThreadStateException if the thread was already started. * @see #run() * @see #stop() */ public synchronized void start() { /** * This method is not invoked for the main method thread or \"system\" * group threads created/set up by the VM. Any new functionality added * to this method in the future may have to also be added to the VM. * * A zero status value corresponds to state \"NEW\". */ if (threadStatus != 0) throw new IllegalThreadStateException(); /* Notify the group that this thread is about to be started * so that it can be added to the group's list of threads * and the group's unstarted count can be decremented. */ group.add(this); boolean started = false; try { start0(); started = true; } finally { try { if (!started) { group.threadStartFailed(this); } } catch (Throwable ignore) { /* do nothing. If start0 threw a Throwable then it will be passed up the call stack */ } } } /** * This method is called by the system to give a Thread * a chance to clean up before it actually exits. */ private void exit() { if (threadLocals != null \u0026\u0026 TerminatingThreadLocal.REGISTRY.isPresent()) { TerminatingThreadLocal.threadTerminated(); } if (group != null) { group.threadTerminated(this); group = null; } /* Aggressively null out all reference fields: see bug 4006245 */ target = null; /* Speed the release of some of these resources */ threadLocals = null; inheritableThreadLocals = null; inheritedAccessControlContext = null; blocker = null; uncaughtExceptionHandler = null; } 相关 ThreadGroup in Java\nJava 并发 之 线程组 ThreadGroup 介绍\nJava多线程系列——过期的suspend()挂起、resume()继续执行线程\n",
+  "wordCount" : "1382",
+  "inLanguage": "zh-cn",
+  "datePublished": "2021-06-24T22:41:34+08:00",
+  "dateModified": "2021-06-24T22:41:34+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "DnF"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://zone.desiyonan.tech/2021/06/2021062424104134/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DnF's Zone",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://zone.desiyonan.tech/favicon.svg"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<noscript>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: #1d1e20;
+                --entry: #2e2e33;
+                --primary: rgba(255, 255, 255, 0.84);
+                --secondary: rgba(255, 255, 255, 0.56);
+                --tertiary: rgba(255, 255, 255, 0.16);
+                --content: rgba(255, 255, 255, 0.74);
+                --hljs-bg: #2e2e33;
+                --code-bg: #37383e;
+                --border: #333;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://zone.desiyonan.tech" accesskey="h" title="DnF&#39;s Zone (Alt + H)">DnF&#39;s Zone</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://zone.desiyonan.tech/search" title="搜索">
+                    <span>搜索</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://zone.desiyonan.tech/categories" title="分类">
+                    <span>分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://zone.desiyonan.tech/tags" title="标签">
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://zone.desiyonan.tech/series" title="系列">
+                    <span>系列</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://zone.desiyonan.tech/archive" title="归档">
+                    <span>归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://zone.desiyonan.tech/about" title="关于">
+                    <span>关于</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://zone.desiyonan.tech">Home</a>&nbsp;»&nbsp;<a href="https://zone.desiyonan.tech/post/">Posts</a></div>
+    <h1 class="post-title">
+      ThreadGroup 线程池
+    </h1>
+    <div class="post-meta">2021-06-24&nbsp;·&nbsp;DnF
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <div class="details">Table of Contents</div>
+        </summary>
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e7%ae%80%e4%bb%8b" aria-label="简介">简介</a></li>
+                <li>
+                    <a href="#%e5%89%8d%e8%a8%80" aria-label="前言">前言</a></li>
+                <li>
+                    <a href="#%e5%90%84%e8%87%aa%e7%9a%84%e6%84%8f%e4%b9%89" aria-label="各自的意义">各自的意义</a></li>
+                <li>
+                    <a href="#%e5%90%84%e8%87%aa%e7%9a%84%e4%bd%9c%e7%94%a8" aria-label="各自的作用">各自的作用</a></li>
+                <li>
+                    <a href="#%e5%ae%88%e6%8a%a4%e7%ba%bf%e7%a8%8b%e7%bb%84daemon" aria-label="守护线程组(Daemon)">守护线程组(Daemon)</a></li>
+                <li>
+                    <a href="#%e7%9b%b8%e5%85%b3" aria-label="相关">相关</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="简介">简介<a hidden class="anchor" aria-hidden="true" href="#简介">#</a></h2>
+<p>本文了解 <code>ThreadGroup</code> 的作用和特性，而且为什么有且只有一个 <code>system ThreadGroup</code>。</p>
+<h2 id="前言">前言<a hidden class="anchor" aria-hidden="true" href="#前言">#</a></h2>
+<p>今天同事突然问我线程组<code>ThreadGroup</code> 与线程池<code>ThreadPool</code>有什么区别？又有啥作用？</p>
+<p>说实话，确实自己理解的不够清晰，讨论过后整理记录下自己的理解</p>
+<h2 id="各自的意义">各自的意义<a hidden class="anchor" aria-hidden="true" href="#各自的意义">#</a></h2>
+<p>字面意义：</p>
+<ul>
+<li>线程池：(空闲的)线程放在一起管理</li>
+<li>线程组：对线程进行分组管理</li>
+</ul>
+<p>从定义上看：</p>
+<ul>
+<li>线程池是一种池化实现，为了重复利用空闲的线程资源，避免系统频繁创建线程造成的大量资源消耗。</li>
+<li>线程组是一个抽象集合，为了统一方便管理多个线程。</li>
+</ul>
+<p>当然线程池也可以理解为一类线程的集合，不过这类集合与线程组同样是有区别的：</p>
+<ul>
+<li>线程池是空闲的线程的集合</li>
+<li>线程组是<strong>所有</strong>未结束的线程和未销毁的线程组的集合</li>
+</ul>
+<h2 id="各自的作用">各自的作用<a hidden class="anchor" aria-hidden="true" href="#各自的作用">#</a></h2>
+<p>线程池的作用上面已经说过了，是为了减小系统频繁创建线程带来的资源消耗，<br>
+而线程组为了统一方便的管理组内多个线程提供很多方法：</p>
+<table>
+<thead>
+<tr>
+<th>返回类型</th>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>void</td>
+<td>suspend()</td>
+<td>暂停所有线程</td>
+</tr>
+<tr>
+<td>void</td>
+<td>resume()</td>
+<td>恢复所有线程</td>
+</tr>
+<tr>
+<td>void</td>
+<td>stop()</td>
+<td>停止所有线程</td>
+</tr>
+<tr>
+<td>void</td>
+<td>interrupt()</td>
+<td>中断所有线程</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注： 由于<a href="https://docs.oracle.com/javase/8/docs/technotes/guides/concurrency/threadPrimitiveDeprecation.html" title="Why is deprecated?Thread.stop">线程安全问题</a>，suspend()、resume() 和 stop() 都已经被标记过时了。</p>
+</blockquote>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">ThreadGroup</span> <span class="kd">implements</span> <span class="n">Thread</span><span class="o">.</span><span class="na">UncaughtExceptionHandler</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">ThreadGroup</span> <span class="n">parent</span><span class="o">;</span>
+    <span class="c1">// ...
+</span><span class="c1"></span>    <span class="n">Thread</span> <span class="n">threads</span><span class="o">[];</span>
+
+    <span class="c1">// ...
+</span><span class="c1"></span>    <span class="n">ThreadGroup</span> <span class="n">groups</span><span class="o">[];</span>
+
+    <span class="c1">// ... methods
+</span><span class="c1"></span><span class="o">}</span>
+</code></pre></div><p>从以上属性中能看出这些特性:</p>
+<ol>
+<li>线程组都有一个父组</li>
+<li>一个线程组由多个线程和多个子组组成</li>
+</ol>
+<p>它的相关构造函数</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="cm">/**
+</span><span class="cm"> * Creates an empty Thread group that is not in any Thread group.
+</span><span class="cm"> * This method is used to create the system Thread group.
+</span><span class="cm"> */</span>
+<span class="kd">private</span> <span class="nf">ThreadGroup</span><span class="o">()</span> <span class="o">{</span>     <span class="c1">// called from C code
+</span><span class="c1"></span>    <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="s">&#34;system&#34;</span><span class="o">;</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">maxPriority</span> <span class="o">=</span> <span class="n">Thread</span><span class="o">.</span><span class="na">MAX_PRIORITY</span><span class="o">;</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">parent</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div><p>由此可见<code>JVM</code>启动时会创建一个默认名为 <code>system</code> 的线程组，由这个线程组一直往下创建<code>Thread</code>和<code>ThreadGroup</code>，<br>
+能够想象这形成的是一个树结构，根节点便是这个<code>system</code>的线程组。</p>
+<h2 id="守护线程组daemon">守护线程组(Daemon)<a hidden class="anchor" aria-hidden="true" href="#守护线程组daemon">#</a></h2>
+<p>线程组提供了多个方法管理线程，而且<code>ThreadGroup</code> 和 <code>Thread</code> 都有<code>daemon</code>属性，但是他们的意义是不一样的，<br>
+也就是说<code>ThreadGroup.setDaemon(boolean)</code>并不能批量设置组能得线程为守护线程（之前理解错了 😂）。</p>
+<p>在源码上有一段说明：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">205
+</span><span class="lnt">206
+</span><span class="lnt">207
+</span><span class="lnt">208
+</span><span class="lnt">209
+</span><span class="lnt">210
+</span><span class="hl"><span class="lnt">211
+</span></span><span class="hl"><span class="lnt">212
+</span></span><span class="lnt">213
+</span><span class="lnt">214
+</span><span class="lnt">215
+</span><span class="lnt">216
+</span><span class="lnt">217
+</span><span class="lnt">218
+</span><span class="lnt">219
+</span><span class="lnt">220
+</span><span class="lnt">221
+</span><span class="lnt">222
+</span><span class="lnt">223
+</span><span class="lnt">224
+</span><span class="lnt">225
+</span><span class="lnt">226
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="cm">/**
+</span><span class="cm"> * Changes the daemon status of this thread group.
+</span><span class="cm"> * &lt;p&gt;
+</span><span class="cm"> * First, the {@code checkAccess} method of this thread group is
+</span><span class="cm"> * called with no arguments; this may result in a security exception.
+</span><span class="cm"> * &lt;p&gt;
+</span><span class="hl"><span class="cm"> * A daemon thread group is automatically destroyed when its last
+</span></span><span class="hl"><span class="cm"> * thread is stopped or its last thread group is destroyed.
+</span></span><span class="cm"> *
+</span><span class="cm"> * @param      daemon   if {@code true}, marks this thread group as
+</span><span class="cm"> *                      a daemon thread group; otherwise, marks this
+</span><span class="cm"> *                      thread group as normal.
+</span><span class="cm"> * @throws     SecurityException  if the current thread cannot modify
+</span><span class="cm"> *               this thread group.
+</span><span class="cm"> * @see        java.lang.SecurityException
+</span><span class="cm"> * @see        java.lang.ThreadGroup#checkAccess()
+</span><span class="cm"> * @since      1.0
+</span><span class="cm"> */</span>
+<span class="kd">public</span> <span class="kd">final</span> <span class="kt">void</span> <span class="nf">setDaemon</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">daemon</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">checkAccess</span><span class="o">();</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">daemon</span> <span class="o">=</span> <span class="n">daemon</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>大致意义就是线程组的 <code>daemon</code> 属性表示当它内部没有 <code>active</code> 的线程时，它会自动销毁。</p>
+<p>当一个 <code>Thread</code> 结束时，他会从他所属的那个 <code>ThreadGroup</code> 中脱离:</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="cm">/**
+</span><span class="cm"> * Causes this thread to begin execution; the Java Virtual Machine
+</span><span class="cm"> * calls the {@code run} method of this thread.
+</span><span class="cm"> * &lt;p&gt;
+</span><span class="cm"> * The result is that two threads are running concurrently: the
+</span><span class="cm"> * current thread (which returns from the call to the
+</span><span class="cm"> * {@code start} method) and the other thread (which executes its
+</span><span class="cm"> * {@code run} method).
+</span><span class="cm"> * &lt;p&gt;
+</span><span class="cm"> * It is never legal to start a thread more than once.
+</span><span class="cm"> * In particular, a thread may not be restarted once it has completed
+</span><span class="cm"> * execution.
+</span><span class="cm"> *
+</span><span class="cm"> * @throws     IllegalThreadStateException  if the thread was already started.
+</span><span class="cm"> * @see        #run()
+</span><span class="cm"> * @see        #stop()
+</span><span class="cm"> */</span>
+<span class="kd">public</span> <span class="kd">synchronized</span> <span class="kt">void</span> <span class="nf">start</span><span class="o">()</span> <span class="o">{</span>
+    <span class="cm">/**
+</span><span class="cm">     * This method is not invoked for the main method thread or &#34;system&#34;
+</span><span class="cm">     * group threads created/set up by the VM. Any new functionality added
+</span><span class="cm">     * to this method in the future may have to also be added to the VM.
+</span><span class="cm">     *
+</span><span class="cm">     * A zero status value corresponds to state &#34;NEW&#34;.
+</span><span class="cm">     */</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">threadStatus</span> <span class="o">!=</span> <span class="n">0</span><span class="o">)</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="n">IllegalThreadStateException</span><span class="o">();</span>
+
+    <span class="cm">/* Notify the group that this thread is about to be started
+</span><span class="cm">        * so that it can be added to the group&#39;s list of threads
+</span><span class="cm">        * and the group&#39;s unstarted count can be decremented. */</span>
+    <span class="n">group</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+
+    <span class="kt">boolean</span> <span class="n">started</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+    <span class="k">try</span> <span class="o">{</span>
+        <span class="n">start0</span><span class="o">();</span>
+        <span class="n">started</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+    <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(!</span><span class="n">started</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">group</span><span class="o">.</span><span class="na">threadStartFailed</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Throwable</span> <span class="n">ignore</span><span class="o">)</span> <span class="o">{</span>
+            <span class="cm">/* do nothing. If start0 threw a Throwable then
+</span><span class="cm">                it will be passed up the call stack */</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="cm">/**
+</span><span class="cm"> * This method is called by the system to give a Thread
+</span><span class="cm"> * a chance to clean up before it actually exits.
+</span><span class="cm"> */</span>
+<span class="kd">private</span> <span class="kt">void</span> <span class="nf">exit</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">threadLocals</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">TerminatingThreadLocal</span><span class="o">.</span><span class="na">REGISTRY</span><span class="o">.</span><span class="na">isPresent</span><span class="o">())</span> <span class="o">{</span>
+        <span class="n">TerminatingThreadLocal</span><span class="o">.</span><span class="na">threadTerminated</span><span class="o">();</span>
+    <span class="o">}</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">group</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">group</span><span class="o">.</span><span class="na">threadTerminated</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+        <span class="n">group</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="cm">/* Aggressively null out all reference fields: see bug 4006245 */</span>
+    <span class="n">target</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="cm">/* Speed the release of some of these resources */</span>
+    <span class="n">threadLocals</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="n">inheritableThreadLocals</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="n">inheritedAccessControlContext</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="n">blocker</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="n">uncaughtExceptionHandler</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div><h2 id="相关">相关<a hidden class="anchor" aria-hidden="true" href="#相关">#</a></h2>
+<p><a href="https://www.javatpoint.com/threadgroup-in-java" title="ThreadGroup in Java">ThreadGroup in Java</a><br>
+<a href="https://juejin.cn/post/6844903811899719694" title="Java并发 之 线程组 ThreadGroup 介绍">Java 并发 之 线程组 ThreadGroup 介绍</a><br>
+<a href="https://www.cnblogs.com/zhengbin/p/6505971.html" title="Java多线程系列——过期的suspend()挂起、resume()继续执行线程">Java多线程系列——过期的suspend()挂起、resume()继续执行线程</a></p>
+<!--  -->
+
+  </div>
+  <footer class="post-footer"><div class="share-buttons">
+    <a target="_blank" rel="noopener noreferrer" aria-label="share ThreadGroup 线程池 on twitter"
+        href="https://twitter.com/intent/tweet/?text=ThreadGroup%20%e7%ba%bf%e7%a8%8b%e6%b1%a0&amp;url=https%3a%2f%2fzone.desiyonan.tech%2f2021%2f06%2f2021062424104134%2f&amp;hashtags=">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-253.927,424.544c135.939,0 210.268,-112.643 210.268,-210.268c0,-3.218 0,-6.437 -0.153,-9.502c14.406,-10.421 26.973,-23.448 36.935,-38.314c-13.18,5.824 -27.433,9.809 -42.452,11.648c15.326,-9.196 26.973,-23.602 32.49,-40.92c-14.252,8.429 -30.038,14.56 -46.896,17.931c-13.487,-14.406 -32.644,-23.295 -53.946,-23.295c-40.767,0 -73.87,33.104 -73.87,73.87c0,5.824 0.613,11.494 1.992,16.858c-61.456,-3.065 -115.862,-32.49 -152.337,-77.241c-6.284,10.881 -9.962,23.601 -9.962,37.088c0,25.594 13.027,48.276 32.95,61.456c-12.107,-0.307 -23.448,-3.678 -33.41,-9.196l0,0.92c0,35.862 25.441,65.594 59.311,72.49c-6.13,1.686 -12.72,2.606 -19.464,2.606c-4.751,0 -9.348,-0.46 -13.946,-1.38c9.349,29.426 36.628,50.728 68.965,51.341c-25.287,19.771 -57.164,31.571 -91.8,31.571c-5.977,0 -11.801,-0.306 -17.625,-1.073c32.337,21.15 71.264,33.41 112.95,33.41Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share ThreadGroup 线程池 on linkedin"
+        href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fzone.desiyonan.tech%2f2021%2f06%2f2021062424104134%2f&amp;title=ThreadGroup%20%e7%ba%bf%e7%a8%8b%e6%b1%a0&amp;summary=ThreadGroup%20%e7%ba%bf%e7%a8%8b%e6%b1%a0&amp;source=https%3a%2f%2fzone.desiyonan.tech%2f2021%2f06%2f2021062424104134%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share ThreadGroup 线程池 on reddit"
+        href="https://reddit.com/submit?url=https%3a%2f%2fzone.desiyonan.tech%2f2021%2f06%2f2021062424104134%2f&title=ThreadGroup%20%e7%ba%bf%e7%a8%8b%e6%b1%a0">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share ThreadGroup 线程池 on facebook"
+        href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fzone.desiyonan.tech%2f2021%2f06%2f2021062424104134%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share ThreadGroup 线程池 on whatsapp"
+        href="https://api.whatsapp.com/send?text=ThreadGroup%20%e7%ba%bf%e7%a8%8b%e6%b1%a0%20-%20https%3a%2f%2fzone.desiyonan.tech%2f2021%2f06%2f2021062424104134%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share ThreadGroup 线程池 on telegram"
+        href="https://telegram.me/share/url?text=ThreadGroup%20%e7%ba%bf%e7%a8%8b%e6%b1%a0&amp;url=https%3a%2f%2fzone.desiyonan.tech%2f2021%2f06%2f2021062424104134%2f">
+        <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28">
+            <path
+                d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+        </svg>
+    </a>
+</div>
+
+  </footer>
+</article>
+    </main>
+    <footer class="footer">
+    <span>&copy; 2021 <a href="https://zone.desiyonan.tech">DnF&#39;s Zone</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
+    <button class="top-link" id="top-link" type="button" accesskey="g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z" />
+        </svg>
+    </button>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+    menu.onscroll = function () {
+        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

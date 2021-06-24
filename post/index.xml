@@ -5,7 +5,17 @@
     <link>https://zone.desiyonan.tech/post/</link>
     <description>Recent content in Posts on DnF&#39;s Zone</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 16 Jun 2021 16:13:33 +0800</lastBuildDate><atom:link href="https://zone.desiyonan.tech/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 24 Jun 2021 22:41:34 +0800</lastBuildDate><atom:link href="https://zone.desiyonan.tech/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ThreadGroup 线程池</title>
+      <link>https://zone.desiyonan.tech/2021/06/2021062424104134/</link>
+      <pubDate>Thu, 24 Jun 2021 22:41:34 +0800</pubDate>
+      
+      <guid>https://zone.desiyonan.tech/2021/06/2021062424104134/</guid>
+      <description>&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
+&lt;p&gt;本文了解 &lt;code&gt;ThreadGroup&lt;/code&gt; 的作用和特性，而且为什么有且只有一个 &lt;code&gt;system ThreadGroup&lt;/code&gt;。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Spring POST重定向到GET</title>
       <link>https://zone.desiyonan.tech/2021/06/202106161641333/</link>
