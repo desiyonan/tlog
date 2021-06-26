@@ -2,22 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://zone.desiyonan.tech/categories/</loc>
+    <lastmod>2021-06-24T22:41:34+08:00</lastmod>
+  </url><url>
     <loc>https://zone.desiyonan.tech/</loc>
+    <lastmod>2021-06-24T22:41:34+08:00</lastmod>
+  </url><url>
+    <loc>https://zone.desiyonan.tech/tags/java/</loc>
+    <lastmod>2021-06-24T22:41:34+08:00</lastmod>
+  </url><url>
+    <loc>https://zone.desiyonan.tech/categories/java/</loc>
     <lastmod>2021-06-24T22:41:34+08:00</lastmod>
   </url><url>
     <loc>https://zone.desiyonan.tech/post/</loc>
     <lastmod>2021-06-24T22:41:34+08:00</lastmod>
   </url><url>
-    <loc>https://zone.desiyonan.tech/2021/06/2021062424104134/</loc>
+    <loc>https://zone.desiyonan.tech/tags/</loc>
     <lastmod>2021-06-24T22:41:34+08:00</lastmod>
   </url><url>
-    <loc>https://zone.desiyonan.tech/categories/</loc>
-    <lastmod>2021-06-16T16:13:33+08:00</lastmod>
+    <loc>https://zone.desiyonan.tech/tags/thread/</loc>
+    <lastmod>2021-06-24T22:41:34+08:00</lastmod>
+  </url><url>
+    <loc>https://zone.desiyonan.tech/2021/06/2021062424104134/</loc>
+    <lastmod>2021-06-24T22:41:34+08:00</lastmod>
   </url><url>
     <loc>https://zone.desiyonan.tech/tags/http/</loc>
     <lastmod>2021-06-16T16:13:33+08:00</lastmod>
   </url><url>
-    <loc>https://zone.desiyonan.tech/tags/java/</loc>
+    <loc>https://zone.desiyonan.tech/categories/network/</loc>
     <lastmod>2021-06-16T16:13:33+08:00</lastmod>
   </url><url>
     <loc>https://zone.desiyonan.tech/tags/spring/</loc>
@@ -26,13 +38,16 @@
     <loc>https://zone.desiyonan.tech/2021/06/202106161641333/</loc>
     <lastmod>2021-06-16T16:13:33+08:00</lastmod>
   </url><url>
-    <loc>https://zone.desiyonan.tech/tags/</loc>
-    <lastmod>2021-06-16T16:13:33+08:00</lastmod>
-  </url><url>
-    <loc>https://zone.desiyonan.tech/categories/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/</loc>
-    <lastmod>2021-06-16T16:13:33+08:00</lastmod>
+    <loc>https://zone.desiyonan.tech/tags/class/</loc>
+    <lastmod>2021-06-08T19:52:10+08:00</lastmod>
   </url><url>
     <loc>https://zone.desiyonan.tech/2021/06/20210608875210/</loc>
+    <lastmod>2021-06-08T19:52:10+08:00</lastmod>
+  </url><url>
+    <loc>https://zone.desiyonan.tech/tags/jdk/</loc>
+    <lastmod>2021-06-08T19:52:10+08:00</lastmod>
+  </url><url>
+    <loc>https://zone.desiyonan.tech/categories/jvm/</loc>
     <lastmod>2021-06-08T19:52:10+08:00</lastmod>
   </url><url>
     <loc>https://zone.desiyonan.tech/photo/</loc>
