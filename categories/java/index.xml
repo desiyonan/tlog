@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>java on DnF&#39;s Zone</title>
-    <link>https://zone.desiyonan.tech/categories/java/</link>
+    <link>https://zone.dnfn.tech/categories/java/</link>
     <description>Recent content in java on DnF&#39;s Zone</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 24 Jun 2021 22:41:34 +0800</lastBuildDate><atom:link href="https://zone.desiyonan.tech/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 24 Jun 2021 22:41:34 +0800</lastBuildDate><atom:link href="https://zone.dnfn.tech/categories/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ThreadGroup 线程池</title>
-      <link>https://zone.desiyonan.tech/2021/06/2021062424104134/</link>
+      <link>https://zone.dnfn.tech/2021/06/2021062424104134/</link>
       <pubDate>Thu, 24 Jun 2021 22:41:34 +0800</pubDate>
       
-      <guid>https://zone.desiyonan.tech/2021/06/2021062424104134/</guid>
+      <guid>https://zone.dnfn.tech/2021/06/2021062424104134/</guid>
       <description>&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
 &lt;p&gt;本文了解 &lt;code&gt;ThreadGroup&lt;/code&gt; 的作用和特性，而且为什么有且只有一个 &lt;code&gt;system ThreadGroup&lt;/code&gt;。&lt;/p&gt;</description>
     </item>

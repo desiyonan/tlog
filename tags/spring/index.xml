@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>spring on DnF&#39;s Zone</title>
-    <link>https://zone.desiyonan.tech/tags/spring/</link>
+    <link>https://zone.dnfn.tech/tags/spring/</link>
     <description>Recent content in spring on DnF&#39;s Zone</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 16 Jun 2021 16:13:33 +0800</lastBuildDate><atom:link href="https://zone.desiyonan.tech/tags/spring/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 16 Jun 2021 16:13:33 +0800</lastBuildDate><atom:link href="https://zone.dnfn.tech/tags/spring/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Spring POST重定向到GET</title>
-      <link>https://zone.desiyonan.tech/2021/06/202106161641333/</link>
+      <link>https://zone.dnfn.tech/2021/06/202106161641333/</link>
       <pubDate>Wed, 16 Jun 2021 16:13:33 +0800</pubDate>
       
-      <guid>https://zone.desiyonan.tech/2021/06/202106161641333/</guid>
+      <guid>https://zone.dnfn.tech/2021/06/202106161641333/</guid>
       <description>&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
 &lt;p&gt;主要记录了使用 &lt;code&gt;spring&lt;/code&gt; 重定向时遇到的问题，以及重新熟悉 &lt;code&gt;HTTP&lt;/code&gt; &lt;code&gt;3xx&lt;/code&gt; 中重定向状态码的意义。&lt;/p&gt;</description>
     </item>
