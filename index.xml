@@ -5,7 +5,17 @@
     <link>https://zone.dnfn.tech/</link>
     <description>Recent content on DnF&#39;s Zone</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 24 Jun 2021 22:41:34 +0800</lastBuildDate><atom:link href="https://zone.dnfn.tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 17 Jul 2021 16:24:48 +0800</lastBuildDate><atom:link href="https://zone.dnfn.tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OAuth2</title>
+      <link>https://zone.dnfn.tech/2021/07/202107171742448/</link>
+      <pubDate>Sat, 17 Jul 2021 16:24:48 +0800</pubDate>
+      
+      <guid>https://zone.dnfn.tech/2021/07/202107171742448/</guid>
+      <description>&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
+&lt;p&gt;记录下授权&lt;code&gt;oauth2&lt;/code&gt;的理解，还有自己的疑问等等。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>ThreadGroup 线程池</title>
       <link>https://zone.dnfn.tech/2021/06/2021062424104134/</link>
