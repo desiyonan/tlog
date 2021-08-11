@@ -5,7 +5,17 @@
     <link>https://zone.dnfn.tech/</link>
     <description>Recent content on DnF&#39;s Zone</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 17 Jul 2021 16:24:48 +0800</lastBuildDate><atom:link href="https://zone.dnfn.tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 11 Aug 2021 18:57:10 +0800</lastBuildDate><atom:link href="https://zone.dnfn.tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo 网站评论功能</title>
+      <link>https://zone.dnfn.tech/post/2a86b000a420f725ee577c52c8e18c0e/</link>
+      <pubDate>Wed, 11 Aug 2021 18:57:10 +0800</pubDate>
+      
+      <guid>https://zone.dnfn.tech/post/2a86b000a420f725ee577c52c8e18c0e/</guid>
+      <description>&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
+&lt;p&gt;网站虽小，但评论功能不能少，万一哪天有老哥想跟我唠嗑呢？先用utterances搞个评论功能撑撑场面。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>OAuth2理解和疑惑</title>
       <link>https://zone.dnfn.tech/post/202107171742448/</link>

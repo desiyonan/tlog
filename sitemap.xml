@@ -2,19 +2,52 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://zone.dnfn.tech/tags/blog/</loc>
+    <lastmod>2021-08-11T18:57:10+08:00</lastmod>
+  </url><url>
+    <loc>https://zone.dnfn.tech/categories/</loc>
+    <lastmod>2021-08-11T18:57:10+08:00</lastmod>
+  </url><url>
+    <loc>https://zone.dnfn.tech/</loc>
+    <lastmod>2021-08-11T18:57:10+08:00</lastmod>
+  </url><url>
+    <loc>https://zone.dnfn.tech/tags/github/</loc>
+    <lastmod>2021-08-11T18:57:10+08:00</lastmod>
+  </url><url>
+    <loc>https://zone.dnfn.tech/tags/hugo/</loc>
+    <lastmod>2021-08-11T18:57:10+08:00</lastmod>
+  </url><url>
+    <loc>https://zone.dnfn.tech/series/hugo/</loc>
+    <lastmod>2021-08-11T18:57:10+08:00</lastmod>
+  </url><url>
+    <loc>https://zone.dnfn.tech/post/2a86b000a420f725ee577c52c8e18c0e/</loc>
+    <lastmod>2021-08-11T18:57:10+08:00</lastmod>
+  </url><url>
+    <loc>https://zone.dnfn.tech/tags/markdown/</loc>
+    <lastmod>2021-08-11T18:57:10+08:00</lastmod>
+  </url><url>
+    <loc>https://zone.dnfn.tech/post/</loc>
+    <lastmod>2021-08-11T18:57:10+08:00</lastmod>
+  </url><url>
+    <loc>https://zone.dnfn.tech/series/</loc>
+    <lastmod>2021-08-11T18:57:10+08:00</lastmod>
+  </url><url>
+    <loc>https://zone.dnfn.tech/tags/</loc>
+    <lastmod>2021-08-11T18:57:10+08:00</lastmod>
+  </url><url>
+    <loc>https://zone.dnfn.tech/tags/web/</loc>
+    <lastmod>2021-08-11T18:57:10+08:00</lastmod>
+  </url><url>
+    <loc>https://zone.dnfn.tech/categories/web/</loc>
+    <lastmod>2021-08-11T18:57:10+08:00</lastmod>
+  </url><url>
     <loc>https://zone.dnfn.tech/tags/auth/</loc>
     <lastmod>2021-07-17T16:24:48+08:00</lastmod>
   </url><url>
     <loc>https://zone.dnfn.tech/categories/auth/</loc>
     <lastmod>2021-07-17T16:24:48+08:00</lastmod>
   </url><url>
-    <loc>https://zone.dnfn.tech/categories/</loc>
-    <lastmod>2021-07-17T16:24:48+08:00</lastmod>
-  </url><url>
     <loc>https://zone.dnfn.tech/categories/develop/</loc>
-    <lastmod>2021-07-17T16:24:48+08:00</lastmod>
-  </url><url>
-    <loc>https://zone.dnfn.tech/</loc>
     <lastmod>2021-07-17T16:24:48+08:00</lastmod>
   </url><url>
     <loc>https://zone.dnfn.tech/tags/oauth2/</loc>
@@ -23,19 +56,10 @@
     <loc>https://zone.dnfn.tech/post/202107171742448/</loc>
     <lastmod>2021-07-17T16:24:48+08:00</lastmod>
   </url><url>
-    <loc>https://zone.dnfn.tech/post/</loc>
-    <lastmod>2021-07-17T16:24:48+08:00</lastmod>
-  </url><url>
     <loc>https://zone.dnfn.tech/categories/protocl/</loc>
     <lastmod>2021-07-17T16:24:48+08:00</lastmod>
   </url><url>
-    <loc>https://zone.dnfn.tech/tags/</loc>
-    <lastmod>2021-07-17T16:24:48+08:00</lastmod>
-  </url><url>
     <loc>https://zone.dnfn.tech/tags/user-agent/</loc>
-    <lastmod>2021-07-17T16:24:48+08:00</lastmod>
-  </url><url>
-    <loc>https://zone.dnfn.tech/tags/web/</loc>
     <lastmod>2021-07-17T16:24:48+08:00</lastmod>
   </url><url>
     <loc>https://zone.dnfn.tech/tags/java/</loc>
@@ -86,28 +110,7 @@
     <loc>https://zone.dnfn.tech/search/</loc>
     <lastmod>2021-06-02T17:40:57+08:00</lastmod>
   </url><url>
-    <loc>https://zone.dnfn.tech/tags/blog/</loc>
-    <lastmod>2021-05-31T20:25:48+08:00</lastmod>
-  </url><url>
-    <loc>https://zone.dnfn.tech/tags/github/</loc>
-    <lastmod>2021-05-31T20:25:48+08:00</lastmod>
-  </url><url>
-    <loc>https://zone.dnfn.tech/tags/hugo/</loc>
-    <lastmod>2021-05-31T20:25:48+08:00</lastmod>
-  </url><url>
-    <loc>https://zone.dnfn.tech/series/hugo/</loc>
-    <lastmod>2021-05-31T20:25:48+08:00</lastmod>
-  </url><url>
     <loc>https://zone.dnfn.tech/post/8df2adb7809b41c597eb2efb10ed66db/</loc>
-    <lastmod>2021-05-31T20:25:48+08:00</lastmod>
-  </url><url>
-    <loc>https://zone.dnfn.tech/tags/markdown/</loc>
-    <lastmod>2021-05-31T20:25:48+08:00</lastmod>
-  </url><url>
-    <loc>https://zone.dnfn.tech/series/</loc>
-    <lastmod>2021-05-31T20:25:48+08:00</lastmod>
-  </url><url>
-    <loc>https://zone.dnfn.tech/categories/web/</loc>
     <lastmod>2021-05-31T20:25:48+08:00</lastmod>
   </url><url>
     <loc>https://zone.dnfn.tech/archive/</loc>
