@@ -8,40 +8,40 @@
     <lastBuildDate>Sat, 17 Jul 2021 16:24:48 +0800</lastBuildDate><atom:link href="https://zone.dnfn.tech/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>OAuth2理解和疑惑</title>
-      <link>https://zone.dnfn.tech/2021/07/202107171742448/</link>
+      <link>https://zone.dnfn.tech/post/202107171742448/</link>
       <pubDate>Sat, 17 Jul 2021 16:24:48 +0800</pubDate>
       
-      <guid>https://zone.dnfn.tech/2021/07/202107171742448/</guid>
+      <guid>https://zone.dnfn.tech/post/202107171742448/</guid>
       <description>&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
 &lt;p&gt;本文适合对&lt;code&gt;OAuth2&lt;/code&gt;已经有一定了解的开发人员，没有说到几种具体的模式流程，仅仅写下我自己对授权&lt;code&gt;oauth2&lt;/code&gt;的理解，还有一些疑问和解答，希望对阅读的人有所帮助，如果有什么建议可以直接联系笔者。关于具体的模式讲解和实例我就留到后续文章中一一道来。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>ThreadGroup 线程池</title>
-      <link>https://zone.dnfn.tech/2021/06/2021062424104134/</link>
+      <link>https://zone.dnfn.tech/post/2021062424104134/</link>
       <pubDate>Thu, 24 Jun 2021 22:41:34 +0800</pubDate>
       
-      <guid>https://zone.dnfn.tech/2021/06/2021062424104134/</guid>
+      <guid>https://zone.dnfn.tech/post/2021062424104134/</guid>
       <description>&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
 &lt;p&gt;本文记录了&lt;code&gt;ThreadGroup&lt;/code&gt;的作用和特性，它和线程池的区别。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Spring POST重定向到GET</title>
-      <link>https://zone.dnfn.tech/2021/06/202106161641333/</link>
+      <link>https://zone.dnfn.tech/post/202106161641333/</link>
       <pubDate>Wed, 16 Jun 2021 16:13:33 +0800</pubDate>
       
-      <guid>https://zone.dnfn.tech/2021/06/202106161641333/</guid>
+      <guid>https://zone.dnfn.tech/post/202106161641333/</guid>
       <description>&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
 &lt;p&gt;主要记录了使用 &lt;code&gt;spring&lt;/code&gt; 重定向时遇到的问题，以及重新熟悉 &lt;code&gt;HTTP&lt;/code&gt; &lt;code&gt;3xx&lt;/code&gt; 中重定向状态码的意义。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Java Class 文件解析</title>
-      <link>https://zone.dnfn.tech/2021/06/20210608875210/</link>
+      <link>https://zone.dnfn.tech/post/20210608875210/</link>
       <pubDate>Tue, 08 Jun 2021 19:52:10 +0800</pubDate>
       
-      <guid>https://zone.dnfn.tech/2021/06/20210608875210/</guid>
+      <guid>https://zone.dnfn.tech/post/20210608875210/</guid>
       <description>&lt;!-- TOC off --&gt;
 &lt;h2 id=&#34;简介----omit-in-toc---&#34;&gt;简介 &lt;!-- omit in toc --&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;.java&lt;/code&gt; 文件编译后的 &lt;code&gt;.class&lt;/code&gt; 文件内容究竟是怎样的？&lt;code&gt;JVM&lt;/code&gt; 又是如果识别并加载 &lt;code&gt;.class&lt;/code&gt; 文件的&lt;/p&gt;</description>
@@ -68,10 +68,10 @@
     
     <item>
       <title>Hugo&#43;Github 搭建个人网站</title>
-      <link>https://zone.dnfn.tech/2021/05/8df2adb7809b41c597eb2efb10ed66db/</link>
+      <link>https://zone.dnfn.tech/post/8df2adb7809b41c597eb2efb10ed66db/</link>
       <pubDate>Mon, 31 May 2021 20:25:48 +0800</pubDate>
       
-      <guid>https://zone.dnfn.tech/2021/05/8df2adb7809b41c597eb2efb10ed66db/</guid>
+      <guid>https://zone.dnfn.tech/post/8df2adb7809b41c597eb2efb10ed66db/</guid>
       <description>&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
 &lt;p&gt;这是我的第一篇博客，这篇文章主要讲述了我搭建个人网站，以及如何自动构建发布静态页面的过程。&lt;/p&gt;</description>
     </item>

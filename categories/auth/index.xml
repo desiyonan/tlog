@@ -8,10 +8,10 @@
     <lastBuildDate>Sat, 17 Jul 2021 16:24:48 +0800</lastBuildDate><atom:link href="https://zone.dnfn.tech/categories/auth/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>OAuth2理解和疑惑</title>
-      <link>https://zone.dnfn.tech/2021/07/202107171742448/</link>
+      <link>https://zone.dnfn.tech/post/202107171742448/</link>
       <pubDate>Sat, 17 Jul 2021 16:24:48 +0800</pubDate>
       
-      <guid>https://zone.dnfn.tech/2021/07/202107171742448/</guid>
+      <guid>https://zone.dnfn.tech/post/202107171742448/</guid>
       <description>&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
 &lt;p&gt;本文适合对&lt;code&gt;OAuth2&lt;/code&gt;已经有一定了解的开发人员，没有说到几种具体的模式流程，仅仅写下我自己对授权&lt;code&gt;oauth2&lt;/code&gt;的理解，还有一些疑问和解答，希望对阅读的人有所帮助，如果有什么建议可以直接联系笔者。关于具体的模式讲解和实例我就留到后续文章中一一道来。&lt;/p&gt;</description>
     </item>

@@ -8,10 +8,10 @@
     <lastBuildDate>Thu, 24 Jun 2021 22:41:34 +0800</lastBuildDate><atom:link href="https://zone.dnfn.tech/tags/thread/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ThreadGroup 线程池</title>
-      <link>https://zone.dnfn.tech/2021/06/2021062424104134/</link>
+      <link>https://zone.dnfn.tech/post/2021062424104134/</link>
       <pubDate>Thu, 24 Jun 2021 22:41:34 +0800</pubDate>
       
-      <guid>https://zone.dnfn.tech/2021/06/2021062424104134/</guid>
+      <guid>https://zone.dnfn.tech/post/2021062424104134/</guid>
       <description>&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
 &lt;p&gt;本文记录了&lt;code&gt;ThreadGroup&lt;/code&gt;的作用和特性，它和线程池的区别。&lt;/p&gt;</description>
     </item>
