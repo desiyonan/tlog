@@ -5,7 +5,43 @@
     <link>https://zone.dnfn.tech/tags/</link>
     <description>Recent content in Tags on DnF&#39;s Zone</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 24 Jun 2021 22:41:34 +0800</lastBuildDate><atom:link href="https://zone.dnfn.tech/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 17 Jul 2021 16:24:48 +0800</lastBuildDate><atom:link href="https://zone.dnfn.tech/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>auth</title>
+      <link>https://zone.dnfn.tech/tags/auth/</link>
+      <pubDate>Sat, 17 Jul 2021 16:24:48 +0800</pubDate>
+      
+      <guid>https://zone.dnfn.tech/tags/auth/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>oauth2</title>
+      <link>https://zone.dnfn.tech/tags/oauth2/</link>
+      <pubDate>Sat, 17 Jul 2021 16:24:48 +0800</pubDate>
+      
+      <guid>https://zone.dnfn.tech/tags/oauth2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>user-agent</title>
+      <link>https://zone.dnfn.tech/tags/user-agent/</link>
+      <pubDate>Sat, 17 Jul 2021 16:24:48 +0800</pubDate>
+      
+      <guid>https://zone.dnfn.tech/tags/user-agent/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web</title>
+      <link>https://zone.dnfn.tech/tags/web/</link>
+      <pubDate>Sat, 17 Jul 2021 16:24:48 +0800</pubDate>
+      
+      <guid>https://zone.dnfn.tech/tags/web/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>java</title>
       <link>https://zone.dnfn.tech/tags/java/</link>
@@ -93,15 +129,6 @@
       <pubDate>Mon, 31 May 2021 20:25:48 +0800</pubDate>
       
       <guid>https://zone.dnfn.tech/tags/markdown/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>web</title>
-      <link>https://zone.dnfn.tech/tags/web/</link>
-      <pubDate>Mon, 31 May 2021 20:25:48 +0800</pubDate>
-      
-      <guid>https://zone.dnfn.tech/tags/web/</guid>
       <description></description>
     </item>
     

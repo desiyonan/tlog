@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>web on DnF&#39;s Zone</title>
-    <link>https://zone.dnfn.tech/tags/web/</link>
-    <description>Recent content in web on DnF&#39;s Zone</description>
+    <title>oauth2 on DnF&#39;s Zone</title>
+    <link>https://zone.dnfn.tech/tags/oauth2/</link>
+    <description>Recent content in oauth2 on DnF&#39;s Zone</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 17 Jul 2021 16:24:48 +0800</lastBuildDate><atom:link href="https://zone.dnfn.tech/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 17 Jul 2021 16:24:48 +0800</lastBuildDate><atom:link href="https://zone.dnfn.tech/tags/oauth2/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>OAuth2理解和疑惑</title>
       <link>https://zone.dnfn.tech/2021/07/202107171742448/</link>
@@ -14,16 +14,6 @@
       <guid>https://zone.dnfn.tech/2021/07/202107171742448/</guid>
       <description>&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
 &lt;p&gt;本文适合对&lt;code&gt;OAuth2&lt;/code&gt;已经有一定了解的开发人员，没有说到几种具体的模式流程，仅仅写下我自己对授权&lt;code&gt;oauth2&lt;/code&gt;的理解，还有一些疑问和解答，希望对阅读的人有所帮助，如果有什么建议可以直接联系笔者。关于具体的模式讲解和实例我就留到后续文章中一一道来。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Hugo&#43;Github 搭建个人网站</title>
-      <link>https://zone.dnfn.tech/2021/05/8df2adb7809b41c597eb2efb10ed66db/</link>
-      <pubDate>Mon, 31 May 2021 20:25:48 +0800</pubDate>
-      
-      <guid>https://zone.dnfn.tech/2021/05/8df2adb7809b41c597eb2efb10ed66db/</guid>
-      <description>&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
-&lt;p&gt;这是我的第一篇博客，这篇文章主要讲述了我搭建个人网站，以及如何自动构建发布静态页面的过程。&lt;/p&gt;</description>
     </item>
     
   </channel>
