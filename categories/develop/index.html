@@ -149,6 +149,23 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>War包新增文件无法自动部署</h2>
+  </header>
+  <section class="entry-content">
+    <p>前言 手上一个war老项目，tomcat部署的，一般情况下idea配置的Hot Swap就行了。今天前端突然问加的新文件为啥没热部署到Tomcat，文件更新又能热部署成功，就很纳闷。
+尝试了直接build或rebuild模块和项目都不成，idea的编译器的autobuild都没问题，最后再StackOverflow找到相关的解决方法：
+File -&gt; Project Structure -&gt; Artifacts -&gt; Include in project build
+如下：
+
+配置成功，自动构建时也会构建Artifacts。
+...</p>
+  </section>
+  <footer class="entry-footer">2021-08-18&nbsp;·&nbsp;DnF</footer>
+  <a class="entry-link" aria-label="post link to War包新增文件无法自动部署" href="https://zone.dnfn.tech/post/3b1a32308bc6174e0c519d645bf1caad/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>OAuth2理解和疑惑</h2>
   </header>
   <section class="entry-content">

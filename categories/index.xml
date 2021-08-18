@@ -5,7 +5,16 @@
     <link>https://zone.dnfn.tech/categories/</link>
     <description>Recent content in Categories on DnF&#39;s Zone</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 11 Aug 2021 18:57:10 +0800</lastBuildDate><atom:link href="https://zone.dnfn.tech/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 18 Aug 2021 14:57:55 +0800</lastBuildDate><atom:link href="https://zone.dnfn.tech/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>develop</title>
+      <link>https://zone.dnfn.tech/categories/develop/</link>
+      <pubDate>Wed, 18 Aug 2021 14:57:55 +0800</pubDate>
+      
+      <guid>https://zone.dnfn.tech/categories/develop/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>web</title>
       <link>https://zone.dnfn.tech/categories/web/</link>
@@ -21,15 +30,6 @@
       <pubDate>Sat, 17 Jul 2021 16:24:48 +0800</pubDate>
       
       <guid>https://zone.dnfn.tech/categories/auth/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>develop</title>
-      <link>https://zone.dnfn.tech/categories/develop/</link>
-      <pubDate>Sat, 17 Jul 2021 16:24:48 +0800</pubDate>
-      
-      <guid>https://zone.dnfn.tech/categories/develop/</guid>
       <description></description>
     </item>
     
