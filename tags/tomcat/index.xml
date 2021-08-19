@@ -19,7 +19,8 @@
 &lt;p&gt;如下：&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://oss.dnfn.tech:1024/bedroom/2021/8/18/20210818183315.png&#34; title=&#34;Include in project build&#34;&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://oss.dnfn.tech:1024/bedroom/2021/8/18/20210818183315.png&#34; alt=&#34;P1&#34;  title=&#34;Include in project build&#34;  /&gt;
 &lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;配置成功，自动构建时也会构建&lt;code&gt;Artifacts&lt;/code&gt;。&lt;/p&gt;</description>
+&lt;p&gt;配置成功，自动构建时也会构建&lt;code&gt;Artifacts&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;PASS: 事后发现，通过idea资源窗口复制两次文件再&lt;code&gt;build&lt;/code&gt;，只会把第一次的文件编译到&lt;code&gt;tagert&lt;/code&gt;下，不过直接通过win的文件管理器不会有这种问题。&lt;/p&gt;</description>
     </item>
     
   </channel>
