@@ -1,0 +1,24 @@
+@startuml Klass Model
+
+class Metadata
+class Klass
+class InstanceKlass
+class ArrayKlass
+class ObjArrayKlass
+class TypeArrayKlass
+class InstanceRefKlass
+class InstanceMirrorKlass
+class InstanceClassLoaderKlass
+
+Metadata <|-- Klass
+Klass <|- ArrayKlass
+Klass <|-left- InstanceKlass
+
+InstanceKlass <|-- InstanceRefKlass
+InstanceKlass <|-- InstanceMirrorKlass
+InstanceKlass <|-- InstanceClassLoaderKlass
+
+ArrayKlass <|-- ObjArrayKlass
+ArrayKlass <|-- TypeArrayKlass
+
+@enduml
