@@ -95,7 +95,7 @@
                     "id": "7ldqmabr606jpkd84o331onv0k",
                     "text": "02.  class文件结构",
                     "created": 1633657298547,
-                    "expandState": "expand",
+                    "expandState": "collapse",
                     "layout": null
                 },
                 "children": [
@@ -1167,15 +1167,23 @@
                                     "created": 1633748031119,
                                     "text": "意义",
                                     "layout": null,
-                                    "expandState": "expand"
+                                    "expandState": "collapse"
                                 },
                                 "children": [
                                     {
                                         "data": {
                                             "id": "cevf27nn5vs0",
                                             "created": 1633837512968,
-                                            "text": "抽象描述一个Java类",
+                                            "text": "面向对象概念上的类抽象（方法也是）",
                                             "expandState": "expand"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cewayinzr4o0",
+                                            "created": 1633927498995,
+                                            "text": "JVM层的行为分发调用"
                                         },
                                         "children": []
                                     }
@@ -1186,7 +1194,7 @@
                                     "id": "ceujt7rcxnk0",
                                     "created": 1633749353508,
                                     "text": "属性",
-                                    "expandState": "expand",
+                                    "expandState": "collapse",
                                     "layout": null
                                 },
                                 "children": [
@@ -1195,7 +1203,7 @@
                                             "id": "ceujcme68pc0",
                                             "created": 1633748053172,
                                             "text": "全部属性",
-                                            "expandState": "expand",
+                                            "expandState": "collapse",
                                             "layout": null
                                         },
                                         "children": [
@@ -2140,7 +2148,8 @@
                                                                 "data": {
                                                                     "id": "cevs7m27omg0",
                                                                     "created": 1633874610574,
-                                                                    "text": "锁相关"
+                                                                    "text": "锁相关",
+                                                                    "expandState": "collapse"
                                                                 },
                                                                 "children": [
                                                                     {
@@ -2202,14 +2211,14 @@
                                     "created": 1633748099393,
                                     "text": "重点",
                                     "layout": null,
-                                    "expandState": "expand"
+                                    "expandState": "collapse"
                                 },
                                 "children": [
                                     {
                                         "data": {
                                             "id": "ceveydupl9c0",
                                             "created": 1633837213001,
-                                            "text": "对象布局属性",
+                                            "text": "对象布局",
                                             "expandState": "expand"
                                         },
                                         "children": []
@@ -2227,7 +2236,7 @@
                                         "data": {
                                             "id": "cevf3q3jyzk0",
                                             "created": 1633837631477,
-                                            "text": "锁相关属性",
+                                            "text": "锁相关",
                                             "expandState": "expand"
                                         },
                                         "children": []
@@ -2253,7 +2262,41 @@
                             "layout": null,
                             "expandState": "expand"
                         },
-                        "children": []
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cewaz1ulrog0",
+                                    "created": 1633927540753,
+                                    "text": "意义"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cewazakp84g0",
+                                            "created": 1633927559745,
+                                            "text": "Java语言层面的类，即class"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cewaz3dg5ag0",
+                                    "created": 1633927544069,
+                                    "text": "属性"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cewaz65qps80",
+                                    "created": 1633927550134,
+                                    "text": "布局"
+                                },
+                                "children": []
+                            }
+                        ]
                     },
                     {
                         "data": {
