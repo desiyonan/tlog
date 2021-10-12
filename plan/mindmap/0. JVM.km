@@ -2283,6 +2283,352 @@
                             },
                             {
                                 "data": {
+                                    "id": "cewaz3dg5ag0",
+                                    "created": 1633927544069,
+                                    "text": "属性"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cewpmmjssn40",
+                                            "created": 1633968883728,
+                                            "text": "全部属性"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cewpmpkmsuo0",
+                                                    "created": 1633968890307,
+                                                    "text": "_annonations"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cewpn8zzal40",
+                                                    "created": 1633968932594,
+                                                    "text": "_array_klasses"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cewpo5rg6940",
+                                                    "created": 1633969003912,
+                                                    "text": "_constants"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cewpo8r6j200",
+                                                    "created": 1633969010426,
+                                                    "text": "_inner_classes"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cewpow1l0m80",
+                                                    "created": 1633969061121,
+                                                    "text": "_array_name"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cewpsif3xb40",
+                                                    "created": 1633969344921,
+                                                    "text": "_nonstatic_field_size"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cewptq5smi00",
+                                                    "created": 1633969440136,
+                                                    "text": "_static_field_size"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cewpv9d604o0",
+                                                    "created": 1633969560305,
+                                                    "text": "_generic_signature_index"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cewpvb5j5mg0",
+                                                    "created": 1633969564197,
+                                                    "text": "_source_file_name_index"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cewpvil03sg0",
+                                                    "created": 1633969580370,
+                                                    "text": "_static_oop_field_count"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cewpw7lpa2g0",
+                                                    "created": 1633969634832,
+                                                    "text": "_java_fields_count"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cewpwr7ssww0",
+                                                    "created": 1633969677527,
+                                                    "text": "_nonstatic_oop_map_size"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cewpyfa6j6o0",
+                                                    "created": 1633969808278,
+                                                    "text": "_is_marked_dependent"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cewpyggxxt40",
+                                                    "created": 1633969810863,
+                                                    "text": "_has_unloaded_dependent"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cewpyuibs3s0",
+                                                    "created": 1633969841422,
+                                                    "text": "_misc_flags"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cewpz2khs1c0",
+                                                    "created": 1633969858967,
+                                                    "text": "_minor_version"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cewq0uq6kv40",
+                                                    "created": 1633969998625,
+                                                    "text": "_maj_version"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cewq12e3xnk0",
+                                                    "created": 1633970015309,
+                                                    "text": "_init_thread"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cewq1d44x680",
+                                                    "created": 1633970038651,
+                                                    "text": "_vtable_len"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cewq1n2q7ls0",
+                                                    "created": 1633970060334,
+                                                    "text": "_itable_len"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cewq1xh67gw0",
+                                                    "created": 1633970082975,
+                                                    "text": "_oop_map_cache"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cewq2kyp0o00",
+                                                    "created": 1633970134100,
+                                                    "text": "_member_names"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cewq2xrusts0",
+                                                    "created": 1633970161985,
+                                                    "text": "_jni_ids"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cewq34zants0",
+                                                    "created": 1633970177672,
+                                                    "text": "_methods_jmethod_ids"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cewq3p1ckcg0",
+                                                    "created": 1633970221332,
+                                                    "text": "_dependencies"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cewq4ub5nfk0",
+                                                    "created": 1633970311173,
+                                                    "text": "_osr_nmethods_head"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cewq5awlkv40",
+                                                    "created": 1633970347298,
+                                                    "text": "_breakpoints"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cewq62tcx5c0",
+                                                    "created": 1633970408052,
+                                                    "text": "_previous_versions"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cewq6gc3cd40",
+                                                    "created": 1633970437483,
+                                                    "text": "_cached_class_file"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cewq7mm9pfc0",
+                                                    "created": 1633970529523,
+                                                    "text": "_idnum_allocated_count"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cewq8jnhkr40",
+                                                    "created": 1633970601431,
+                                                    "text": "_init_state"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cewq9atpvns0",
+                                                    "created": 1633970660581,
+                                                    "text": "_reference_type"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cewq9pyyo940",
+                                                    "created": 1633970693550,
+                                                    "text": "_jvmti_cached_class_field_map"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cewqadb29vc0",
+                                                    "created": 1633970744347,
+                                                    "text": "_methods"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cewqak5dl6g0",
+                                                    "created": 1633970759241,
+                                                    "text": "_default_methods"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cewqb7v9efc0",
+                                                    "created": 1633970810872,
+                                                    "text": "_local_interfaces"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cewqbgmj8cw0",
+                                                    "created": 1633970829935,
+                                                    "text": "_transitive_interfaces"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cewqbqz422g0",
+                                                    "created": 1633970852464,
+                                                    "text": "_method_ordering"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cewqcpeeoq80",
+                                                    "created": 1633970927399,
+                                                    "text": "_default_vtable_indices"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cewqe0j0uqg0",
+                                                    "created": 1633971029987,
+                                                    "text": "fields"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cewaz65qps80",
+                                    "created": 1633927550134,
+                                    "text": "布局"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
                                     "id": "cewfgfcycxs0",
                                     "created": 1633940186791,
                                     "text": "类状态",
@@ -2398,22 +2744,6 @@
                                         ]
                                     }
                                 ]
-                            },
-                            {
-                                "data": {
-                                    "id": "cewaz3dg5ag0",
-                                    "created": 1633927544069,
-                                    "text": "属性"
-                                },
-                                "children": []
-                            },
-                            {
-                                "data": {
-                                    "id": "cewaz65qps80",
-                                    "created": 1633927550134,
-                                    "text": "布局"
-                                },
-                                "children": []
                             },
                             {
                                 "data": {
