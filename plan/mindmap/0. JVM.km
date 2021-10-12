@@ -2292,7 +2292,8 @@
                                         "data": {
                                             "id": "cewpmmjssn40",
                                             "created": 1633968883728,
-                                            "text": "全部属性"
+                                            "text": "全部属性",
+                                            "expandState": "expand"
                                         },
                                         "children": [
                                             {
@@ -2611,9 +2612,68 @@
                                                 "data": {
                                                     "id": "cewqe0j0uqg0",
                                                     "created": 1633971029987,
-                                                    "text": "fields"
+                                                    "text": "_fields"
                                                 },
                                                 "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cex3ni2ghm80",
+                                                    "created": 1634008447874,
+                                                    "text": "内嵌属性",
+                                                    "note": "没有对应属性名，只能通过指针和偏移量访问",
+                                                    "expandState": "collapse"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cex3ntf6k7s0",
+                                                            "created": 1634008472588,
+                                                            "text": "vtable"
+                                                        },
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cex3nvzv2ew0",
+                                                            "created": 1634008478192,
+                                                            "text": "itables"
+                                                        },
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cex3piz2g540",
+                                                            "created": 1634008606574,
+                                                            "text": "static fields"
+                                                        },
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cex3poaygc80",
+                                                            "created": 1634008618177,
+                                                            "text": "nonstatic oop-map blocks"
+                                                        },
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cex3qgn7znk0",
+                                                            "created": 1634008679868,
+                                                            "text": "implementor of this interface"
+                                                        },
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cex6yg6fdds0",
+                                                            "created": 1634017769096,
+                                                            "text": "host klass"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
                                             }
                                         ]
                                     }
