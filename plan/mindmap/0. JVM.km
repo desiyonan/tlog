@@ -1239,7 +1239,7 @@
                     "text": "03. 类模型",
                     "created": 1633657298547,
                     "layout": null,
-                    "expandState": "expand"
+                    "expandState": "collapse"
                 },
                 "children": [
                     {
@@ -5678,7 +5678,8 @@
                         "data": {
                             "id": "cez1onkv8gw0",
                             "created": 1634206015929,
-                            "text": "对象继承体系"
+                            "text": "对象继承体系",
+                            "expandState": "collapse"
                         },
                         "children": [
                             {
@@ -5686,11 +5687,11 @@
                                     "id": "cez26shkjag0",
                                     "created": 1634207437168,
                                     "text": "topic",
-                                    "image": "https://oss.dnfn.tech:1024/bedroom/2021/10/14/202110141831822.svg",
+                                    "image": "https://oss.dnfn.tech:1024/bedroom/2021/10/14/oop.png",
                                     "imageTitle": "oop继承",
                                     "imageSize": {
-                                        "width": 0,
-                                        "height": 0
+                                        "width": 200,
+                                        "height": 165
                                     }
                                 },
                                 "children": []
@@ -5702,7 +5703,7 @@
                             "id": "cez0ov4hc8o0",
                             "created": 1634203211242,
                             "text": "对象组成",
-                            "expandState": "collapse"
+                            "expandState": "expand"
                         },
                         "children": [
                             {
@@ -5711,7 +5712,232 @@
                                     "created": 1634205640050,
                                     "text": "对象头"
                                 },
-                                "children": []
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cez9708s2tc0",
+                                            "created": 1634227201820,
+                                            "text": "_mark",
+                                            "expandState": "expand"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cez9g2od2vk0",
+                                                    "created": 1634227912393,
+                                                    "text": "大小",
+                                                    "expandState": "collapse"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cez9gxpk93k0",
+                                                            "created": 1634227979946,
+                                                            "text": "64位机器下的指针，8字节"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cez9g7vy5vc0",
+                                                    "created": 1634227923736,
+                                                    "text": "组成",
+                                                    "expandState": "expand"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cez9hcxy47k0",
+                                                            "created": 1634228013105,
+                                                            "text": "哈希值",
+                                                            "expandState": "collapse"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "data": {
+                                                                    "id": "cez9qftxaq00",
+                                                                    "created": 1634228724671,
+                                                                    "text": "对象在堆中的地址"
+                                                                },
+                                                                "children": []
+                                                            },
+                                                            {
+                                                                "data": {
+                                                                    "id": "cez9y4hit4o0",
+                                                                    "created": 1634229326888,
+                                                                    "text": "25位"
+                                                                },
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cez9oi86asg0",
+                                                            "created": 1634228573156,
+                                                            "text": "gc分代年龄",
+                                                            "expandState": "collapse"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "data": {
+                                                                    "id": "cez9xyt3qa00",
+                                                                    "created": 1634229314528,
+                                                                    "text": "4位"
+                                                                },
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cez9oyw0s4g0",
+                                                            "created": 1634228609427,
+                                                            "text": "锁状态标识",
+                                                            "expandState": "collapse"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "data": {
+                                                                    "id": "cez9xf2mcoo0",
+                                                                    "created": 1634229271568,
+                                                                    "text": "2位"
+                                                                },
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cez9xua906w0",
+                                                            "created": 1634229304681,
+                                                            "text": "偏向锁标识",
+                                                            "expandState": "collapse"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "data": {
+                                                                    "id": "cez9xv6wuu00",
+                                                                    "created": 1634229306656,
+                                                                    "text": "1位"
+                                                                },
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cez9qw6g0w00",
+                                                            "created": 1634228760255,
+                                                            "text": "线程持有的锁",
+                                                            "expandState": "collapse"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "data": {
+                                                                    "id": "cez9z2s3dcw0",
+                                                                    "created": 1634229401538,
+                                                                    "text": "30位"
+                                                                },
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cez9p29m7j40",
+                                                            "created": 1634228616779,
+                                                            "text": "偏向线程ID",
+                                                            "expandState": "collapse"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "data": {
+                                                                    "id": "cez9yay9fps0",
+                                                                    "created": 1634229340961,
+                                                                    "text": "23位"
+                                                                },
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cez9phb8ujk0",
+                                                            "created": 1634228649530,
+                                                            "text": "偏向时间戳",
+                                                            "expandState": "collapse"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "data": {
+                                                                    "id": "cez9yei2mkg0",
+                                                                    "created": 1634229348689,
+                                                                    "text": "2位"
+                                                                },
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cez9ubk9j6w0",
+                                                    "created": 1634229028835,
+                                                    "text": "布局"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cez974ua9a80",
+                                            "created": 1634227211828,
+                                            "text": "_metadata",
+                                            "expandState": "collapse"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cez9sjn67mo0",
+                                                    "created": 1634228889697,
+                                                    "text": "元数据，记录对象的Klass"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cez9svgyhls0",
+                                                    "created": 1634228915442,
+                                                    "text": "大小",
+                                                    "expandState": "collapse"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cez9sy5mrts0",
+                                                            "created": 1634228921288,
+                                                            "text": "默认开启指针压缩，64位下为4字节"
+                                                        },
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cez9tckyi8g0",
+                                                            "created": 1634228952690,
+                                                            "text": "不开启指针压缩，为8字节"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
                             },
                             {
                                 "data": {
@@ -5740,6 +5966,106 @@
                             "expandState": "expand"
                         },
                         "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "ceza0w5u59c0",
+                            "created": 1634229543860,
+                            "text": "锁标志位状态变化",
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "ceza16xmf3s0",
+                                    "created": 1634229567308,
+                                    "text": "无锁",
+                                    "expandState": "collapse"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "ceza1w0mii80",
+                                            "created": 1634229621909,
+                                            "text": "01,偏向锁标志位为0"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "ceza1cprbyw0",
+                                    "created": 1634229579893,
+                                    "text": "偏向锁",
+                                    "expandState": "collapse"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "ceza1w0mii80",
+                                            "created": 1634229621909,
+                                            "text": "01,偏向锁标志位为1"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "ceza1f0ffj40",
+                                    "created": 1634229584892,
+                                    "text": "轻量级锁",
+                                    "expandState": "collapse"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "ceza2dxvb080",
+                                            "created": 1634229660925,
+                                            "text": "00"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "ceza1ofm99k0",
+                                    "created": 1634229605401,
+                                    "text": "重锁",
+                                    "expandState": "collapse"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "ceza2g0nj340",
+                                            "created": 1634229665446,
+                                            "text": "10"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "ceza1tecptk0",
+                                    "created": 1634229616209,
+                                    "text": "GC",
+                                    "expandState": "collapse"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "ceza2hatiu00",
+                                            "created": 1634229668238,
+                                            "text": "11"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
                     }
                 ]
             },
