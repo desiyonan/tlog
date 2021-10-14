@@ -1239,7 +1239,7 @@
                     "text": "03. 类模型",
                     "created": 1633657298547,
                     "layout": null,
-                    "expandState": "expand"
+                    "expandState": "collapse"
                 },
                 "children": [
                     {
@@ -2468,7 +2468,7 @@
                                     "created": 1633927544069,
                                     "text": "属性",
                                     "layout": null,
-                                    "expandState": "expand"
+                                    "expandState": "collapse"
                                 },
                                 "children": [
                                     {
@@ -3576,7 +3576,7 @@
                                             "created": 1634042018519,
                                             "text": "分类",
                                             "layout": null,
-                                            "expandState": "collapse"
+                                            "expandState": "expand"
                                         },
                                         "children": [
                                             {
@@ -3585,7 +3585,7 @@
                                                     "created": 1634042077784,
                                                     "text": "层面",
                                                     "layout": null,
-                                                    "expandState": "collapse"
+                                                    "expandState": "expand"
                                                 },
                                                 "children": [
                                                     {
@@ -3650,7 +3650,7 @@
                                                             "created": 1634042109587,
                                                             "text": "JVM类",
                                                             "layout": null,
-                                                            "expandState": "collapse"
+                                                            "expandState": "expand"
                                                         },
                                                         "children": [
                                                             {
@@ -3872,9 +3872,19 @@
                                                                                             "id": "cey12a6q2s80",
                                                                                             "created": 1634102702807,
                                                                                             "text": "_osr_nmethods_head",
-                                                                                            "layout": null
+                                                                                            "layout": null,
+                                                                                            "expandState": "collapse"
                                                                                         },
-                                                                                        "children": []
+                                                                                        "children": [
+                                                                                            {
+                                                                                                "data": {
+                                                                                                    "id": "ceyyvcibwpk0",
+                                                                                                    "created": 1634198077050,
+                                                                                                    "text": "栈上替换的本地方法头部"
+                                                                                                },
+                                                                                                "children": []
+                                                                                            }
+                                                                                        ]
                                                                                     }
                                                                                 ]
                                                                             },
@@ -4641,6 +4651,86 @@
                             },
                             {
                                 "data": {
+                                    "id": "ceytl3zze2g0",
+                                    "created": 1634183169335,
+                                    "text": "子类",
+                                    "expandState": "collapse"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "ceytl6xyfi00",
+                                            "created": 1634183175743,
+                                            "text": "InstanceClassLoaderKlass",
+                                            "expandState": "collapse"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "ceytlqkn27k0",
+                                                    "created": 1634183218473,
+                                                    "text": "没有添加新的字段，增加了新的oop遍历方法，主要用于类加载器依赖遍历使用"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "ceytlcwsboo0",
+                                            "created": 1634183188733,
+                                            "text": "InstanceRefKlass",
+                                            "expandState": "collapse"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "ceytlusob7c0",
+                                                    "created": 1634183227666,
+                                                    "text": "用于表示java/lang/ref/Reference的子类，这些类需要垃圾回收器特殊处理，因此改写了原有的oop_oop_iterate中用于垃圾回收的相关方法"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "ceytlg6p7rs0",
+                                            "created": 1634183195863,
+                                            "text": "InstanceMirrorKlass",
+                                            "expandState": "collapse"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "ceyuvx8qxt40",
+                                                    "created": 1634186837743,
+                                                    "text": "用于表示特殊的java.lang.Class类"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "ceyuwilnym00",
+                                                    "created": 1634186884237,
+                                                    "text": "java.lang.Class对应的OopDesc实例用于保存类的静态属性，因此他们的实例大小不同，需要特殊的方式来计算他们的大小以及属性遍历。"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "ceyuwsjr6xk0",
+                                                    "created": 1634186905889,
+                                                    "text": "Klass的属性_java_mirror就指向保存该类静态字段的OopDesc实例，可通过该属性访问类的静态字段"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
                                     "id": "cewgllaxbq80",
                                     "created": 1633943412660,
                                     "text": "相关",
@@ -4652,10 +4742,458 @@
                                         "data": {
                                             "id": "cewglmnx1oo0",
                                             "created": 1633943415622,
-                                            "text": "类生命周期",
+                                            "text": "类加载过程",
                                             "layout": null
                                         },
                                         "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "ceyt7b5jiag0",
+                                            "created": 1634182087810,
+                                            "text": "方法",
+                                            "expandState": "collapse"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "ceyt7zti6oo0",
+                                                    "created": 1634182141502,
+                                                    "text": "数据结构",
+                                                    "expandState": "expand"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "ceyt7c86s000",
+                                                            "created": 1634182090147,
+                                                            "text": "Method",
+                                                            "expandState": "collapse"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "data": {
+                                                                    "id": "ceyt7nl02b40",
+                                                                    "created": 1634182114867,
+                                                                    "text": "_constMethod"
+                                                                },
+                                                                "children": []
+                                                            },
+                                                            {
+                                                                "data": {
+                                                                    "id": "ceyt86kwnxs0",
+                                                                    "created": 1634182156220,
+                                                                    "text": "_method_data"
+                                                                },
+                                                                "children": []
+                                                            },
+                                                            {
+                                                                "data": {
+                                                                    "id": "ceyt8j4oy0o0",
+                                                                    "created": 1634182183538,
+                                                                    "text": "_method_counters"
+                                                                },
+                                                                "children": []
+                                                            },
+                                                            {
+                                                                "data": {
+                                                                    "id": "ceyt97bxv6g0",
+                                                                    "created": 1634182236219,
+                                                                    "text": "_access_flags"
+                                                                },
+                                                                "children": []
+                                                            },
+                                                            {
+                                                                "data": {
+                                                                    "id": "ceyt9byc5sw0",
+                                                                    "created": 1634182246280,
+                                                                    "text": "_vtable_index"
+                                                                },
+                                                                "children": []
+                                                            },
+                                                            {
+                                                                "data": {
+                                                                    "id": "ceyt9h1zk600",
+                                                                    "created": 1634182257385,
+                                                                    "text": "_method_size"
+                                                                },
+                                                                "children": []
+                                                            },
+                                                            {
+                                                                "data": {
+                                                                    "id": "ceyt9lzvdjc0",
+                                                                    "created": 1634182268141,
+                                                                    "text": "_compiled_invocation_count"
+                                                                },
+                                                                "children": []
+                                                            },
+                                                            {
+                                                                "data": {
+                                                                    "id": "ceyt9ppzibk0",
+                                                                    "created": 1634182276250,
+                                                                    "text": "_i2i_entry"
+                                                                },
+                                                                "children": []
+                                                            },
+                                                            {
+                                                                "data": {
+                                                                    "id": "ceyt9rz2ehk0",
+                                                                    "created": 1634182281153,
+                                                                    "text": "_adapter"
+                                                                },
+                                                                "children": []
+                                                            },
+                                                            {
+                                                                "data": {
+                                                                    "id": "ceyt9yuuh3s0",
+                                                                    "created": 1634182296135,
+                                                                    "text": "_from_compiled_entry"
+                                                                },
+                                                                "children": []
+                                                            },
+                                                            {
+                                                                "data": {
+                                                                    "id": "ceyta3ew5uo0",
+                                                                    "created": 1634182306054,
+                                                                    "text": "_code"
+                                                                },
+                                                                "children": []
+                                                            },
+                                                            {
+                                                                "data": {
+                                                                    "id": "ceyta8prdco0",
+                                                                    "created": 1634182317595,
+                                                                    "text": "_from_interpreted_entry"
+                                                                },
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "ceyt8dt53340",
+                                                    "created": 1634182171955,
+                                                    "text": "布局",
+                                                    "expandState": "collapse"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "ceytj8p7q480",
+                                                            "created": 1634183022840,
+                                                            "text": "// |------------------------------------------------------|\n// | header                                               |\n// | klass                                                |\n// |------------------------------------------------------|\n// | ConstMethod*                   (oop)                 |\n// |------------------------------------------------------|\n// | methodData                     (oop)                 |\n// | methodCounters                                       |\n// |------------------------------------------------------|\n// | access_flags                                         |\n// | vtable_index                                         |\n// |------------------------------------------------------|\n// | result_index (C++ interpreter only)                  |\n// |------------------------------------------------------|\n// | method_size             |   intrinsic_id|   flags    |\n// |------------------------------------------------------|\n// | code                           (pointer)             |\n// | i2i                            (pointer)             |\n// | adapter                        (pointer)             |\n// | from_compiled_entry            (pointer)             |\n// | from_interpreted_entry         (pointer)             |\n// |------------------------------------------------------|\n// | native_function       (present only if native)       |\n// | signature_handler     (present only if native)       |\n// |------------------------------------------------------|"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "ceyt7eoi2io0",
+                                            "created": 1634182095487,
+                                            "text": "虚函数表",
+                                            "expandState": "collapse"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "ceytjfpt08g0",
+                                                    "created": 1634183038113,
+                                                    "text": "结构",
+                                                    "expandState": "collapse"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "ceytjiqubs00",
+                                                            "created": 1634183044707,
+                                                            "text": "klassVtable",
+                                                            "expandState": "collapse"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "data": {
+                                                                    "id": "ceytjoy474o0",
+                                                                    "created": 1634183058206,
+                                                                    "text": "_klass"
+                                                                },
+                                                                "children": []
+                                                            },
+                                                            {
+                                                                "data": {
+                                                                    "id": "ceytjt2fyow0",
+                                                                    "created": 1634183067175,
+                                                                    "text": "_tableOffse"
+                                                                },
+                                                                "children": []
+                                                            },
+                                                            {
+                                                                "data": {
+                                                                    "id": "ceytjwbvzc80",
+                                                                    "created": 1634183074277,
+                                                                    "text": "_length"
+                                                                },
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "ceytkj44s2o0",
+                                                            "created": 1634183123874,
+                                                            "text": "vtableEntry"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "ceyt7vhkdl40",
+                                            "created": 1634182132073,
+                                            "text": "接口函数表",
+                                            "expandState": "collapse"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "ceytkle20eo0",
+                                                    "created": 1634183128827,
+                                                    "text": "itableMethodEntry"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "ceyt8pp0kgw0",
+                                            "created": 1634182197827,
+                                            "text": "JIT",
+                                            "expandState": "collapse"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "ceyw72fl97k0",
+                                                    "created": 1634190532157,
+                                                    "text": "编译器",
+                                                    "expandState": "collapse"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "ceyw75detlc0",
+                                                            "created": 1634190538555,
+                                                            "text": "C1",
+                                                            "expandState": "collapse"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "data": {
+                                                                    "id": "ceyw7mxuau00",
+                                                                    "created": 1634190576796,
+                                                                    "text": "Client Compiler"
+                                                                },
+                                                                "children": []
+                                                            },
+                                                            {
+                                                                "data": {
+                                                                    "id": "ceyw7zbwj400",
+                                                                    "created": 1634190603768,
+                                                                    "text": "简单快速"
+                                                                },
+                                                                "children": []
+                                                            },
+                                                            {
+                                                                "data": {
+                                                                    "id": "ceyw8bmj8bc0",
+                                                                    "created": 1634190630532,
+                                                                    "text": "局部优化"
+                                                                },
+                                                                "children": []
+                                                            },
+                                                            {
+                                                                "data": {
+                                                                    "id": "ceyw8etfz7c0",
+                                                                    "created": 1634190637480,
+                                                                    "text": "适用于执行时间较短或对启动性能有要求的程序，例如，GUI 应用对界面启动速度就有一定要求"
+                                                                },
+                                                                "children": []
+                                                            },
+                                                            {
+                                                                "data": {
+                                                                    "id": "ceyw8zm93gg0",
+                                                                    "created": 1634190682758,
+                                                                    "text": "启动性能优势"
+                                                                },
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "ceyw76idfhc0",
+                                                            "created": 1634190541032,
+                                                            "text": "C2",
+                                                            "expandState": "collapse"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "data": {
+                                                                    "id": "ceyw7wccax40",
+                                                                    "created": 1634190597264,
+                                                                    "text": "Server Compiler"
+                                                                },
+                                                                "children": []
+                                                            },
+                                                            {
+                                                                "data": {
+                                                                    "id": "ceyw8pej62g0",
+                                                                    "created": 1634190660523,
+                                                                    "text": "为长期运行的服务器端应用程序做性能调优的编译器"
+                                                                },
+                                                                "children": []
+                                                            },
+                                                            {
+                                                                "data": {
+                                                                    "id": "ceyw9eozdao0",
+                                                                    "created": 1634190715574,
+                                                                    "text": "适用于执行时间较长或对峰值性能有要求的程序"
+                                                                },
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "ceyw9h2fka00",
+                                                    "created": 1634190720741,
+                                                    "text": "分层编译",
+                                                    "expandState": "collapse"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "ceyw9srhw9k0",
+                                                            "created": 1634190746201,
+                                                            "text": "层次",
+                                                            "expandState": "collapse"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "data": {
+                                                                    "id": "ceyw9v87xo80",
+                                                                    "created": 1634190751566,
+                                                                    "text": "第 0 层：程序解释执行，默认开启性能监控功能（Profiling），如果不开启，可触发第二层编译；"
+                                                                },
+                                                                "children": []
+                                                            },
+                                                            {
+                                                                "data": {
+                                                                    "id": "ceyw9z8tupc0",
+                                                                    "created": 1634190760310,
+                                                                    "text": "第 1 层：C1 编译，将字节码编译为本地代码，进行简单、可靠的优化，不开启 Profiling；"
+                                                                },
+                                                                "children": []
+                                                            },
+                                                            {
+                                                                "data": {
+                                                                    "id": "ceywa2q4ymo0",
+                                                                    "created": 1634190767887,
+                                                                    "text": "第 2 层：C1 编译，开启 Profiling，仅执行带方法调用次数和循环回边执行次数 profiling 的 C1 编译；"
+                                                                },
+                                                                "children": []
+                                                            },
+                                                            {
+                                                                "data": {
+                                                                    "id": "ceywa6a2q740",
+                                                                    "created": 1634190775623,
+                                                                    "text": "第 3 层：C1 编译，执行所有带 Profiling 的 C1 编译；"
+                                                                },
+                                                                "children": []
+                                                            },
+                                                            {
+                                                                "data": {
+                                                                    "id": "ceywa7iqi5s0",
+                                                                    "created": 1634190778323,
+                                                                    "text": "第 4 层：C2 编译，也是将字节码编译为本地代码，但是会启用一些编译耗时较长的优化，甚至会根据性能监控信息进行一些不可靠的激进优化。"
+                                                                },
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "ceyyuhs1vh40",
+                                                    "created": 1634198010158,
+                                                    "text": "栈上替换",
+                                                    "expandState": "collapse"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "ceyyur0k9rk0",
+                                                            "created": 1634198030263,
+                                                            "text": "OSR - On Stack Replacement"
+                                                        },
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "ceyyvtrsmfc0",
+                                                            "created": 1634198114628,
+                                                            "text": "为了编译过后的循环体本地代码在运行中使用"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "ceyw5nwsbjc0",
+                                                    "created": 1634190422181,
+                                                    "text": "应用优化",
+                                                    "expandState": "collapse"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "ceyw58enw7k0",
+                                                            "created": 1634190388433,
+                                                            "text": "方法内联"
+                                                        },
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "ceyt8z6ep400",
+                                                            "created": 1634182218470,
+                                                            "text": "逃逸分析"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "ceyyxzf9sgw0",
+                                                    "created": 1634198283659,
+                                                    "text": "退优化"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
                                     }
                                 ]
                             }
@@ -4692,7 +5230,8 @@
                                 "data": {
                                     "id": "cey6e2p058g0",
                                     "created": 1634117732418,
-                                    "text": "属性"
+                                    "text": "属性",
+                                    "expandState": "collapse"
                                 },
                                 "children": [
                                     {
@@ -4786,6 +5325,145 @@
                                         ]
                                     }
                                 ]
+                            },
+                            {
+                                "data": {
+                                    "id": "ceysfo9xnfk0",
+                                    "created": 1634179922178,
+                                    "text": "子类",
+                                    "expandState": "collapse"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "ceysfqiu03k0",
+                                            "created": 1634179927069,
+                                            "text": "ObjArrayKlass",
+                                            "expandState": "expand"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "ceysfxb9g4g0",
+                                                    "created": 1634179941849,
+                                                    "text": "意义作用",
+                                                    "expandState": "collapse"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "ceysfzk2or40",
+                                                            "created": 1634179946735,
+                                                            "text": "表示数组元素为引用类型的数组"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "ceysgmalcps0",
+                                                    "created": 1634179996228,
+                                                    "text": "属性"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "ceysh2dwck80",
+                                                            "created": 1634180031256,
+                                                            "text": "_element_klass",
+                                                            "expandState": "collapse"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "data": {
+                                                                    "id": "ceysi3t04rc0",
+                                                                    "created": 1634180112711,
+                                                                    "text": "元素类型，Klass指针，多维数组则为上一位数组引用"
+                                                                },
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "ceyshd9127s0",
+                                                            "created": 1634180054907,
+                                                            "text": "_bottom_klass",
+                                                            "expandState": "collapse"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "data": {
+                                                                    "id": "ceyshgq9gb40",
+                                                                    "created": 1634180062479,
+                                                                    "text": "一维数组类型，可为ObjArrayKlass或TypeArrayKlass"
+                                                                },
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "ceysftnscy00",
+                                            "created": 1634179933899,
+                                            "text": "TypeArrayKlass",
+                                            "expandState": "collapse"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "ceysj7gkl880",
+                                                    "created": 1634180199030,
+                                                    "text": "意义",
+                                                    "expandState": "expand"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "ceysj9g0cxc0",
+                                                            "created": 1634180203350,
+                                                            "text": "表示元素类型为基本类型的数组类"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "ceysjmkq3go0",
+                                                    "created": 1634180231933,
+                                                    "text": "属性",
+                                                    "expandState": "expand"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "ceysjpcivq80",
+                                                            "created": 1634180237968,
+                                                            "text": "_max_length",
+                                                            "expandState": "collapse"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "data": {
+                                                                    "id": "ceysjv33j340",
+                                                                    "created": 1634180250458,
+                                                                    "text": "数组最大长度"
+                                                                },
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
                             }
                         ]
                     }
@@ -4838,7 +5516,7 @@
                     "text": "07. 方法调用",
                     "created": 1633657298547,
                     "layout": null,
-                    "expandState": "expand"
+                    "expandState": "collapse"
                 },
                 "children": [
                     {
