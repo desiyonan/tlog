@@ -1,0 +1,17 @@
+@startuml
+
+class oopDesc {
+  markOop _mark;
+  union _metadata {
+    Klass* _klass;
+    narrowKlass _compressed_klass;
+  };
+}
+
+oopDesc <|-- instanceOopDesc
+oopDesc <|-- arrayOopDesc
+
+arrayOopDesc <|-- ObjArrayOopDesc
+arrayOopDesc <|-- TypeArrayOopDesc
+
+@enduml
