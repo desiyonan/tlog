@@ -1239,7 +1239,7 @@
                     "text": "03. 类模型",
                     "created": 1633657298547,
                     "layout": null,
-                    "expandState": "expand"
+                    "expandState": "collapse"
                 },
                 "children": [
                     {
@@ -4948,7 +4948,7 @@
                                             "id": "ceyt7b5jiag0",
                                             "created": 1634182087810,
                                             "text": "方法",
-                                            "expandState": "expand"
+                                            "expandState": "collapse"
                                         },
                                         "children": [
                                             {
@@ -5377,14 +5377,6 @@
                                                                         ]
                                                                     }
                                                                 ]
-                                                            },
-                                                            {
-                                                                "data": {
-                                                                    "id": "ceyyxzf9sgw0",
-                                                                    "created": 1634198283659,
-                                                                    "text": "退优化"
-                                                                },
-                                                                "children": []
                                                             }
                                                         ]
                                                     }
@@ -5482,7 +5474,7 @@
                             "created": 1633747726758,
                             "text": "ArrayKlass",
                             "layout": null,
-                            "expandState": "collapse"
+                            "expandState": "expand"
                         },
                         "children": [
                             {
@@ -5608,7 +5600,7 @@
                                     "id": "ceysfo9xnfk0",
                                     "created": 1634179922178,
                                     "text": "子类",
-                                    "expandState": "collapse"
+                                    "expandState": "expand"
                                 },
                                 "children": [
                                     {
@@ -5616,7 +5608,7 @@
                                             "id": "ceysfqiu03k0",
                                             "created": 1634179927069,
                                             "text": "ObjArrayKlass",
-                                            "expandState": "collapse"
+                                            "expandState": "expand"
                                         },
                                         "children": [
                                             {
@@ -5689,7 +5681,7 @@
                                             "id": "ceysftnscy00",
                                             "created": 1634179933899,
                                             "text": "TypeArrayKlass",
-                                            "expandState": "collapse"
+                                            "expandState": "expand"
                                         },
                                         "children": [
                                             {
@@ -5751,7 +5743,7 @@
                     "id": "7932ci23m7rlroqr7irn2vtcc8",
                     "text": "04. 对象模型",
                     "created": 1633657298547,
-                    "expandState": "collapse",
+                    "expandState": "expand",
                     "layout": null
                 },
                 "children": [
@@ -5784,7 +5776,7 @@
                             "id": "cez0ov4hc8o0",
                             "created": 1634203211242,
                             "text": "对象组成",
-                            "expandState": "collapse"
+                            "expandState": "expand"
                         },
                         "children": [
                             {
@@ -5792,7 +5784,7 @@
                                     "id": "cez1juwivuo0",
                                     "created": 1634205640050,
                                     "text": "对象头",
-                                    "expandState": "collapse"
+                                    "expandState": "expand"
                                 },
                                 "children": [
                                     {
@@ -5800,7 +5792,7 @@
                                             "id": "cez9708s2tc0",
                                             "created": 1634227201820,
                                             "text": "_mark",
-                                            "expandState": "collapse"
+                                            "expandState": "expand"
                                         },
                                         "children": [
                                             {
@@ -5969,9 +5961,57 @@
                                                 "data": {
                                                     "id": "cez9ubk9j6w0",
                                                     "created": 1634229028835,
-                                                    "text": "布局"
+                                                    "text": "布局",
+                                                    "expandState": "expand"
                                                 },
-                                                "children": []
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cf5txqr0yo80",
+                                                            "created": 1634895078926,
+                                                            "text": "32位"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "data": {
+                                                                    "id": "cf5txsxj2sw0",
+                                                                    "created": 1634895083673,
+                                                                    "text": "32位布局",
+                                                                    "image": "https://oss.dnfn.tech:1024/bedroom/2021/10/22/202110221731195.png",
+                                                                    "imageTitle": "32位布局",
+                                                                    "imageSize": {
+                                                                        "width": 200,
+                                                                        "height": 58
+                                                                    }
+                                                                },
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cf5ty8ngs8g0",
+                                                            "created": 1634895117893,
+                                                            "text": "64位"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "data": {
+                                                                    "id": "cf5tybl0ys80",
+                                                                    "created": 1634895124276,
+                                                                    "text": "64位布局",
+                                                                    "image": "https://oss.dnfn.tech:1024/bedroom/2021/10/22/202110221732773.png",
+                                                                    "imageTitle": "64位布局",
+                                                                    "imageSize": {
+                                                                        "width": 200,
+                                                                        "height": 66
+                                                                    }
+                                                                },
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
                                             }
                                         ]
                                     },
@@ -6023,6 +6063,23 @@
                             },
                             {
                                 "data": {
+                                    "id": "cf5tnlx2sio0",
+                                    "created": 1634894284767,
+                                    "text": "数组长度"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cf5tnrvhd9k0",
+                                            "created": 1634894297731,
+                                            "text": "可选，只有数组才有"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
                                     "id": "cez1jwxch3k0",
                                     "created": 1634205644453,
                                     "text": "实例数据"
@@ -6057,7 +6114,24 @@
                             "layout": null,
                             "expandState": "expand"
                         },
-                        "children": []
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cf5u60tegg00",
+                                    "created": 1634895727751,
+                                    "text": "对象"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cf79hualeew0",
+                                    "created": 1635040530528,
+                                    "text": "数组"
+                                },
+                                "children": []
+                            }
+                        ]
                     },
                     {
                         "data": {

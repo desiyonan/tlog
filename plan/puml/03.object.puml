@@ -1,0 +1,15 @@
+@startuml
+allowmixing
+skinparam nodesep 1
+skinparam ranksep 1
+skinparam sameClassWidth true
+
+
+object 对象实例 {
+  对象头
+  ----
+  实例数据
+  ----
+  对齐填充
+}
+@enduml
