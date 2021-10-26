@@ -1266,7 +1266,7 @@
                     "text": "03. 类模型",
                     "created": 1633657298547,
                     "layout": null,
-                    "expandState": "collapse"
+                    "expandState": "expand"
                 },
                 "children": [
                     {
@@ -2025,7 +2025,7 @@
                                             "id": "cevf1fgv8bc0",
                                             "created": 1633837451609,
                                             "text": "分类",
-                                            "expandState": "collapse",
+                                            "expandState": "expand",
                                             "layout": null
                                         },
                                         "children": [
@@ -2034,7 +2034,7 @@
                                                     "id": "cevqx97m0vs0",
                                                     "created": 1633870977851,
                                                     "text": "层面",
-                                                    "expandState": "collapse",
+                                                    "expandState": "expand",
                                                     "layout": null
                                                 },
                                                 "children": [
@@ -2073,7 +2073,7 @@
                                                                     "id": "cevrmeydbow0",
                                                                     "created": 1633872949457,
                                                                     "text": "修饰符",
-                                                                    "expandState": "collapse",
+                                                                    "expandState": "expand",
                                                                     "layout": null
                                                                 },
                                                                 "children": [
@@ -2104,7 +2104,7 @@
                                                                     "id": "cevrmvgvx540",
                                                                     "created": 1633872985405,
                                                                     "text": "父类",
-                                                                    "expandState": "collapse",
+                                                                    "expandState": "expand",
                                                                     "layout": null
                                                                 },
                                                                 "children": [
@@ -2157,7 +2157,7 @@
                                                                     "id": "cevrfh6apu00",
                                                                     "created": 1633872405740,
                                                                     "text": "对象布局",
-                                                                    "expandState": "expand",
+                                                                    "expandState": "collapse",
                                                                     "layout": null
                                                                 },
                                                                 "children": [
@@ -2178,7 +2178,7 @@
                                                                     "id": "cevrfp81du00",
                                                                     "created": 1633872423261,
                                                                     "text": "对象原型",
-                                                                    "expandState": "expand",
+                                                                    "expandState": "collapse",
                                                                     "layout": null
                                                                 },
                                                                 "children": [
@@ -2413,7 +2413,7 @@
                                     "created": 1633748099393,
                                     "text": "重点",
                                     "layout": null,
-                                    "expandState": "expand"
+                                    "expandState": "collapse"
                                 },
                                 "children": [
                                     {
@@ -2503,7 +2503,7 @@
                                             "id": "cewpmmjssn40",
                                             "created": 1633968883728,
                                             "text": "全部属性",
-                                            "expandState": "collapse",
+                                            "expandState": "expand",
                                             "layout": null
                                         },
                                         "children": [
@@ -2512,7 +2512,7 @@
                                                     "id": "cewpmpkmsuo0",
                                                     "created": 1633968890307,
                                                     "text": "_annonations",
-                                                    "expandState": "expand",
+                                                    "expandState": "collapse",
                                                     "layout": null
                                                 },
                                                 "children": [
@@ -2532,7 +2532,7 @@
                                                     "id": "cewpn8zzal40",
                                                     "created": 1633968932594,
                                                     "text": "_array_klasses",
-                                                    "expandState": "expand",
+                                                    "expandState": "collapse",
                                                     "layout": null
                                                 },
                                                 "children": [
@@ -2552,7 +2552,7 @@
                                                     "id": "cewpo5rg6940",
                                                     "created": 1633969003912,
                                                     "text": "_constants",
-                                                    "expandState": "expand",
+                                                    "expandState": "collapse",
                                                     "layout": null
                                                 },
                                                 "children": [
@@ -2572,7 +2572,7 @@
                                                     "id": "cewpo8r6j200",
                                                     "created": 1633969010426,
                                                     "text": "_inner_classes",
-                                                    "expandState": "expand",
+                                                    "expandState": "collapse",
                                                     "layout": null
                                                 },
                                                 "children": [
@@ -2659,7 +2659,7 @@
                                                     "id": "cewpow1l0m80",
                                                     "created": 1633969061121,
                                                     "text": "_array_name",
-                                                    "expandState": "expand",
+                                                    "expandState": "collapse",
                                                     "layout": null
                                                 },
                                                 "children": [
@@ -3044,7 +3044,7 @@
                                                     "id": "cewq2xrusts0",
                                                     "created": 1633970161985,
                                                     "text": "_jni_ids",
-                                                    "expandState": "expand",
+                                                    "expandState": "collapse",
                                                     "layout": null
                                                 },
                                                 "children": [
@@ -3064,7 +3064,7 @@
                                                     "id": "cewq34zants0",
                                                     "created": 1633970177672,
                                                     "text": "_methods_jmethod_ids",
-                                                    "expandState": "expand",
+                                                    "expandState": "collapse",
                                                     "layout": null
                                                 },
                                                 "children": [
@@ -3084,7 +3084,7 @@
                                                     "id": "cewq3p1ckcg0",
                                                     "created": 1633970221332,
                                                     "text": "_dependencies",
-                                                    "expandState": "expand",
+                                                    "expandState": "collapse",
                                                     "layout": null
                                                 },
                                                 "children": [
@@ -3104,7 +3104,7 @@
                                                     "id": "cewq4ub5nfk0",
                                                     "created": 1633970311173,
                                                     "text": "_osr_nmethods_head",
-                                                    "expandState": "expand",
+                                                    "expandState": "collapse",
                                                     "layout": null
                                                 },
                                                 "children": [
@@ -3142,7 +3142,7 @@
                                                     "id": "cewq6gc3cd40",
                                                     "created": 1633970437483,
                                                     "text": "_cached_class_file",
-                                                    "expandState": "expand",
+                                                    "expandState": "collapse",
                                                     "layout": null
                                                 },
                                                 "children": [
@@ -3231,7 +3231,7 @@
                                                     "id": "cewqadb29vc0",
                                                     "created": 1633970744347,
                                                     "text": "_methods",
-                                                    "expandState": "expand",
+                                                    "expandState": "collapse",
                                                     "layout": null
                                                 },
                                                 "children": [
@@ -3251,7 +3251,7 @@
                                                     "id": "cewqak5dl6g0",
                                                     "created": 1633970759241,
                                                     "text": "_default_methods",
-                                                    "expandState": "expand",
+                                                    "expandState": "collapse",
                                                     "layout": null
                                                 },
                                                 "children": [
@@ -3271,7 +3271,7 @@
                                                     "id": "cewqb7v9efc0",
                                                     "created": 1633970810872,
                                                     "text": "_local_interfaces",
-                                                    "expandState": "expand",
+                                                    "expandState": "collapse",
                                                     "layout": null
                                                 },
                                                 "children": [
@@ -3291,7 +3291,7 @@
                                                     "id": "cewqbgmj8cw0",
                                                     "created": 1633970829935,
                                                     "text": "_transitive_interfaces",
-                                                    "expandState": "expand",
+                                                    "expandState": "collapse",
                                                     "layout": null
                                                 },
                                                 "children": [
@@ -3311,7 +3311,7 @@
                                                     "id": "cewqbqz422g0",
                                                     "created": 1633970852464,
                                                     "text": "_method_ordering",
-                                                    "expandState": "expand",
+                                                    "expandState": "collapse",
                                                     "layout": null
                                                 },
                                                 "children": [
@@ -3331,7 +3331,7 @@
                                                     "id": "cewqcpeeoq80",
                                                     "created": 1633970927399,
                                                     "text": "_default_vtable_indices",
-                                                    "expandState": "expand",
+                                                    "expandState": "collapse",
                                                     "layout": null
                                                 },
                                                 "children": [
@@ -3351,7 +3351,7 @@
                                                     "id": "cewqe0j0uqg0",
                                                     "created": 1633971029987,
                                                     "text": "_fields",
-                                                    "expandState": "expand",
+                                                    "expandState": "collapse",
                                                     "layout": null
                                                 },
                                                 "children": [
@@ -3369,7 +3369,8 @@
                                                             "id": "cexd28d57ao0",
                                                             "created": 1634034992204,
                                                             "text": "6组2字节的数据描述一个字段",
-                                                            "layout": null
+                                                            "layout": null,
+                                                            "expandState": "collapse"
                                                         },
                                                         "children": [
                                                             {
@@ -3400,7 +3401,7 @@
                                                             "id": "cex3ntf6k7s0",
                                                             "created": 1634008472588,
                                                             "text": "vtable",
-                                                            "expandState": "expand",
+                                                            "expandState": "collapse",
                                                             "layout": null
                                                         },
                                                         "children": [
@@ -3603,7 +3604,7 @@
                                             "created": 1634042018519,
                                             "text": "分类",
                                             "layout": null,
-                                            "expandState": "collapse"
+                                            "expandState": "expand"
                                         },
                                         "children": [
                                             {
@@ -3612,7 +3613,7 @@
                                                     "created": 1634042077784,
                                                     "text": "层面",
                                                     "layout": null,
-                                                    "expandState": "collapse"
+                                                    "expandState": "expand"
                                                 },
                                                 "children": [
                                                     {
@@ -3677,7 +3678,7 @@
                                                             "created": 1634042109587,
                                                             "text": "JVM类",
                                                             "layout": null,
-                                                            "expandState": "collapse"
+                                                            "expandState": "expand"
                                                         },
                                                         "children": [
                                                             {
@@ -4005,7 +4006,7 @@
                                                                             "id": "cexx8mgygz40",
                                                                             "created": 1634091915292,
                                                                             "text": "字段属性",
-                                                                            "expandState": "expand",
+                                                                            "expandState": "collapse",
                                                                             "layout": null
                                                                         },
                                                                         "children": [
@@ -4252,7 +4253,8 @@
                                                                             "id": "cexwsomcs4o0",
                                                                             "created": 1634090666146,
                                                                             "text": "静态",
-                                                                            "layout": null
+                                                                            "layout": null,
+                                                                            "expandState": "expand"
                                                                         },
                                                                         "children": [
                                                                             {
@@ -4271,7 +4273,8 @@
                                                                             "id": "cexwst6rs0w0",
                                                                             "created": 1634090676087,
                                                                             "text": "非静态",
-                                                                            "layout": null
+                                                                            "layout": null,
+                                                                            "expandState": "expand"
                                                                         },
                                                                         "children": [
                                                                             {
@@ -4957,7 +4960,7 @@
                                     "id": "cewgllaxbq80",
                                     "created": 1633943412660,
                                     "text": "相关",
-                                    "expandState": "expand",
+                                    "expandState": "collapse",
                                     "layout": null
                                 },
                                 "children": [
@@ -5424,7 +5427,7 @@
                                                     "id": "ceytjfpt08g0",
                                                     "created": 1634183038113,
                                                     "text": "结构",
-                                                    "expandState": "collapse"
+                                                    "expandState": "expand"
                                                 },
                                                 "children": [
                                                     {
@@ -5432,7 +5435,7 @@
                                                             "id": "ceytjiqubs00",
                                                             "created": 1634183044707,
                                                             "text": "klassVtable",
-                                                            "expandState": "collapse"
+                                                            "expandState": "expand"
                                                         },
                                                         "children": [
                                                             {
@@ -5447,7 +5450,7 @@
                                                                 "data": {
                                                                     "id": "ceytjt2fyow0",
                                                                     "created": 1634183067175,
-                                                                    "text": "_tableOffse"
+                                                                    "text": "_tableOffset"
                                                                 },
                                                                 "children": []
                                                             },
@@ -5501,7 +5504,7 @@
                             "created": 1633747726758,
                             "text": "ArrayKlass",
                             "layout": null,
-                            "expandState": "expand"
+                            "expandState": "collapse"
                         },
                         "children": [
                             {
@@ -6170,7 +6173,8 @@
                                         "data": {
                                             "id": "cf93qm2fa7c0",
                                             "created": 1635227411151,
-                                            "text": "顺序"
+                                            "text": "顺序",
+                                            "expandState": "collapse"
                                         },
                                         "children": [
                                             {
@@ -6386,23 +6390,68 @@
                                                     "id": "cf94dn694s80",
                                                     "created": 1635229215936,
                                                     "text": "@sun.misc.Contended",
-                                                    "expandState": "expand"
+                                                    "expandState": "collapse"
                                                 },
                                                 "children": [
                                                     {
                                                         "data": {
                                                             "id": "cf94eothp800",
                                                             "created": 1635229297882,
-                                                            "text": "伪共享"
+                                                            "text": "伪共享",
+                                                            "expandState": "collapse"
                                                         },
                                                         "children": [
                                                             {
                                                                 "data": {
                                                                     "id": "cf95vvk0gu00",
                                                                     "created": 1635233465847,
-                                                                    "text": "CPU三级缓存"
+                                                                    "text": "CPU三级缓存",
+                                                                    "expandState": "collapse"
                                                                 },
-                                                                "children": []
+                                                                "children": [
+                                                                    {
+                                                                        "data": {
+                                                                            "id": "cf96nt7y8xc0",
+                                                                            "created": 1635235654960,
+                                                                            "text": "L1",
+                                                                            "expandState": "collapse"
+                                                                        },
+                                                                        "children": [
+                                                                            {
+                                                                                "data": {
+                                                                                    "id": "cf96nzfzoy80",
+                                                                                    "created": 1635235668507,
+                                                                                    "text": "L1i"
+                                                                                },
+                                                                                "children": []
+                                                                            },
+                                                                            {
+                                                                                "data": {
+                                                                                    "id": "cf96o1selww0",
+                                                                                    "created": 1635235673611,
+                                                                                    "text": "L1d"
+                                                                                },
+                                                                                "children": []
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        "data": {
+                                                                            "id": "cf96nuk73o80",
+                                                                            "created": 1635235657878,
+                                                                            "text": "L2"
+                                                                        },
+                                                                        "children": []
+                                                                    },
+                                                                    {
+                                                                        "data": {
+                                                                            "id": "cf96nvifans0",
+                                                                            "created": 1635235659947,
+                                                                            "text": "L3"
+                                                                        },
+                                                                        "children": []
+                                                                    }
+                                                                ]
                                                             },
                                                             {
                                                                 "data": {

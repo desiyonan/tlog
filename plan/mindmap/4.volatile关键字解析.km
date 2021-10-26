@@ -1,0 +1,46 @@
+{
+    "root": {
+        "data": {
+            "id": "cf97s9qs1s00",
+            "created": 1635238825494,
+            "text": "volatile"
+        },
+        "children": [
+            {
+                "data": {
+                    "id": "cf995makir40",
+                    "created": 1635242692656,
+                    "text": "含义"
+                },
+                "children": []
+            },
+            {
+                "data": {
+                    "id": "cf995qxqyg00",
+                    "created": 1635242702765,
+                    "text": "作用"
+                },
+                "children": []
+            },
+            {
+                "data": {
+                    "id": "cf995v2of2w0",
+                    "created": 1635242711770,
+                    "text": "并发编程的三个概念"
+                },
+                "children": []
+            },
+            {
+                "data": {
+                    "id": "cf996qjzel40",
+                    "created": 1635242780296,
+                    "text": "JVM内存模型"
+                },
+                "children": []
+            }
+        ]
+    },
+    "template": "default",
+    "theme": "fresh-blue",
+    "version": "1.4.43"
+}
