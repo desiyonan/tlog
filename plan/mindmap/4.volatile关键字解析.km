@@ -10,33 +10,571 @@
                 "data": {
                     "id": "cf995makir40",
                     "created": 1635242692656,
-                    "text": "含义"
+                    "text": "1. 具体含义作用",
+                    "expandState": "collapse"
                 },
-                "children": []
-            },
-            {
-                "data": {
-                    "id": "cf995qxqyg00",
-                    "created": 1635242702765,
-                    "text": "作用"
-                },
-                "children": []
+                "children": [
+                    {
+                        "data": {
+                            "id": "cfa0om7ophc0",
+                            "created": 1635320351368,
+                            "text": "含义",
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cfa0ov36dgg0",
+                                    "created": 1635320370688,
+                                    "text": "线程之间共享可见的变量"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cfa0p76vfns0",
+                            "created": 1635320397032,
+                            "text": "作用",
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cfa0p8br2s80",
+                                    "created": 1635320399503,
+                                    "text": "1. 保证变量在线程间的可见性"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cfa0psnc33c0",
+                                    "created": 1635320443739,
+                                    "text": "2. 对该变量的访问禁用指令重排"
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
             },
             {
                 "data": {
                     "id": "cf995v2of2w0",
                     "created": 1635242711770,
-                    "text": "并发编程的三个概念"
+                    "text": "2. 并发编程概念",
+                    "expandState": "collapse"
                 },
-                "children": []
+                "children": [
+                    {
+                        "data": {
+                            "id": "cfa0qcn7vmo0",
+                            "created": 1635320487268,
+                            "text": "原子性",
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cfa0x1sjenk0",
+                                    "created": 1635321012194,
+                                    "text": "一个操作或者多个操作 要么全部执行并且执行的过程不会被任何因素打断，要么就都不执行"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cfa0x4eyck80",
+                                    "created": 1635321017903,
+                                    "text": "例子",
+                                    "expandState": "collapse"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cfa0x6wvps00",
+                                            "created": 1635321023341,
+                                            "text": "x = 10"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cfa0x9nnk5k0",
+                                            "created": 1635321029313,
+                                            "text": "x++"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cfa0xavw8680",
+                                            "created": 1635321031988,
+                                            "text": "x=x+2"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cfa0qjwd67c0",
+                            "created": 1635320503059,
+                            "text": "可见性",
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cfa0wt5ltmg0",
+                                    "created": 1635320993393,
+                                    "text": "多个线程访问同一个变量时，一个线程修改了这个变量的值，其他线程能够立即看得到修改的值"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cfa0qm00wdc0",
+                            "created": 1635320507633,
+                            "text": "有序性",
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cfa0y7wbnlc0",
+                                    "created": 1635321103848,
+                                    "text": "程序执行的顺序按照代码的先后顺序执行"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cfa0ydq49540",
+                                    "created": 1635321116533,
+                                    "text": "指令重排",
+                                    "expandState": "collapse"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cfa0yipbso00",
+                                            "created": 1635321127369,
+                                            "text": "单线程不影响，多线程有问题"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "cf9t8evs3so0",
+                    "created": 1635299333815,
+                    "text": "3. 物理硬件架构"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cfa12lqj85c0",
+                            "created": 1635321447429,
+                            "text": "简单图例",
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cfa1058g5tc0",
+                                    "created": 1635321254779,
+                                    "text": "图示",
+                                    "image": "https://oss.dnfn.tech:1024/bedroom/2021/10/27/20211027155639.jpeg",
+                                    "imageTitle": "计算机硬件架构",
+                                    "imageSize": {
+                                        "width": 200,
+                                        "height": 176
+                                    }
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cfa12wmnb0g0",
+                            "created": 1635321471139,
+                            "text": "概念",
+                            "expandState": "expand"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cfa13k9369k0",
+                                    "created": 1635321522562,
+                                    "text": "主存 - 内存"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cfa192rci880",
+                                    "created": 1635321954669,
+                                    "text": "CPU高速缓存",
+                                    "expandState": "collapse"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cfa1cjrellc0",
+                                            "created": 1635322226770,
+                                            "text": "意义",
+                                            "expandState": "collapse"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cfa1cn3dxow0",
+                                                    "created": 1635322234025,
+                                                    "text": "CPU运行速度和内存读写速度差异过大，引入三级缓存防止频繁读取内存影响运行速度"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cfa14okxkfk0",
+                                            "created": 1635321610349,
+                                            "text": "组成",
+                                            "expandState": "collapse",
+                                            "note": null
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cfa16bri4sg0",
+                                                    "created": 1635321739177,
+                                                    "text": "L1",
+                                                    "expandState": "collapse"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cfa1go3mckw0",
+                                                            "created": 1635322549673,
+                                                            "text": "组成",
+                                                            "expandState": "collapse"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "data": {
+                                                                    "id": "cfa1f0pg3fk0",
+                                                                    "created": 1635322420385,
+                                                                    "text": "L1i"
+                                                                },
+                                                                "children": [
+                                                                    {
+                                                                        "data": {
+                                                                            "id": "cfa1f5wfops0",
+                                                                            "created": 1635322431692,
+                                                                            "text": "一级指令缓存"
+                                                                        },
+                                                                        "children": []
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                "data": {
+                                                                    "id": "cfa1f3grxs80",
+                                                                    "created": 1635322426391,
+                                                                    "text": "L1d"
+                                                                },
+                                                                "children": [
+                                                                    {
+                                                                        "data": {
+                                                                            "id": "cfa1fav2e080",
+                                                                            "created": 1635322442493,
+                                                                            "text": "一级数据缓存"
+                                                                        },
+                                                                        "children": []
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cfa1gsj6elc0",
+                                                            "created": 1635322559320,
+                                                            "text": "最近，最小，最快"
+                                                        },
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cfa1ha3ucz40",
+                                                            "created": 1635322597575,
+                                                            "text": "核专属"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "data": {
+                                                                    "id": "cfa1l17uecg0",
+                                                                    "created": 1635322891683,
+                                                                    "text": "一个核独享一个一级缓存"
+                                                                },
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cfa16dbawug0",
+                                                    "created": 1635321742551,
+                                                    "text": "L2",
+                                                    "expandState": "collapse"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cfa1fdn9qfc0",
+                                                            "created": 1635322448552,
+                                                            "text": "二级缓存"
+                                                        },
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cfa1iuhvgb40",
+                                                            "created": 1635322720323,
+                                                            "text": "核专属"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "data": {
+                                                                    "id": "cfa1lcsa25k0",
+                                                                    "created": 1635322916863,
+                                                                    "text": "一个核独享一个二级缓存"
+                                                                },
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cfa16et29xc0",
+                                                    "created": 1635321745802,
+                                                    "text": "L3",
+                                                    "expandState": "collapse"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cfa1ffvqcyo0",
+                                                            "created": 1635322453417,
+                                                            "text": "三级缓存"
+                                                        },
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cfa1llo7zig0",
+                                                            "created": 1635322936209,
+                                                            "text": "座专属",
+                                                            "expandState": "collapse"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "data": {
+                                                                    "id": "cfa1lyh6c2w0",
+                                                                    "created": 1635322964081,
+                                                                    "text": "一个CPU座(多核)共享一个三级缓存"
+                                                                },
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cfa1ca7s9w00",
+                                            "created": 1635322205993,
+                                            "text": "大小",
+                                            "expandState": "collapse"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cfa1cbn4ui80",
+                                                    "created": 1635322209098,
+                                                    "text": "lscpu查看"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cfa1mj39hao0",
+                                    "created": 1635323008952,
+                                    "text": "CPU缓存行"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cfa1ml8kjwg0",
+                                            "created": 1635323013627,
+                                            "text": "定义",
+                                            "expandState": "collapse"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cfa21imgcy80",
+                                                    "created": 1635324183398,
+                                                    "text": "CPU缓存的基本单位"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cfa21p7befs0",
+                                            "created": 1635324197720,
+                                            "text": "大小",
+                                            "expandState": "collapse"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cfa225fj7h40",
+                                                    "created": 1635324233046,
+                                                    "text": "2的整数幂个连续字节，一般为32-256个字节"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cfa21qffrog0",
+                                                    "created": 1635324200389,
+                                                    "text": "常见为64字节"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cfa22qpzcq80",
+                                            "created": 1635324279390,
+                                            "text": "作用"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cfa22vgxbc00",
+                                                    "created": 1635324289726,
+                                                    "text": "缓存内存空间中连续的一段数据"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cfa23bwwzd40",
+                                                    "created": 1635324325522,
+                                                    "text": "数组将缓存其后相邻的元素",
+                                                    "expandState": "collapse"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cfa27mg6emg0",
+                                                            "created": 1635324661911,
+                                                            "text": "加快顺序访问"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cfa23uwqsjc0",
+                                                    "created": 1635324366870,
+                                                    "text": "字段将缓存相邻的几个字段",
+                                                    "expandState": "expand"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cfa24o2yg6g0",
+                                                            "created": 1635324430372,
+                                                            "text": "伪共享",
+                                                            "hyperlink": "https://www.jianshu.com/p/e338b550850f",
+                                                            "hyperlinkTitle": "伪共享问题"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             },
             {
                 "data": {
                     "id": "cf996qjzel40",
                     "created": 1635242780296,
-                    "text": "JVM内存模型"
+                    "text": "4. JVM内存模型"
                 },
                 "children": []
+            },
+            {
+                "data": {
+                    "id": "cf9taejycvs0",
+                    "created": 1635299489828,
+                    "text": "5. JVM实现原理"
+                },
+                "children": []
+            },
+            {
+                "data": {
+                    "id": "cf9taphp5fc0",
+                    "created": 1635299513636,
+                    "text": "6. 相关实际应用",
+                    "expandState": "collapse"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cf9tb2t1db40",
+                            "created": 1635299542620,
+                            "text": "1. 双重校验锁定模式 - 单例模式"
+                        },
+                        "children": []
+                    }
+                ]
             }
         ]
     },
