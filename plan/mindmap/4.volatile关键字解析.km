@@ -560,7 +560,7 @@
                                     "id": "cfauqi1mqrs0",
                                     "created": 1635405132321,
                                     "text": "Store Buffer",
-                                    "expandState": "expand"
+                                    "expandState": "collapse"
                                 },
                                 "children": [
                                     {
@@ -644,7 +644,7 @@
                                             "id": "cfawpnyb44o0",
                                             "created": 1635410709036,
                                             "text": "副作用",
-                                            "expandState": "expand"
+                                            "expandState": "collapse"
                                         },
                                         "children": [
                                             {
@@ -652,7 +652,7 @@
                                                     "id": "cfawpt1mz0g0",
                                                     "created": 1635410720121,
                                                     "text": "单个CPU内的指令乱序",
-                                                    "expandState": "collapse"
+                                                    "expandState": "expand"
                                                 },
                                                 "children": [
                                                     {
@@ -660,7 +660,7 @@
                                                             "id": "cfawvfkmkwo0",
                                                             "created": 1635411160979,
                                                             "text": "现象",
-                                                            "expandState": "collapse"
+                                                            "expandState": "expand"
                                                         },
                                                         "children": [
                                                             {
@@ -748,7 +748,7 @@
                                                             "id": "cfaxat9qe1s0",
                                                             "created": 1635412366258,
                                                             "text": "现象",
-                                                            "expandState": "collapse"
+                                                            "expandState": "expand"
                                                         },
                                                         "children": [
                                                             {
@@ -792,7 +792,7 @@
                                                             "id": "cfaxawe3yk00",
                                                             "created": 1635412373053,
                                                             "text": "原因",
-                                                            "expandState": "collapse"
+                                                            "expandState": "expand"
                                                         },
                                                         "children": [
                                                             {
@@ -836,7 +836,7 @@
                                                             "id": "cfbiber275s0",
                                                             "created": 1635471656326,
                                                             "text": "解决",
-                                                            "expandState": "collapse"
+                                                            "expandState": "expand"
                                                         },
                                                         "children": [
                                                             {
@@ -983,7 +983,7 @@
                                     "id": "cfaqa4w7mls0",
                                     "created": 1635392565428,
                                     "text": "指令重排",
-                                    "expandState": "collapse"
+                                    "expandState": "expand"
                                 },
                                 "children": [
                                     {
@@ -999,7 +999,7 @@
                                             "id": "cfauk6yxu4g0",
                                             "created": 1635404638028,
                                             "text": "分类",
-                                            "expandState": "collapse"
+                                            "expandState": "expand"
                                         },
                                         "children": [
                                             {
@@ -1025,7 +1025,7 @@
                                                     "id": "cfbi77a1vs80",
                                                     "created": 1635471326604,
                                                     "text": "被动的",
-                                                    "expandState": "collapse"
+                                                    "expandState": "expand"
                                                 },
                                                 "children": [
                                                     {
@@ -1328,6 +1328,47 @@
                                 "children": [
                                     {
                                         "data": {
+                                            "id": "cfbo7hnvxls0",
+                                            "created": 1635488275868,
+                                            "text": "乱序现象"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cfbo7m9ncxs0",
+                                                    "created": 1635488285891,
+                                                    "text": "Load-Store"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cfbo86e4pow0",
+                                                    "created": 1635488329698,
+                                                    "text": "Store-Load"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cfbo8ag0cs80",
+                                                    "created": 1635488338518,
+                                                    "text": "Load-Load"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cfbo8dgpwj40",
+                                                    "created": 1635488345091,
+                                                    "text": "Store-Store"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
                                             "id": "cfbjbesnltc0",
                                             "created": 1635474477533,
                                             "text": "分类",
@@ -1344,40 +1385,25 @@
                                                 "children": [
                                                     {
                                                         "data": {
-                                                            "id": "cfbjcpd2gxc0",
-                                                            "created": 1635474578899,
-                                                            "text": "写屏障后的写操作也跟同(写屏障标记的操作)写入Store Buffer中先缓冲，\n使得其他CPU想获取当前CPU的独享变量只能获取Cache中之前的值， \n直到当前CPU在适当时机（不太清楚，应该是获得ACK），才会把写屏障标记及之后的数据一同写入Cache"
-                                                        },
-                                                        "children": []
-                                                    },
-                                                    {
-                                                        "data": {
-                                                            "id": "cfbjo9vnm5s0",
-                                                            "created": 1635475485564,
-                                                            "text": "实现写的可见性，写数据顺序的可见性",
+                                                            "id": "cfbogwr8km80",
+                                                            "created": 1635489013999,
+                                                            "text": "分类",
                                                             "expandState": "collapse"
                                                         },
                                                         "children": [
                                                             {
                                                                 "data": {
-                                                                    "id": "cfbk6cf1www0",
-                                                                    "created": 1635476901646,
-                                                                    "text": "1. 写远程缓存数据"
-                                                                },
-                                                                "children": []
-                                                            },
-                                                            {
-                                                                "data": {
-                                                                    "id": "cfbk6k3sbvc0",
-                                                                    "created": 1635476918379,
-                                                                    "text": "2. 写本地缓存数据"
+                                                                    "id": "cfboh0se4eg0",
+                                                                    "created": 1635489022776,
+                                                                    "text": "简单刷入，等待刷入完再继续执行，即变为同步",
+                                                                    "expandState": "collapse"
                                                                 },
                                                                 "children": [
                                                                     {
                                                                         "data": {
-                                                                            "id": "cfbkcevbwjs0",
-                                                                            "created": 1635477377169,
-                                                                            "text": "写屏障后的本地写操作"
+                                                                            "id": "cfbonwaprj40",
+                                                                            "created": 1635489561550,
+                                                                            "text": "一步一步完成，完成一个指令再执行下一行指令"
                                                                         },
                                                                         "children": []
                                                                     }
@@ -1385,27 +1411,106 @@
                                                             },
                                                             {
                                                                 "data": {
-                                                                    "id": "cfbk6r2268g0",
-                                                                    "created": 1635476933512,
-                                                                    "text": "3. 获取到远程响应"
+                                                                    "id": "cfboja6oqxs0",
+                                                                    "created": 1635489199960,
+                                                                    "text": "还是异步，把屏障后的操作也暂时缓存，一起刷入",
+                                                                    "expandState": "collapse"
                                                                 },
-                                                                "children": []
+                                                                "children": [
+                                                                    {
+                                                                        "data": {
+                                                                            "id": "cfbjcpd2gxc0",
+                                                                            "created": 1635474578899,
+                                                                            "text": "写屏障后的写操作也跟同(写屏障标记的操作)写入Store Buffer中先缓冲，\n使得其他CPU想获取当前CPU的独享变量只能获取Cache中之前的值， \n直到当前CPU在适当时机（不太清楚，应该是获得ACK），才会把写屏障标记及之后的数据一同写入Cache"
+                                                                        },
+                                                                        "children": []
+                                                                    },
+                                                                    {
+                                                                        "data": {
+                                                                            "id": "cfbjo9vnm5s0",
+                                                                            "created": 1635475485564,
+                                                                            "text": "实现写的可见性，写数据顺序的可见性",
+                                                                            "expandState": "collapse"
+                                                                        },
+                                                                        "children": [
+                                                                            {
+                                                                                "data": {
+                                                                                    "id": "cfbk6cf1www0",
+                                                                                    "created": 1635476901646,
+                                                                                    "text": "1. 写远程缓存数据"
+                                                                                },
+                                                                                "children": []
+                                                                            },
+                                                                            {
+                                                                                "data": {
+                                                                                    "id": "cfbk6k3sbvc0",
+                                                                                    "created": 1635476918379,
+                                                                                    "text": "2. 写本地缓存数据"
+                                                                                },
+                                                                                "children": [
+                                                                                    {
+                                                                                        "data": {
+                                                                                            "id": "cfbkcevbwjs0",
+                                                                                            "created": 1635477377169,
+                                                                                            "text": "写屏障后的本地写操作"
+                                                                                        },
+                                                                                        "children": []
+                                                                                    }
+                                                                                ]
+                                                                            },
+                                                                            {
+                                                                                "data": {
+                                                                                    "id": "cfbk6r2268g0",
+                                                                                    "created": 1635476933512,
+                                                                                    "text": "3. 获取到远程响应"
+                                                                                },
+                                                                                "children": []
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        "data": {
+                                                                            "id": "cfbjp7plrso0",
+                                                                            "created": 1635475559209,
+                                                                            "text": "解决的问题",
+                                                                            "expandState": "collapse"
+                                                                        },
+                                                                        "children": [
+                                                                            {
+                                                                                "data": {
+                                                                                    "id": "cfbjphgn4s00",
+                                                                                    "created": 1635475580435,
+                                                                                    "text": "远程写是异步的，本地写是同步的 \n远程写是往Store Buffer，本地写是往Cache \n实现原理：遇到写屏障把写屏障标记及之后的缓存都写入Store Buffer（即便是本地写），解除标记时全部写入Cache"
+                                                                                },
+                                                                                "children": []
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        "data": {
+                                                                            "id": "cfbookv0xrk0",
+                                                                            "created": 1635489615020,
+                                                                            "text": "把写屏障与获得ACK之间的写操作视为一个整体缓存和再刷入"
+                                                                        },
+                                                                        "children": []
+                                                                    }
+                                                                ]
                                                             }
                                                         ]
                                                     },
                                                     {
                                                         "data": {
-                                                            "id": "cfbjp7plrso0",
-                                                            "created": 1635475559209,
-                                                            "text": "解决的问题",
+                                                            "id": "cfboqzyqdj40",
+                                                            "created": 1635489804625,
+                                                            "text": "区别",
                                                             "expandState": "collapse"
                                                         },
                                                         "children": [
                                                             {
                                                                 "data": {
-                                                                    "id": "cfbjphgn4s00",
-                                                                    "created": 1635475580435,
-                                                                    "text": "远程写是异步的，本地写是同步的 \n远程写是往Store Buffer，本地写是往Cache \n实现原理：遇到写屏障把写屏障标记及之后的缓存都写入Store Buffer（即便是本地写），解除标记时全部写入Cache"
+                                                                    "id": "cfbor1d40lk0",
+                                                                    "created": 1635489807671,
+                                                                    "text": "同步的对其他CPU而言可以更快拿到缓存更新结果，\n 异步的对当前CPU而言效率更高，但是对其他CPU而言需要晚一步"
                                                                 },
                                                                 "children": []
                                                             }
@@ -1524,6 +1629,14 @@
                                                         ]
                                                     }
                                                 ]
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cfbo6jg77vc0",
+                                                    "created": 1635488201392,
+                                                    "text": "全屏障"
+                                                },
+                                                "children": []
                                             }
                                         ]
                                     }
@@ -1539,7 +1652,25 @@
                     "created": 1635242780296,
                     "text": "4. JVM内存模型"
                 },
-                "children": []
+                "children": [
+                    {
+                        "data": {
+                            "id": "cfbnxao9hq00",
+                            "created": 1635487477011,
+                            "text": "模型图"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cfbnxlzg7jk0",
+                                    "created": 1635487501632,
+                                    "text": "图例"
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
             },
             {
                 "data": {
@@ -1561,9 +1692,27 @@
                         "data": {
                             "id": "cf9tb2t1db40",
                             "created": 1635299542620,
-                            "text": "1. 双重校验锁定模式 - 单例模式"
+                            "text": "1. 双重校验锁定模式 - 单例模式",
+                            "expandState": "collapse"
                         },
-                        "children": []
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cfbp0gstm600",
+                                    "created": 1635490546550,
+                                    "text": "目的是避免指令重排：初始化对象与变量引用赋值可能颠倒。\n 避免其他线程拿到未初始化的对象进行操作"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cfbp31z3pkg0",
+                                    "created": 1635490749371,
+                                    "text": "代替方案：基于内部类初始化"
+                                },
+                                "children": []
+                            }
+                        ]
                     }
                 ]
             }
