@@ -180,7 +180,8 @@
                 "data": {
                     "id": "cf9t8evs3so0",
                     "created": 1635299333815,
-                    "text": "3. 物理硬件架构"
+                    "text": "3. 物理硬件架构",
+                    "expandState": "collapse"
                 },
                 "children": [
                     {
@@ -226,7 +227,7 @@
                             "id": "cfa12wmnb0g0",
                             "created": 1635321471139,
                             "text": "概念",
-                            "expandState": "expand"
+                            "expandState": "collapse"
                         },
                         "children": [
                             {
@@ -575,7 +576,7 @@
                                             "id": "cfautsycacw0",
                                             "created": 1635405391159,
                                             "text": "作用",
-                                            "expandState": "collapse"
+                                            "expandState": "expand"
                                         },
                                         "children": [
                                             {
@@ -642,7 +643,7 @@
                                         "data": {
                                             "id": "cfawpnyb44o0",
                                             "created": 1635410709036,
-                                            "text": "影响",
+                                            "text": "副作用",
                                             "expandState": "expand"
                                         },
                                         "children": [
@@ -747,7 +748,7 @@
                                                             "id": "cfaxat9qe1s0",
                                                             "created": 1635412366258,
                                                             "text": "现象",
-                                                            "expandState": "expand"
+                                                            "expandState": "collapse"
                                                         },
                                                         "children": [
                                                             {
@@ -790,14 +791,15 @@
                                                         "data": {
                                                             "id": "cfaxawe3yk00",
                                                             "created": 1635412373053,
-                                                            "text": "原因"
+                                                            "text": "原因",
+                                                            "expandState": "collapse"
                                                         },
                                                         "children": [
                                                             {
                                                                 "data": {
                                                                     "id": "cfaxbunst9k0",
                                                                     "created": 1635412447650,
-                                                                    "text": "其他CPU修改某线程的独享变量需要发送请求，但是是异步的，修改自身的独享变量是直接操作Cache"
+                                                                    "text": "其他CPU修改某CPU的独享变量需要发送请求，但是是异步的，修改自身的独享变量是直接操作Cache"
                                                                 },
                                                                 "children": []
                                                             },
@@ -805,7 +807,7 @@
                                                                 "data": {
                                                                     "id": "cfaxolzegb40",
                                                                     "created": 1635413447494,
-                                                                    "text": "读取其他CPU的独享变量是同步的，所以总是正确的"
+                                                                    "text": "读取其他CPU的独享变量是通信同步的，所以是正确的"
                                                                 },
                                                                 "children": []
                                                             },
@@ -813,18 +815,37 @@
                                                                 "data": {
                                                                     "id": "cfaxpowhq5c0",
                                                                     "created": 1635413532213,
-                                                                    "text": "读取自身CPU的独享变量是直接从Cache获取"
+                                                                    "text": "读取自身CPU的独享变量可以直接从Cache获取",
+                                                                    "expandState": "collapse"
                                                                 },
                                                                 "children": [
                                                                     {
                                                                         "data": {
                                                                             "id": "cfaxq5eal4g0",
                                                                             "created": 1635413568118,
-                                                                            "text": "在接受到其他CPU的置无效请求前，读取会存在脏读"
+                                                                            "text": "读取都是同步顺序的，但如果发生变量被其他CPU修改，当前CPU的缓存行状态变化可能就会不及时"
                                                                         },
                                                                         "children": []
                                                                     }
                                                                 ]
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cfbiber275s0",
+                                                            "created": 1635471656326,
+                                                            "text": "解决",
+                                                            "expandState": "collapse"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "data": {
+                                                                    "id": "cfbibhwosk80",
+                                                                    "created": 1635471663197,
+                                                                    "text": "内存屏障"
+                                                                },
+                                                                "children": []
                                                             }
                                                         ]
                                                     }
@@ -893,6 +914,33 @@
                                                                     "text": "处理时机：处理任何缓存行的MSEI状态前"
                                                                 },
                                                                 "children": []
+                                                            },
+                                                            {
+                                                                "data": {
+                                                                    "id": "cfbigxyovpc0",
+                                                                    "created": 1635472089967,
+                                                                    "text": "遗漏：本CPU的独享变量读取"
+                                                                },
+                                                                "children": [
+                                                                    {
+                                                                        "data": {
+                                                                            "id": "cfbih65wu9s0",
+                                                                            "created": 1635472107818,
+                                                                            "text": "使用读屏障解决",
+                                                                            "expandState": "collapse"
+                                                                        },
+                                                                        "children": [
+                                                                            {
+                                                                                "data": {
+                                                                                    "id": "cfbikz99vzs0",
+                                                                                    "created": 1635472406241,
+                                                                                    "text": "遇到读屏障会把队列的消息处理了，然后处理屏障后的操作"
+                                                                                },
+                                                                                "children": []
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ]
                                                             }
                                                         ]
                                                     }
@@ -909,7 +957,7 @@
                             "id": "cfaq9viybts0",
                             "created": 1635392545036,
                             "text": "影响",
-                            "expandState": "expand"
+                            "expandState": "collapse"
                         },
                         "children": [
                             {
@@ -934,42 +982,63 @@
                                 "data": {
                                     "id": "cfaqa4w7mls0",
                                     "created": 1635392565428,
-                                    "text": "指令乱序",
-                                    "expandState": "expand"
+                                    "text": "指令重排",
+                                    "expandState": "collapse"
                                 },
                                 "children": [
                                     {
                                         "data": {
+                                            "id": "cfaqaifwj4o0",
+                                            "created": 1635392594917,
+                                            "text": "为了提升CPU的运行速度，但破坏了指令的有序性"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
                                             "id": "cfauk6yxu4g0",
                                             "created": 1635404638028,
-                                            "text": "分类"
+                                            "text": "分类",
+                                            "expandState": "collapse"
                                         },
                                         "children": [
                                             {
                                                 "data": {
                                                     "id": "cfauk8j4zaw0",
                                                     "created": 1635404641426,
-                                                    "text": "编译器优化"
+                                                    "text": "主动的",
+                                                    "expandState": "collapse"
                                                 },
-                                                "children": []
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cfbi7lb00o00",
+                                                            "created": 1635471357136,
+                                                            "text": "编译器优化，使得CPU更快执行指令"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
                                             },
                                             {
                                                 "data": {
-                                                    "id": "cfaukcteoio0",
-                                                    "created": 1635404650754,
-                                                    "text": "CPU流水线操作延迟"
+                                                    "id": "cfbi77a1vs80",
+                                                    "created": 1635471326604,
+                                                    "text": "被动的",
+                                                    "expandState": "collapse"
                                                 },
-                                                "children": []
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cfaukcteoio0",
+                                                            "created": 1635404650754,
+                                                            "text": "CPU流水线操作延迟。为了异步化指令的执行，引入Store Buffer和Invalidate Queue，却导致了「指令顺序改变」的副作用"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
                                             }
                                         ]
-                                    },
-                                    {
-                                        "data": {
-                                            "id": "cfaqaifwj4o0",
-                                            "created": 1635392594917,
-                                            "text": ""
-                                        },
-                                        "children": []
                                     }
                                 ]
                             }
@@ -979,7 +1048,8 @@
                         "data": {
                             "id": "cfauah76fs80",
                             "created": 1635403876653,
-                            "text": "措施"
+                            "text": "处理",
+                            "expandState": "collapse"
                         },
                         "children": [
                             {
@@ -987,7 +1057,7 @@
                                     "id": "cfauht8jf8g0",
                                     "created": 1635404451405,
                                     "text": "缓存一致性协议",
-                                    "expandState": "expand"
+                                    "expandState": "collapse"
                                 },
                                 "children": [
                                     {
@@ -995,7 +1065,7 @@
                                             "id": "cfauamfxpaw0",
                                             "created": 1635403888066,
                                             "text": "分类",
-                                            "expandState": "expand"
+                                            "expandState": "collapse"
                                         },
                                         "children": [
                                             {
@@ -1176,6 +1246,24 @@
                                     },
                                     {
                                         "data": {
+                                            "id": "cfbj7c4gvmg0",
+                                            "created": 1635474158260,
+                                            "text": "目的",
+                                            "expandState": "collapse"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cfbj7mpuygw0",
+                                                    "created": 1635474181321,
+                                                    "text": "解决多个CPU之间缓存不可见的问题"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
                                             "id": "cfaui5ehqjc0",
                                             "created": 1635404477888,
                                             "text": "副作用",
@@ -1187,14 +1275,14 @@
                                                     "id": "cfaui8vzj9s0",
                                                     "created": 1635404485475,
                                                     "text": "CPU性能降低",
-                                                    "expandState": "collapse"
+                                                    "expandState": "expand"
                                                 },
                                                 "children": [
                                                     {
                                                         "data": {
                                                             "id": "cfauim5ryb40",
                                                             "created": 1635404514365,
-                                                            "text": "需要与其他CPU通信，请求数据"
+                                                            "text": "需要与其他CPU通信，通知响应和请求数据"
                                                         },
                                                         "children": []
                                                     }
@@ -1205,14 +1293,14 @@
                                                     "id": "cfaulpchcco0",
                                                     "created": 1635404756393,
                                                     "text": "指令乱序",
-                                                    "expandState": "collapse"
+                                                    "expandState": "expand"
                                                 },
                                                 "children": [
                                                     {
                                                         "data": {
                                                             "id": "cfaulxpmrso0",
                                                             "created": 1635404774603,
-                                                            "text": "需要异步通信，处理缓存"
+                                                            "text": "原因：为了提升CPU的运行，引入异步通信（Store Buffer&Invalid Queue），处理缓存有延迟"
                                                         },
                                                         "children": []
                                                     },
@@ -1220,7 +1308,7 @@
                                                         "data": {
                                                             "id": "cfaumh8gmgw0",
                                                             "created": 1635404817100,
-                                                            "text": "提供内存屏障解决"
+                                                            "text": "解决：提供内存屏障解决"
                                                         },
                                                         "children": []
                                                     }
@@ -1234,9 +1322,212 @@
                                 "data": {
                                     "id": "cfaup8cfi000",
                                     "created": 1635405032842,
-                                    "text": "内存屏障"
+                                    "text": "内存屏障",
+                                    "expandState": "collapse"
                                 },
-                                "children": []
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cfbjbesnltc0",
+                                            "created": 1635474477533,
+                                            "text": "分类",
+                                            "expandState": "collapse"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cfbjbgzpaw80",
+                                                    "created": 1635474482312,
+                                                    "text": "写屏障",
+                                                    "expandState": "collapse"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cfbjcpd2gxc0",
+                                                            "created": 1635474578899,
+                                                            "text": "写屏障后的写操作也跟同(写屏障标记的操作)写入Store Buffer中先缓冲，\n使得其他CPU想获取当前CPU的独享变量只能获取Cache中之前的值， \n直到当前CPU在适当时机（不太清楚，应该是获得ACK），才会把写屏障标记及之后的数据一同写入Cache"
+                                                        },
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cfbjo9vnm5s0",
+                                                            "created": 1635475485564,
+                                                            "text": "实现写的可见性，写数据顺序的可见性",
+                                                            "expandState": "collapse"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "data": {
+                                                                    "id": "cfbk6cf1www0",
+                                                                    "created": 1635476901646,
+                                                                    "text": "1. 写远程缓存数据"
+                                                                },
+                                                                "children": []
+                                                            },
+                                                            {
+                                                                "data": {
+                                                                    "id": "cfbk6k3sbvc0",
+                                                                    "created": 1635476918379,
+                                                                    "text": "2. 写本地缓存数据"
+                                                                },
+                                                                "children": [
+                                                                    {
+                                                                        "data": {
+                                                                            "id": "cfbkcevbwjs0",
+                                                                            "created": 1635477377169,
+                                                                            "text": "写屏障后的本地写操作"
+                                                                        },
+                                                                        "children": []
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                "data": {
+                                                                    "id": "cfbk6r2268g0",
+                                                                    "created": 1635476933512,
+                                                                    "text": "3. 获取到远程响应"
+                                                                },
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cfbjp7plrso0",
+                                                            "created": 1635475559209,
+                                                            "text": "解决的问题",
+                                                            "expandState": "collapse"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "data": {
+                                                                    "id": "cfbjphgn4s00",
+                                                                    "created": 1635475580435,
+                                                                    "text": "远程写是异步的，本地写是同步的 \n远程写是往Store Buffer，本地写是往Cache \n实现原理：遇到写屏障把写屏障标记及之后的缓存都写入Store Buffer（即便是本地写），解除标记时全部写入Cache"
+                                                                },
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cfbjbkr11ko0",
+                                                    "created": 1635474490495,
+                                                    "text": "读屏障",
+                                                    "expandState": "collapse"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cfbjtxq9qhs0",
+                                                            "created": 1635475929302,
+                                                            "text": "遇到读屏障，则将Invalid Queue中的数据全部处理完"
+                                                        },
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cfbk7ndeafc0",
+                                                            "created": 1635477003854,
+                                                            "text": "实现读的可见性，读（远程写）的可见性",
+                                                            "expandState": "collapse"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "data": {
+                                                                    "id": "cfbk85sk5k00",
+                                                                    "created": 1635477043953,
+                                                                    "text": "1. 响应远程写"
+                                                                },
+                                                                "children": []
+                                                            },
+                                                            {
+                                                                "data": {
+                                                                    "id": "cfbk9dsx07c0",
+                                                                    "created": 1635477139753,
+                                                                    "text": "2. 远程写消息放入 Invalid Queue，待处理"
+                                                                },
+                                                                "children": []
+                                                            },
+                                                            {
+                                                                "data": {
+                                                                    "id": "cfbk7wat4lc0",
+                                                                    "created": 1635477023289,
+                                                                    "text": "3. 已经可以读到远程CPU（它自己本地的）缓存数据的修改"
+                                                                },
+                                                                "children": []
+                                                            },
+                                                            {
+                                                                "data": {
+                                                                    "id": "cfbkb87wf340",
+                                                                    "created": 1635477284327,
+                                                                    "text": "4. 想要当前CPU之前独享的缓存数据"
+                                                                },
+                                                                "children": [
+                                                                    {
+                                                                        "data": {
+                                                                            "id": "cfbkpuyr62w0",
+                                                                            "created": 1635478430938,
+                                                                            "text": "按道理，已经可以读到远程CPU修改过（它本地）的变量，\n那么远程CPU修改过（当前CPU）的变量应该同样可见才是，\n 因为远程CPU写屏障已经解除了（已经获取到了ACK），\n但实际当前CPU还没有处理，消息依旧在Invalid Queue中，"
+                                                                        },
+                                                                        "children": []
+                                                                    },
+                                                                    {
+                                                                        "data": {
+                                                                            "id": "cfbkg7elrhs0",
+                                                                            "created": 1635477674376,
+                                                                            "text": "遇到读屏障，将已无效的缓存处理掉，之后不再从Cache中读，以防脏读"
+                                                                        },
+                                                                        "children": []
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                "data": {
+                                                                    "id": "cfbkdtktqmo0",
+                                                                    "created": 1635477487549,
+                                                                    "text": "5. 远程读（之前远程写）相应的缓存行"
+                                                                },
+                                                                "children": [
+                                                                    {
+                                                                        "data": {
+                                                                            "id": "cfbkgz1q5fs0",
+                                                                            "created": 1635477734548,
+                                                                            "text": "获取正确的缓存"
+                                                                        },
+                                                                        "children": []
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cfbjycf5byg0",
+                                                            "created": 1635476274738,
+                                                            "text": "解决的问题",
+                                                            "expandState": "collapse"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "data": {
+                                                                    "id": "cfbjyf2xwaw0",
+                                                                    "created": 1635476280530,
+                                                                    "text": "远程读是同步的，本地读是同步的，处理远程写是异步的\n 本地读直接从Cache中获取，远程写的通知消息可能还在在Invalid Queue中"
+                                                                },
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
                             }
                         ]
                     }
