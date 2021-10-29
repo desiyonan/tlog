@@ -181,7 +181,7 @@
                     "id": "cf9t8evs3so0",
                     "created": 1635299333815,
                     "text": "3. 物理硬件架构",
-                    "expandState": "collapse"
+                    "expandState": "expand"
                 },
                 "children": [
                     {
@@ -189,7 +189,7 @@
                             "id": "cfa12lqj85c0",
                             "created": 1635321447429,
                             "text": "图例",
-                            "expandState": "collapse"
+                            "expandState": "expand"
                         },
                         "children": [
                             {
