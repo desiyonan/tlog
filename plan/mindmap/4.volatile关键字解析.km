@@ -558,14 +558,15 @@
                                 "data": {
                                     "id": "cfauqi1mqrs0",
                                     "created": 1635405132321,
-                                    "text": "Store Buffer"
+                                    "text": "Store Buffer",
+                                    "expandState": "expand"
                                 },
                                 "children": [
                                     {
                                         "data": {
                                             "id": "cfauvzyiplk0",
                                             "created": 1635405563135,
-                                            "text": "CPU核心与CPU缓存之间的一个写缓冲"
+                                            "text": "CPU核心与CPU缓存之间的一个存储缓冲"
                                         },
                                         "children": []
                                     },
@@ -589,9 +590,51 @@
                                                 "data": {
                                                     "id": "cfauuog3na80",
                                                     "created": 1635405459713,
-                                                    "text": "将修改共享变量并同步请求其他CPU把缓存置为无效的过程通过异步处理"
+                                                    "text": "将写非本CPU的独享变量与同步通知其他CPU把缓存置为无效的过程通过异步处理",
+                                                    "expandState": "collapse"
                                                 },
-                                                "children": []
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cfb60boosds0",
+                                                            "created": 1635436934328,
+                                                            "text": "1. 当前CPU修改不是自己的独享变量"
+                                                        },
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cfb60v0g02g0",
+                                                            "created": 1635436976398,
+                                                            "text": "2.1 写入本CPU的Store Buffer"
+                                                        },
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cfb61j90jyo0",
+                                                            "created": 1635437029159,
+                                                            "text": "2.2 通知其他CPU设置无效缓存行"
+                                                        },
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cfb620afjco0",
+                                                            "created": 1635437066250,
+                                                            "text": "3. 获得响应ACK"
+                                                        },
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cfb62fimoag0",
+                                                            "created": 1635437099397,
+                                                            "text": "4. 将Store Buffer中的对应数据写入Cache"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
                                             }
                                         ]
                                     },
@@ -599,28 +642,63 @@
                                         "data": {
                                             "id": "cfawpnyb44o0",
                                             "created": 1635410709036,
-                                            "text": "副作用"
+                                            "text": "影响",
+                                            "expandState": "expand"
                                         },
                                         "children": [
                                             {
                                                 "data": {
                                                     "id": "cfawpt1mz0g0",
                                                     "created": 1635410720121,
-                                                    "text": "缓冲读写延时造成的单个CPU指令乱序"
+                                                    "text": "单个CPU内的指令乱序",
+                                                    "expandState": "collapse"
                                                 },
                                                 "children": [
                                                     {
                                                         "data": {
                                                             "id": "cfawvfkmkwo0",
                                                             "created": 1635411160979,
-                                                            "text": "现象"
+                                                            "text": "现象",
+                                                            "expandState": "collapse"
                                                         },
                                                         "children": [
                                                             {
                                                                 "data": {
                                                                     "id": "cfawvt7buns0",
                                                                     "created": 1635411190650,
-                                                                    "text": "共享变量写往Store Buffer中等待ACK后再写入Cache，读直接从Cache，当读的时机发生在写入Store Buffer后写入Cache前，数据将不一致"
+                                                                    "text": "本CPU修改其他CPU的独享变量后，马上读取还是原来的值（有延迟，好比和后续代码顺序调换）"
+                                                                },
+                                                                "children": []
+                                                            },
+                                                            {
+                                                                "data": {
+                                                                    "id": "cfb6dkbsgf40",
+                                                                    "created": 1635437971873,
+                                                                    "text": "图例",
+                                                                    "image": "https://oss.dnfn.tech:1024/bedroom/2021/10/29/202110290020380.png",
+                                                                    "imageTitle": "",
+                                                                    "imageSize": {
+                                                                        "width": 200,
+                                                                        "height": 135
+                                                                    }
+                                                                },
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cfb63coqdqw0",
+                                                            "created": 1635437171600,
+                                                            "text": "原因",
+                                                            "expandState": "collapse"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "data": {
+                                                                    "id": "cfb63iutbeg0",
+                                                                    "created": 1635437185028,
+                                                                    "text": "最开始的设计：（对非本CPU的独享变量）写操作先缓存至Store Buffer，读从直接从相应CPU那获取；写入Store Buffer与写入Cache是有延迟的（通知与等待ACK）"
                                                                 },
                                                                 "children": []
                                                             }
@@ -630,7 +708,8 @@
                                                         "data": {
                                                             "id": "cfawwisik0w0",
                                                             "created": 1635411246351,
-                                                            "text": "解决"
+                                                            "text": "解决",
+                                                            "expandState": "collapse"
                                                         },
                                                         "children": [
                                                             {
@@ -639,14 +718,14 @@
                                                                     "created": 1635411250469,
                                                                     "text": "Store Forwarding",
                                                                     "font-weight": "bold",
-                                                                    "expandState": "collapse"
+                                                                    "expandState": "expand"
                                                                 },
                                                                 "children": [
                                                                     {
                                                                         "data": {
                                                                             "id": "cfawwnrniyg0",
                                                                             "created": 1635411257183,
-                                                                            "text": "直接从Store Buffer读取加载数据"
+                                                                            "text": "直接从Store Buffer读取已修改的缓存数据"
                                                                         },
                                                                         "children": []
                                                                     }
@@ -660,49 +739,50 @@
                                                 "data": {
                                                     "id": "cfax55c9wqg0",
                                                     "created": 1635411922348,
-                                                    "text": "多个CPU之间的置缓存无效的延时"
+                                                    "text": "多个CPU之间变量的不正确同步"
                                                 },
                                                 "children": [
                                                     {
                                                         "data": {
-                                                            "id": "cfaxa2jlozc0",
-                                                            "created": 1635412308082,
-                                                            "text": "时序图",
-                                                            "expandState": "collapse"
-                                                        },
-                                                        "children": [
-                                                            {
-                                                                "data": {
-                                                                    "id": "cfaxa7wr0og0",
-                                                                    "created": 1635412319761,
-                                                                    "text": "图例",
-                                                                    "image": "https://oss.dnfn.tech:1024/bedroom/2021/10/28/20211028171146.png",
-                                                                    "imageTitle": "图",
-                                                                    "imageSize": {
-                                                                        "width": 200,
-                                                                        "height": 162
-                                                                    },
-                                                                    "hyperlink": "https://blog.csdn.net/wll1228/article/details/107775976",
-                                                                    "hyperlinkTitle": ""
-                                                                },
-                                                                "children": []
-                                                            }
-                                                        ]
-                                                    },
-                                                    {
-                                                        "data": {
                                                             "id": "cfaxat9qe1s0",
                                                             "created": 1635412366258,
-                                                            "text": "现象"
+                                                            "text": "现象",
+                                                            "expandState": "expand"
                                                         },
                                                         "children": [
                                                             {
                                                                 "data": {
                                                                     "id": "cfaxhn408f40",
                                                                     "created": 1635412901400,
-                                                                    "text": "从其他CPU读取后，当前CPU的"
+                                                                    "text": "几个变量在一个CPU里的有执行的顺序关系，但是在另一个CPU里这种关系却不成立"
                                                                 },
                                                                 "children": []
+                                                            },
+                                                            {
+                                                                "data": {
+                                                                    "id": "cfaxa2jlozc0",
+                                                                    "created": 1635412308082,
+                                                                    "text": "时序图",
+                                                                    "expandState": "expand"
+                                                                },
+                                                                "children": [
+                                                                    {
+                                                                        "data": {
+                                                                            "id": "cfaxa7wr0og0",
+                                                                            "created": 1635412319761,
+                                                                            "text": "图例",
+                                                                            "image": "https://oss.dnfn.tech:1024/bedroom/2021/10/28/20211028171146.png",
+                                                                            "imageTitle": "图",
+                                                                            "imageSize": {
+                                                                                "width": 200,
+                                                                                "height": 162
+                                                                            },
+                                                                            "hyperlink": "https://zhuanlan.zhihu.com/p/125549632",
+                                                                            "hyperlinkTitle": ""
+                                                                        },
+                                                                        "children": []
+                                                                    }
+                                                                ]
                                                             }
                                                         ]
                                                     },
