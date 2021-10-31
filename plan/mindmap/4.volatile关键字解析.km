@@ -181,7 +181,7 @@
                     "id": "cf9t8evs3so0",
                     "created": 1635299333815,
                     "text": "3. 物理硬件架构",
-                    "expandState": "expand"
+                    "expandState": "collapse"
                 },
                 "children": [
                     {
@@ -216,6 +216,20 @@
                                     "imageSize": {
                                         "width": 200,
                                         "height": 177
+                                    }
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cfbnxlzg7jk0",
+                                    "created": 1635487501632,
+                                    "text": "图例",
+                                    "image": "https://oss.dnfn.tech:1024/bedroom/2021/10/31/20211031165801.png",
+                                    "imageTitle": "CPU",
+                                    "imageSize": {
+                                        "width": 200,
+                                        "height": 91
                                     }
                                 },
                                 "children": []
@@ -859,7 +873,8 @@
                                 "data": {
                                     "id": "cfauqj5iwfs0",
                                     "created": 1635405134733,
-                                    "text": "Invalid Queue"
+                                    "text": "Invalid Queue",
+                                    "expandState": "collapse"
                                 },
                                 "children": [
                                     {
@@ -874,7 +889,8 @@
                                         "data": {
                                             "id": "cfav1rxori00",
                                             "created": 1635406015856,
-                                            "text": "作用"
+                                            "text": "作用",
+                                            "expandState": "collapse"
                                         },
                                         "children": [
                                             {
@@ -965,7 +981,7 @@
                                     "id": "cfat13fmsyo0",
                                     "created": 1635400320301,
                                     "text": "缓存一致性",
-                                    "expandState": "collapse"
+                                    "expandState": "expand"
                                 },
                                 "children": [
                                     {
@@ -1049,9 +1065,27 @@
                             "id": "cfauah76fs80",
                             "created": 1635403876653,
                             "text": "处理",
-                            "expandState": "collapse"
+                            "expandState": "expand"
                         },
                         "children": [
+                            {
+                                "data": {
+                                    "id": "cfdgpq7065k0",
+                                    "created": 1635670256027,
+                                    "text": "总线锁",
+                                    "expandState": "collapse"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cfdgr6vsnl40",
+                                            "created": 1635670370719,
+                                            "text": "阻塞其他CPU访问内存，效率低下，早期采用的方案"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
                             {
                                 "data": {
                                     "id": "cfauht8jf8g0",
@@ -1650,23 +1684,309 @@
                 "data": {
                     "id": "cf996qjzel40",
                     "created": 1635242780296,
-                    "text": "4. JVM内存模型"
+                    "text": "4. JVM内存模型",
+                    "expandState": "collapse"
                 },
                 "children": [
                     {
                         "data": {
                             "id": "cfbnxao9hq00",
                             "created": 1635487477011,
-                            "text": "模型图"
+                            "text": "图例",
+                            "expandState": "collapse"
                         },
                         "children": [
                             {
                                 "data": {
-                                    "id": "cfbnxlzg7jk0",
-                                    "created": 1635487501632,
-                                    "text": "图例"
+                                    "id": "cfdgz4jk6d40",
+                                    "created": 1635670992538,
+                                    "text": "JVM内存模型",
+                                    "image": "https://oss.dnfn.tech:1024/bedroom/2021/10/31/20211031170447.jpeg",
+                                    "imageTitle": "内存模型",
+                                    "imageSize": {
+                                        "width": 200,
+                                        "height": 107
+                                    }
                                 },
                                 "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cfdl57capxs0",
+                                    "created": 1635682753254,
+                                    "text": "图",
+                                    "image": "https://oss.dnfn.tech:1024/bedroom/2021/10/31/20211031201903.png",
+                                    "imageTitle": "",
+                                    "imageSize": {
+                                        "width": 200,
+                                        "height": 163
+                                    }
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cfdmbnlnlao0",
+                                    "created": 1635686079944,
+                                    "text": "图",
+                                    "image": "https://oss.dnfn.tech:1024/bedroom/2021/10/31/20211031211433.png",
+                                    "imageTitle": "",
+                                    "imageSize": {
+                                        "width": 200,
+                                        "height": 169
+                                    }
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cfdl6archy00",
+                            "created": 1635682839059,
+                            "text": "意义",
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cfdl6c9w7080",
+                                    "created": 1635682842357,
+                                    "text": "屏蔽硬件和操作系统访问内存的差异，保证在各个平台和系统对内存的访问效果一致"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cfdldlhe2rk0",
+                                    "created": 1635683410951,
+                                    "text": "对CPU物理硬件层的抽象"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cfdl7l8rjzs0",
+                            "created": 1635682940244,
+                            "text": "抽象结构",
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cfdl7wog5cw0",
+                                    "created": 1635682965137,
+                                    "text": "主内存",
+                                    "expandState": "collapse"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cfdm8v41fug0",
+                                            "created": 1635685861200,
+                                            "text": "堆"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cfdl8cfgi000",
+                                            "created": 1635682999422,
+                                            "text": "共享变量的存储位置"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cfdl80k9o3k0",
+                                    "created": 1635682973591,
+                                    "text": "工作内存",
+                                    "expandState": "collapse"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cfdm8rmcgg00",
+                                            "created": 1635685853601,
+                                            "text": "CPU寄存器和高速缓存"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cfdl8wmbbgw0",
+                                            "created": 1635683043372,
+                                            "text": "线程对变量的操作发生的位置"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cfdl9as06dc0",
+                                            "created": 1635683074191,
+                                            "text": "线程不能直接读写主内存"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cfdl9nqe7i80",
+                            "created": 1635683102392,
+                            "text": "happen-before规则",
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cfdl9wwwrxc0",
+                                    "created": 1635683122377,
+                                    "text": "1. 程序次序",
+                                    "expandState": "collapse"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cfdld0tm41c0",
+                                            "created": 1635683365977,
+                                            "text": "一个线程内，按照代码顺序，书写在前面的操作先行发生于书写在后面的操作"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cfdlamxv0x40",
+                                    "created": 1635683179031,
+                                    "text": "2. 锁定规则",
+                                    "expandState": "collapse"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cfdld3wfd3k0",
+                                            "created": 1635683372678,
+                                            "text": "一个unLock操作先行发生于后面对同一个锁额lock操作"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cfdlaxii3hs0",
+                                    "created": 1635683202047,
+                                    "text": "3. 共享变量规则",
+                                    "expandState": "collapse"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cfdld7lf1540",
+                                            "created": 1635683380719,
+                                            "text": "对一个变量的写操作先行发生于后面对这个变量的读操作"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cfdlb3l3nmo0",
+                                    "created": 1635683215264,
+                                    "text": "4. 传递规则",
+                                    "expandState": "collapse"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cfdlddni3fs0",
+                                            "created": 1635683393906,
+                                            "text": "如果操作A先行发生于操作B，而操作B又先行发生于操作C，则可以得出操作A先行发生于操作C"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cfdlbryljlc0",
+                                    "created": 1635683268323,
+                                    "text": "5. 线程启动规则",
+                                    "expandState": "collapse"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cfdlekqvl1s0",
+                                            "created": 1635683487712,
+                                            "text": "Thread对象的start()方法先行发生于此线程的每个一个动作"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cfdlbyf3yqg0",
+                                    "created": 1635683282382,
+                                    "text": "6. 线程中断规则",
+                                    "expandState": "collapse"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cfdletwcx9c0",
+                                            "created": 1635683507634,
+                                            "text": "对线程interrupt()方法的调用先行发生于被中断线程的代码检测到中断事件的发生"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cfdlc614h800",
+                                    "created": 1635683298951,
+                                    "text": "7. 线程终结规则",
+                                    "expandState": "collapse"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cfdlfd1lywo0",
+                                            "created": 1635683549310,
+                                            "text": "线程中所有的操作都先行发生于线程的终止检测，我们可以通过Thread.join()方法结束、Thread.isAlive()的返回值手段检测到线程已经终止执行"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cfdlcifzag00",
+                                    "created": 1635683325971,
+                                    "text": "8. 对象终结规则",
+                                    "expandState": "collapse"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cfdlfggs1lc0",
+                                            "created": 1635683556758,
+                                            "text": "一个对象的初始化完成先行发生于他的finalize()方法的开始"
+                                        },
+                                        "children": []
+                                    }
+                                ]
                             }
                         ]
                     }
@@ -1676,9 +1996,85 @@
                 "data": {
                     "id": "cf9taejycvs0",
                     "created": 1635299489828,
-                    "text": "5. JVM实现原理"
+                    "text": "5. JVM实现原理",
+                    "expandState": "collapse"
                 },
-                "children": []
+                "children": [
+                    {
+                        "data": {
+                            "id": "cfdluqsutuw0",
+                            "created": 1635684754718,
+                            "text": "Lock前缀指令",
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cfdly8ojirc0",
+                                    "created": 1635685028732,
+                                    "text": "1. 线程A执行，写volatile变量，执行Lock前缀指令"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cfdm1nd1qnc0",
+                                    "created": 1635685295781,
+                                    "text": "2. Lock前缀指令，锁定缓存行"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cfdm2sx079s0",
+                                    "created": 1635685386236,
+                                    "text": "3. 其他线程通过总线嗅探获知消息，然后将各自工作内存中的相应的缓存置为无效"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cfdm4kgni7c0",
+                                    "created": 1635685524562,
+                                    "text": "4. 线程A将最新数据写入主存"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cfdm5mvicps0",
+                                    "created": 1635685608178,
+                                    "text": "5. 释放缓存行的锁"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cfdm5ve8wp40",
+                                    "created": 1635685626725,
+                                    "text": "6. 其他线程通过缓存一致性协议保持最新值，其他线程再需要读取时，从主存中加载"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cfdlnb3n30g0",
+                            "created": 1635684171993,
+                            "text": "可见性"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "cfdlo7d7wcg0",
+                            "created": 1635684242229,
+                            "text": "有序性"
+                        },
+                        "children": []
+                    }
+                ]
             },
             {
                 "data": {
@@ -1713,6 +2109,14 @@
                                 "children": []
                             }
                         ]
+                    },
+                    {
+                        "data": {
+                            "id": "cfdjof5yvu80",
+                            "created": 1635678616985,
+                            "text": "2. 状态标记"
+                        },
+                        "children": []
                     }
                 ]
             }
