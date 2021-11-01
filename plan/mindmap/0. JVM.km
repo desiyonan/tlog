@@ -13,7 +13,7 @@
                     "text": "01. 参数和生命周期",
                     "created": 1633657298547,
                     "layout": null,
-                    "expandState": "collapse"
+                    "expandState": "expand"
                 },
                 "children": [
                     {
@@ -21,7 +21,7 @@
                             "id": "cetov4fsr1s0",
                             "created": 1633662048600,
                             "text": "JVM参数",
-                            "expandState": "collapse",
+                            "expandState": "expand",
                             "layout": null
                         },
                         "children": [
@@ -137,6 +137,14 @@
                                                 "children": []
                                             }
                                         ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cfeb2w6dw2o0",
+                                            "created": 1635755921081,
+                                            "text": " -XX:+/-TraceClassLoading "
+                                        },
+                                        "children": []
                                     }
                                 ]
                             },
@@ -1266,7 +1274,7 @@
                     "text": "03. 类模型",
                     "created": 1633657298547,
                     "layout": null,
-                    "expandState": "expand"
+                    "expandState": "collapse"
                 },
                 "children": [
                     {
@@ -2466,7 +2474,7 @@
                             "created": 1633747700802,
                             "text": "InstaceKlass",
                             "layout": null,
-                            "expandState": "expand"
+                            "expandState": "collapse"
                         },
                         "children": [
                             {
@@ -4565,7 +4573,7 @@
                                                         "data": {
                                                             "id": "cewkdqvu0lc0",
                                                             "created": 1633954082334,
-                                                            "text": "加载方式",
+                                                            "text": "加载模式",
                                                             "layout": null
                                                         },
                                                         "children": []
@@ -4960,7 +4968,7 @@
                                     "id": "cewgllaxbq80",
                                     "created": 1633943412660,
                                     "text": "相关",
-                                    "expandState": "collapse",
+                                    "expandState": "expand",
                                     "layout": null
                                 },
                                 "children": [
@@ -5773,7 +5781,7 @@
                     "id": "7932ci23m7rlroqr7irn2vtcc8",
                     "text": "04. 对象模型",
                     "created": 1633657298547,
-                    "expandState": "expand",
+                    "expandState": "collapse",
                     "layout": null
                 },
                 "children": [
@@ -5806,7 +5814,7 @@
                             "id": "cez0ov4hc8o0",
                             "created": 1634203211242,
                             "text": "对象组成",
-                            "expandState": "expand"
+                            "expandState": "collapse"
                         },
                         "children": [
                             {
@@ -6140,7 +6148,8 @@
                                 "data": {
                                     "id": "cez1jwxch3k0",
                                     "created": 1634205644453,
-                                    "text": "实例数据"
+                                    "text": "实例数据",
+                                    "expandState": "collapse"
                                 },
                                 "children": [
                                     {
@@ -6576,7 +6585,7 @@
                             "created": 1633657535887,
                             "text": "对象布局",
                             "layout": null,
-                            "expandState": "expand"
+                            "expandState": "collapse"
                         },
                         "children": [
                             {
@@ -6602,7 +6611,7 @@
                             "id": "cf1dcec1mjc0",
                             "created": 1634442028666,
                             "text": "锁标志位",
-                            "expandState": "expand"
+                            "expandState": "collapse"
                         },
                         "children": [
                             {
@@ -6725,7 +6734,667 @@
                     "layout": null,
                     "expandState": "expand"
                 },
-                "children": []
+                "children": [
+                    {
+                        "data": {
+                            "id": "cfe68ntpeh40",
+                            "created": 1635742267537,
+                            "text": "类加载器",
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cfe6c9628s00",
+                                    "created": 1635742549088,
+                                    "text": "作用",
+                                    "expandState": "collapse"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cfe6cr7gkjs0",
+                                            "created": 1635742588355,
+                                            "text": "加载.class字节码文件到jvm内存中"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cfe6d5z12200",
+                                    "created": 1635742620497,
+                                    "text": "分类",
+                                    "expandState": "collapse"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cfe6ifa5zfs0",
+                                            "created": 1635743032582,
+                                            "text": "图例",
+                                            "expandState": "collapse"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cfe6impjmg00",
+                                                    "created": 1635743048749,
+                                                    "text": "图",
+                                                    "image": "https://upload-images.jianshu.io/upload_images/11299729-99591da096bff85f.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/673",
+                                                    "imageTitle": "",
+                                                    "imageSize": {
+                                                        "width": 200,
+                                                        "height": 101
+                                                    }
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cfe6u6jjs1k0",
+                                                    "created": 1635743953928,
+                                                    "text": "t",
+                                                    "image": "https://oss.dnfn.tech:1024/bedroom/2021/11/1/20211101150404.png",
+                                                    "imageTitle": "t",
+                                                    "imageSize": {
+                                                        "width": 200,
+                                                        "height": 139
+                                                    }
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cfe6itothl40",
+                                            "created": 1635743063943,
+                                            "text": "BootStrap ClassLoader",
+                                            "expandState": "collapse"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cfe6qbsjhb40",
+                                                    "created": 1635743651899,
+                                                    "text": "引导类加载器"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cfe6rqpuyi00",
+                                                    "created": 1635743762753,
+                                                    "text": "由C++实现，不继承java.lang.ClassLoader"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cfe6sb4w8so0",
+                                                    "created": 1635743807198,
+                                                    "text": "加载lib/rt.jar中的class"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cfe6j1ji5ts0",
+                                            "created": 1635743081036,
+                                            "text": "Exttension ClassLoader",
+                                            "expandState": "collapse"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cfe960czqo00",
+                                                    "created": 1635750523061,
+                                                    "text": "扩展类加载器"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cfe96in5ki80",
+                                                    "created": 1635750562857,
+                                                    "text": "lib/ext/*.jar"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cfe6j5b7vk00",
+                                            "created": 1635743089242,
+                                            "text": "Application ClassLoader",
+                                            "expandState": "collapse"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cfe9850ug000",
+                                                    "created": 1635750689939,
+                                                    "text": "Java应用的类加载器"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cfe9x2dg9800",
+                                                    "created": 1635752643275,
+                                                    "text": "加载classpath下的jar和字节码文件"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cfe9xugrfco0",
+                                                    "created": 1635752704425,
+                                                    "text": "一般情况下，我们自己写的类是由这个加载器加载"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cfe6jjxnp280",
+                                            "created": 1635743121074,
+                                            "text": "Custom ClassLoader",
+                                            "expandState": "collapse"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cfe9ylzatew0",
+                                                    "created": 1635752764319,
+                                                    "text": "自定义类加载器"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cfe69y98xc00",
+                            "created": 1635742368608,
+                            "text": "加载机制"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cfe9z6o9yqo0",
+                                    "created": 1635752809365,
+                                    "text": "双亲委派模式"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cfeajgdxnew0",
+                                            "created": 1635754397790,
+                                            "text": "自底向上检查是否已加载类"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cfeajvl9ce80",
+                                            "created": 1635754430885,
+                                            "text": "自顶向下尝试加载类"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cfeb5aorkxc0",
+                                            "created": 1635756109396,
+                                            "text": "优点：共用一个缓存的类，复用"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cfe9zkttyo00",
+                                    "created": 1635752840175,
+                                    "text": "web容器加载模式"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cfeajf6p62o0",
+                                            "created": 1635754395176,
+                                            "text": "自底向上尝试加载类"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cfeb5ojhi1k0",
+                                            "created": 1635756139552,
+                                            "text": "优点：类的作用域隔离，应用隔离"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cfeb6x1xsww0",
+                            "created": 1635756236446,
+                            "text": "破坏委派模式"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cfeb9fovhlc0",
+                                    "created": 1635756433743,
+                                    "text": "目的"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cfeb9ti79mw0",
+                                            "created": 1635756463815,
+                                            "text": "缩小作用域"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cfeb9oi27dk0",
+                                    "created": 1635756452922,
+                                    "text": "场景"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cfec5e7n5vc0",
+                                            "created": 1635758938178,
+                                            "text": "父类加载器调用子类加载器"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cfec5o6nz7c0",
+                                            "created": 1635758959887,
+                                            "text": "重新刷新或加载类"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cfeb1ok6b3c0",
+                            "created": 1635755826137,
+                            "text": "加载时机/方法",
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cfedghq3dso0",
+                                    "created": 1635762628940,
+                                    "text": "静态加载",
+                                    "expandState": "collapse"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cfedgjzcals0",
+                                            "created": 1635762633852,
+                                            "text": "第一次new"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cfedi7fgnkg0",
+                                            "created": 1635762763257,
+                                            "text": "初次访问静态方法，字段"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cfedgmshp140",
+                                    "created": 1635762639968,
+                                    "text": "动态加载",
+                                    "expandState": "collapse"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cfedgq623ts0",
+                                            "created": 1635762647319,
+                                            "text": "Class.forName"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cfedgwlc4ls0",
+                                            "created": 1635762661304,
+                                            "text": "classLoader.loadClass"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cfe690ojqw80",
+                            "created": 1635742295522,
+                            "text": "加载过程",
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cfeasbojih40",
+                                    "created": 1635755092825,
+                                    "text": "创建和装载"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cewkaqna68w0",
+                                    "created": 1633953846725,
+                                    "text": "链接",
+                                    "expandState": "collapse",
+                                    "layout": null
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cewker8egy80",
+                                            "created": 1633954161459,
+                                            "text": "验证",
+                                            "layout": null,
+                                            "expandState": "collapse"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cez0u0hplgg0",
+                                                    "created": 1634203614747,
+                                                    "text": "验证加载字节码符合虚拟机规范"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cfeaz9qq3n40",
+                                                    "created": 1635755637153,
+                                                    "text": "包括",
+                                                    "expandState": "collapse"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cez0uy364jk0",
+                                                            "created": 1634203687878,
+                                                            "text": "文件格式验证"
+                                                        },
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cez0v47yiyo0",
+                                                            "created": 1634203701228,
+                                                            "text": "元数据验证"
+                                                        },
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cez0v656k0o0",
+                                                            "created": 1634203705414,
+                                                            "text": "字节码语义验证"
+                                                        },
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cez0vc2gpm80",
+                                                            "created": 1634203718310,
+                                                            "text": "符号引用验证"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cewkeswlyw00",
+                                            "created": 1633954165099,
+                                            "text": "准备",
+                                            "layout": null,
+                                            "expandState": "collapse"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cez0w0m0ewo0",
+                                                    "created": 1634203771735,
+                                                    "text": "静态变量的初始默认值"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cez1bgiepa00",
+                                                    "created": 1634204981808,
+                                                    "text": "静态常量赋予设定的值"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cewkeuzmu1s0",
+                                            "created": 1633954169636,
+                                            "text": "解析",
+                                            "layout": null,
+                                            "expandState": "collapse"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cez0x3tjjgw0",
+                                                    "created": 1634203857085,
+                                                    "text": "符号引用转换为直接引用"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cez1c2llthk0",
+                                                    "created": 1634205029891,
+                                                    "text": "转换为地址或者偏移量"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cewkh2hwjc00",
+                                            "created": 1633954342706,
+                                            "text": "覆盖",
+                                            "layout": null
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cewkb0c7pfc0",
+                                    "created": 1633953867823,
+                                    "text": "初始化",
+                                    "expandState": "collapse",
+                                    "layout": null
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cez1coef5tk0",
+                                            "created": 1634205077347,
+                                            "text": "初始化内容",
+                                            "expandState": "collapse"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cez1dcr28y80",
+                                                    "created": 1634205130353,
+                                                    "text": "静态变量"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cez1dhm4rh40",
+                                                    "created": 1634205140939,
+                                                    "text": "静态代码块"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cewkhfu51c80",
+                                            "created": 1633954371744,
+                                            "text": "初始化顺序",
+                                            "layout": null,
+                                            "expandState": "collapse"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cez1iequ7tc0",
+                                                    "created": 1634205526514,
+                                                    "text": "先父类后子类"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cez1fr221k00",
+                                                    "created": 1634205318221,
+                                                    "text": "静态变量、静态代码块"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cez1gez0xfk0",
+                                                    "created": 1634205370280,
+                                                    "text": "变量、初始化代码块"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cez1gq7u0m80",
+                                                    "created": 1634205394758,
+                                                    "text": "构造器"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cez1d5z8vq80",
+                                            "created": 1634205115610,
+                                            "text": "初始化时间点",
+                                            "expandState": "collapse"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cez1dq0cam80",
+                                                    "created": 1634205159212,
+                                                    "text": "第一次创建当前类实例"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cez1eimpqe00",
+                                                    "created": 1634205221515,
+                                                    "text": "初始化某一子类"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cez1dx4fmk00",
+                                                    "created": 1634205174697,
+                                                    "text": "访问静态变量"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cez1e4psnd40",
+                                                    "created": 1634205191226,
+                                                    "text": "调用类的静态方法"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cez1e9io2740",
+                                                    "created": 1634205201679,
+                                                    "text": "反射"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cez1h1ftf800",
+                                                    "created": 1634205419185,
+                                                    "text": "class 字面量"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             },
             {
                 "data": {
@@ -6743,7 +7412,7 @@
                     "text": "07. 方法调用",
                     "created": 1633657298547,
                     "layout": null,
-                    "expandState": "expand"
+                    "expandState": "collapse"
                 },
                 "children": [
                     {
@@ -6751,7 +7420,7 @@
                             "id": "ceyah1wshko0",
                             "created": 1634129250244,
                             "text": "JIT",
-                            "expandState": "expand"
+                            "expandState": "collapse"
                         },
                         "children": [
                             {
@@ -6759,7 +7428,7 @@
                                     "id": "ceyah67k3nk0",
                                     "created": 1634129259602,
                                     "text": "优化",
-                                    "expandState": "expand"
+                                    "expandState": "collapse"
                                 },
                                 "children": [
                                     {
