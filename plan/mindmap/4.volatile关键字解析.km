@@ -1841,7 +1841,8 @@
                             "id": "cfdl9nqe7i80",
                             "created": 1635683102392,
                             "text": "happen-before规则",
-                            "expandState": "collapse"
+                            "expandState": "collapse",
+                            "note": "前面一个操作的结果对后续操作必须是可见的"
                         },
                         "children": [
                             {
@@ -2002,77 +2003,157 @@
                 "children": [
                     {
                         "data": {
-                            "id": "cfdluqsutuw0",
-                            "created": 1635684754718,
+                            "id": "cfe2ga2kkxc0",
+                            "created": 1635731580071,
                             "text": "Lock前缀指令",
                             "expandState": "collapse"
                         },
                         "children": [
                             {
                                 "data": {
-                                    "id": "cfdly8ojirc0",
-                                    "created": 1635685028732,
-                                    "text": "1. 线程A执行，写volatile变量，执行Lock前缀指令"
+                                    "id": "cfe2om6dbug0",
+                                    "created": 1635732233335,
+                                    "text": "总线锁",
+                                    "expandState": "collapse"
                                 },
-                                "children": []
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cfe2rprlbc00",
+                                            "created": 1635732476241,
+                                            "text": "总线只有一条，且为独占的，同一时间，只有一个CPU能占用总线"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cfe2skrueug0",
+                                            "created": 1635732543737,
+                                            "text": "当通过LOCK#信号锁定总线后，其他CPU访问内存的请求将被阻塞，直到总线被释放，保证了读写的原子性"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cfe2xo9dxqw0",
+                                            "created": 1635732943149,
+                                            "text": "主要使用场景",
+                                            "expandState": "collapse"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cfe2y4441q80",
+                                                    "created": 1635732977658,
+                                                    "text": "1. 处理器不支持缓存锁定，比如 Intel486、Pentlum"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cfe2ytlz2z40",
+                                                    "created": 1635733033158,
+                                                    "text": "2. 处理的数据不能被缓存在CPU时"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cfe2zhl7aa80",
+                                                    "created": 1635733085354,
+                                                    "text": "3. 操作的数据跨多个缓存行时"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
                             },
                             {
                                 "data": {
-                                    "id": "cfdm1nd1qnc0",
-                                    "created": 1635685295781,
-                                    "text": "2. Lock前缀指令，锁定缓存行"
+                                    "id": "cfe2gqfeqhs0",
+                                    "created": 1635731615676,
+                                    "text": "缓存锁",
+                                    "expandState": "collapse"
                                 },
-                                "children": []
-                            },
-                            {
-                                "data": {
-                                    "id": "cfdm2sx079s0",
-                                    "created": 1635685386236,
-                                    "text": "3. 其他线程通过总线嗅探获知消息，然后将各自工作内存中的相应的缓存置为无效"
-                                },
-                                "children": []
-                            },
-                            {
-                                "data": {
-                                    "id": "cfdm4kgni7c0",
-                                    "created": 1635685524562,
-                                    "text": "4. 线程A将最新数据写入主存"
-                                },
-                                "children": []
-                            },
-                            {
-                                "data": {
-                                    "id": "cfdm5mvicps0",
-                                    "created": 1635685608178,
-                                    "text": "5. 释放缓存行的锁"
-                                },
-                                "children": []
-                            },
-                            {
-                                "data": {
-                                    "id": "cfdm5ve8wp40",
-                                    "created": 1635685626725,
-                                    "text": "6. 其他线程通过缓存一致性协议保持最新值，其他线程再需要读取时，从主存中加载"
-                                },
-                                "children": []
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cfe3703gmls0",
+                                            "created": 1635733674189,
+                                            "text": "当前CPU修改变量，会直接写入内存中"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cfe2hgvuouw0",
+                                            "created": 1635731673266,
+                                            "text": "缓存一致性协议，阻止同时修改"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cfdluqsutuw0",
+                                            "created": 1635684754718,
+                                            "text": "大致过程",
+                                            "expandState": "collapse"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cfdly8ojirc0",
+                                                    "created": 1635685028732,
+                                                    "text": "1. 线程A执行，写volatile变量，执行到Lock前缀指令"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cfdm1nd1qnc0",
+                                                    "created": 1635685295781,
+                                                    "text": "2. Lock前缀指令，锁定缓存行"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cfdm2sx079s0",
+                                                    "created": 1635685386236,
+                                                    "text": "3. 其他线程通过总线嗅探获知消息，然后将各自工作内存中的相应的缓存置为无效"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cfdm4kgni7c0",
+                                                    "created": 1635685524562,
+                                                    "text": "4. 线程A将最新数据写入主存"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cfdm5mvicps0",
+                                                    "created": 1635685608178,
+                                                    "text": "5. 释放缓存行的锁"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cfdm5ve8wp40",
+                                                    "created": 1635685626725,
+                                                    "text": "6. 其他CPU通过缓存一致性协议保持最新值，读取时，从主存中加载"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
                             }
                         ]
-                    },
-                    {
-                        "data": {
-                            "id": "cfdlnb3n30g0",
-                            "created": 1635684171993,
-                            "text": "可见性"
-                        },
-                        "children": []
-                    },
-                    {
-                        "data": {
-                            "id": "cfdlo7d7wcg0",
-                            "created": 1635684242229,
-                            "text": "有序性"
-                        },
-                        "children": []
                     }
                 ]
             },
