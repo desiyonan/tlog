@@ -189,7 +189,7 @@
                             "id": "cfa12lqj85c0",
                             "created": 1635321447429,
                             "text": "图例",
-                            "expandState": "expand"
+                            "expandState": "collapse"
                         },
                         "children": [
                             {
@@ -981,7 +981,7 @@
                                     "id": "cfat13fmsyo0",
                                     "created": 1635400320301,
                                     "text": "缓存一致性",
-                                    "expandState": "expand"
+                                    "expandState": "collapse"
                                 },
                                 "children": [
                                     {
@@ -999,7 +999,7 @@
                                     "id": "cfaqa4w7mls0",
                                     "created": 1635392565428,
                                     "text": "指令重排",
-                                    "expandState": "expand"
+                                    "expandState": "collapse"
                                 },
                                 "children": [
                                     {
@@ -1065,7 +1065,7 @@
                             "id": "cfauah76fs80",
                             "created": 1635403876653,
                             "text": "处理",
-                            "expandState": "expand"
+                            "expandState": "collapse"
                         },
                         "children": [
                             {
@@ -1364,7 +1364,8 @@
                                         "data": {
                                             "id": "cfbo7hnvxls0",
                                             "created": 1635488275868,
-                                            "text": "乱序现象"
+                                            "text": "现象",
+                                            "expandState": "collapse"
                                         },
                                         "children": [
                                             {
@@ -1988,6 +1989,30 @@
                                         "children": []
                                     }
                                 ]
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cfe3id87ntc0",
+                            "created": 1635734564780,
+                            "text": "线程工作内存与主内存的动作交互",
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cfe3ku8fuio0",
+                                    "created": 1635734758528,
+                                    "text": "图例",
+                                    "image": "https://oss.dnfn.tech:1024/bedroom/2021/11/1/20211101104516.jpeg",
+                                    "imageTitle": "",
+                                    "imageSize": {
+                                        "width": 200,
+                                        "height": 144
+                                    }
+                                },
+                                "children": []
                             }
                         ]
                     }
