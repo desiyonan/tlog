@@ -6025,7 +6025,8 @@
                                                         "data": {
                                                             "id": "cf5txqr0yo80",
                                                             "created": 1634895078926,
-                                                            "text": "32位"
+                                                            "text": "32位",
+                                                            "expandState": "collapse"
                                                         },
                                                         "children": [
                                                             {
@@ -7144,7 +7145,7 @@
                             "id": "cfeb1ok6b3c0",
                             "created": 1635755826137,
                             "text": "加载时机/方法",
-                            "expandState": "expand"
+                            "expandState": "collapse"
                         },
                         "children": [
                             {
@@ -7152,7 +7153,7 @@
                                     "id": "cfedghq3dso0",
                                     "created": 1635762628940,
                                     "text": "静态加载",
-                                    "expandState": "expand"
+                                    "expandState": "collapse"
                                 },
                                 "children": [
                                     {
@@ -7214,7 +7215,7 @@
                             "id": "cfe690ojqw80",
                             "created": 1635742295522,
                             "text": "加载过程",
-                            "expandState": "expand"
+                            "expandState": "collapse"
                         },
                         "children": [
                             {
@@ -7573,7 +7574,7 @@
                 "data": {
                     "id": "70fu0c47incsrpsijho9j5vjm2",
                     "created": 1633657298547,
-                    "text": "09. 内存模型",
+                    "text": "09. 内存分区",
                     "layout": null,
                     "expandState": "expand"
                 },
@@ -7582,7 +7583,7 @@
             {
                 "data": {
                     "id": "61te335iefdeqlikckr8lehjui",
-                    "text": "10. 线程模型",
+                    "text": "10. 内存模型",
                     "created": 1633657298547,
                     "layout": null,
                     "expandState": "expand"
@@ -7597,7 +7598,16 @@
                     "layout": null,
                     "expandState": "expand"
                 },
-                "children": []
+                "children": [
+                    {
+                        "data": {
+                            "id": "cfexwmfdpzc0",
+                            "created": 1635820315200,
+                            "text": "synchronized"
+                        },
+                        "children": []
+                    }
+                ]
             },
             {
                 "data": {
