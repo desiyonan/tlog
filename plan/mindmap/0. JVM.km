@@ -6835,7 +6835,7 @@
                                                 "data": {
                                                     "id": "cfe6sb4w8so0",
                                                     "created": 1635743807198,
-                                                    "text": "加载lib/rt.jar中的class"
+                                                    "text": "加载lib/rt.jar中的class，Java核心类"
                                                 },
                                                 "children": []
                                             }
@@ -6879,7 +6879,7 @@
                                                 "data": {
                                                     "id": "cfe9850ug000",
                                                     "created": 1635750689939,
-                                                    "text": "Java应用的类加载器"
+                                                    "text": "Java应用系统的类加载器"
                                                 },
                                                 "children": []
                                             },
@@ -6927,14 +6927,16 @@
                         "data": {
                             "id": "cfe69y98xc00",
                             "created": 1635742368608,
-                            "text": "加载机制"
+                            "text": "加载机制",
+                            "expandState": "collapse"
                         },
                         "children": [
                             {
                                 "data": {
                                     "id": "cfe9z6o9yqo0",
                                     "created": 1635752809365,
-                                    "text": "双亲委派模式"
+                                    "text": "双亲委派模式",
+                                    "expandState": "collapse"
                                 },
                                 "children": [
                                     {
@@ -6957,9 +6959,27 @@
                                         "data": {
                                             "id": "cfeb5aorkxc0",
                                             "created": 1635756109396,
-                                            "text": "优点：共用一个缓存的类，复用"
+                                            "text": "优点",
+                                            "expandState": "collapse"
                                         },
-                                        "children": []
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cfefvxpqvo80",
+                                                    "created": 1635769481429,
+                                                    "text": "共用一个缓存的类，复用"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cfefvygg5u00",
+                                                    "created": 1635769483044,
+                                                    "text": "安全，防止核心类被覆盖"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
                                     }
                                 ]
                             },
@@ -6967,7 +6987,8 @@
                                 "data": {
                                     "id": "cfe9zkttyo00",
                                     "created": 1635752840175,
-                                    "text": "web容器加载模式"
+                                    "text": "web容器加载模式",
+                                    "expandState": "collapse"
                                 },
                                 "children": [
                                     {
@@ -6994,21 +7015,23 @@
                         "data": {
                             "id": "cfeb6x1xsww0",
                             "created": 1635756236446,
-                            "text": "破坏委派模式"
+                            "text": "破坏委派模式",
+                            "expandState": "collapse"
                         },
                         "children": [
                             {
                                 "data": {
                                     "id": "cfeb9fovhlc0",
                                     "created": 1635756433743,
-                                    "text": "目的"
+                                    "text": "目的",
+                                    "expandState": "collapse"
                                 },
                                 "children": [
                                     {
                                         "data": {
                                             "id": "cfeb9ti79mw0",
                                             "created": 1635756463815,
-                                            "text": "缩小作用域"
+                                            "text": "破坏类加载范围限制的限制"
                                         },
                                         "children": []
                                     }
@@ -7018,14 +7041,15 @@
                                 "data": {
                                     "id": "cfeb9oi27dk0",
                                     "created": 1635756452922,
-                                    "text": "场景"
+                                    "text": "场景",
+                                    "expandState": "collapse"
                                 },
                                 "children": [
                                     {
                                         "data": {
                                             "id": "cfec5e7n5vc0",
                                             "created": 1635758938178,
-                                            "text": "父类加载器调用子类加载器"
+                                            "text": "父类加载器无法加载到需要的类，通过委托子类加载器"
                                         },
                                         "children": []
                                     },
@@ -7038,6 +7062,80 @@
                                         "children": []
                                     }
                                 ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cfefwwjngjc0",
+                                    "created": 1635769557248,
+                                    "text": "实例",
+                                    "expandState": "collapse"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cfefx1wslq00",
+                                            "created": 1635769568927,
+                                            "text": "JDBC",
+                                            "expandState": "collapse"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cfeg69psf600",
+                                                    "created": 1635770291195,
+                                                    "text": "目的是为了加载需要但自己加载的驱动类"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cfefx52qsxk0",
+                                            "created": 1635769575817,
+                                            "text": "web容器（Tomcat）",
+                                            "expandState": "collapse"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cfeg6rfyoxc0",
+                                                    "created": 1635770329783,
+                                                    "text": "目的是隔离应用"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cfefxexwsnc0",
+                                            "created": 1635769597292,
+                                            "text": "SPI",
+                                            "expandState": "collapse"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cfeg5tn30gg0",
+                                                    "created": 1635770256203,
+                                                    "text": "基于Thread.getContextClassLoader()",
+                                                    "expandState": "collapse"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cfeg604bns80",
+                                                            "created": 1635770270306,
+                                                            "text": "默认是系统加载器"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
                             }
                         ]
                     },
@@ -7046,7 +7144,7 @@
                             "id": "cfeb1ok6b3c0",
                             "created": 1635755826137,
                             "text": "加载时机/方法",
-                            "expandState": "collapse"
+                            "expandState": "expand"
                         },
                         "children": [
                             {
@@ -7054,7 +7152,7 @@
                                     "id": "cfedghq3dso0",
                                     "created": 1635762628940,
                                     "text": "静态加载",
-                                    "expandState": "collapse"
+                                    "expandState": "expand"
                                 },
                                 "children": [
                                     {
@@ -7070,6 +7168,14 @@
                                             "id": "cfedi7fgnkg0",
                                             "created": 1635762763257,
                                             "text": "初次访问静态方法，字段"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cfeg7wvqxdk0",
+                                            "created": 1635770419985,
+                                            "text": "子类初始化时，父类隐式被动加载"
                                         },
                                         "children": []
                                     }
@@ -7108,7 +7214,7 @@
                             "id": "cfe690ojqw80",
                             "created": 1635742295522,
                             "text": "加载过程",
-                            "expandState": "collapse"
+                            "expandState": "expand"
                         },
                         "children": [
                             {
