@@ -1,0 +1,14 @@
+{
+    "root": {
+        "data": {
+            "id": "cfexy8sfmy00",
+            "created": 1635820442243,
+            "text": "synchronized",
+            "note": "表=>里\nJAVA => JVM"
+        },
+        "children": []
+    },
+    "template": "default",
+    "theme": "fresh-blue",
+    "version": "1.4.43"
+}
