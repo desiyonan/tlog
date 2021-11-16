@@ -277,7 +277,7 @@
                             "id": "5jnfhm6ifcv59pesauut8ovdu4",
                             "text": "版本号-u4",
                             "created": 1633657298547,
-                            "expandState": "expand",
+                            "expandState": "collapse",
                             "layout": null
                         },
                         "children": [
@@ -328,7 +328,7 @@
                                     "text": "常量池数据区",
                                     "created": 1633657298547,
                                     "layout": null,
-                                    "expandState": "expand"
+                                    "expandState": "collapse"
                                 },
                                 "children": [
                                     {
@@ -337,7 +337,7 @@
                                             "text": "cp_info[]",
                                             "created": 1633657298547,
                                             "layout": null,
-                                            "expandState": "expand"
+                                            "expandState": "collapse"
                                         },
                                         "children": [
                                             {
@@ -377,7 +377,7 @@
                                                     "text": "常见结构",
                                                     "created": 1633657298547,
                                                     "layout": null,
-                                                    "expandState": "expand"
+                                                    "expandState": "collapse"
                                                 },
                                                 "children": [
                                                     {
@@ -386,7 +386,7 @@
                                                             "text": "CONSTANT_Utf8",
                                                             "created": 1633657298547,
                                                             "layout": null,
-                                                            "expandState": "expand"
+                                                            "expandState": "collapse"
                                                         },
                                                         "children": [
                                                             {
@@ -407,7 +407,7 @@
                                                             "text": "CONSTANT_Class",
                                                             "created": 1633657298547,
                                                             "layout": null,
-                                                            "expandState": "expand"
+                                                            "expandState": "collapse"
                                                         },
                                                         "children": [
                                                             {
@@ -428,7 +428,7 @@
                                                             "text": "CONSTANT_Fieldref",
                                                             "created": 1633657298547,
                                                             "layout": null,
-                                                            "expandState": "expand"
+                                                            "expandState": "collapse"
                                                         },
                                                         "children": [
                                                             {
@@ -449,7 +449,7 @@
                                                             "text": "CONSTANT_Methodref",
                                                             "created": 1633657298547,
                                                             "layout": null,
-                                                            "expandState": "expand"
+                                                            "expandState": "collapse"
                                                         },
                                                         "children": [
                                                             {
@@ -470,7 +470,7 @@
                                                             "text": "CONSTANT_InterfaceMethodref",
                                                             "created": 1633657298547,
                                                             "layout": null,
-                                                            "expandState": "expand"
+                                                            "expandState": "collapse"
                                                         },
                                                         "children": [
                                                             {
@@ -491,7 +491,7 @@
                                                             "text": "CONSTANT_String",
                                                             "created": 1633657298547,
                                                             "layout": null,
-                                                            "expandState": "expand"
+                                                            "expandState": "collapse"
                                                         },
                                                         "children": [
                                                             {
@@ -1003,7 +1003,7 @@
                                     "text": "接口池计数器",
                                     "created": 1633657298547,
                                     "layout": null,
-                                    "expandState": "expand"
+                                    "expandState": "collapse"
                                 },
                                 "children": [
                                     {
@@ -1056,7 +1056,7 @@
                                     "text": "字段计数器",
                                     "created": 1633657298547,
                                     "layout": null,
-                                    "expandState": "expand"
+                                    "expandState": "collapse"
                                 },
                                 "children": [
                                     {
@@ -1077,7 +1077,7 @@
                                     "text": "字段数据区",
                                     "created": 1633657298547,
                                     "layout": null,
-                                    "expandState": "expand"
+                                    "expandState": "collapse"
                                 },
                                 "children": [
                                     {
@@ -1086,7 +1086,7 @@
                                             "text": "field_info fields[fields_count]",
                                             "created": 1633657298547,
                                             "layout": null,
-                                            "expandState": "expand"
+                                            "expandState": "collapse"
                                         },
                                         "children": [
                                             {
@@ -1131,7 +1131,7 @@
                                     "text": "方法计数器",
                                     "created": 1633657298547,
                                     "layout": null,
-                                    "expandState": "expand"
+                                    "expandState": "collapse"
                                 },
                                 "children": [
                                     {
@@ -1152,7 +1152,7 @@
                                     "text": "方法数据区",
                                     "created": 1633657298547,
                                     "layout": null,
-                                    "expandState": "expand"
+                                    "expandState": "collapse"
                                 },
                                 "children": [
                                     {
@@ -1161,7 +1161,7 @@
                                             "text": "method_info methods[methods_count]",
                                             "created": 1633657298547,
                                             "layout": null,
-                                            "expandState": "expand"
+                                            "expandState": "collapse"
                                         },
                                         "children": [
                                             {
@@ -1170,7 +1170,7 @@
                                                     "text": "method_info{\r\n  u2 access_flags;\r\n  u2 name_index;\r\n  u2 descriptor_index;\r\n  u2 attributes_count;\r\n  attribute_info attributes[attributes_count];\r\n}",
                                                     "created": 1633657298547,
                                                     "layout": null,
-                                                    "expandState": "expand"
+                                                    "expandState": "collapse"
                                                 },
                                                 "children": [
                                                     {
@@ -1206,7 +1206,7 @@
                                     "text": "属性计数器",
                                     "created": 1633657298547,
                                     "layout": null,
-                                    "expandState": "expand"
+                                    "expandState": "collapse"
                                 },
                                 "children": [
                                     {
@@ -1227,7 +1227,7 @@
                                     "text": "属性数据区",
                                     "created": 1633657298547,
                                     "layout": null,
-                                    "expandState": "expand"
+                                    "expandState": "collapse"
                                 },
                                 "children": [
                                     {
@@ -1236,7 +1236,7 @@
                                             "text": "attribute_info attributes[attributes_count]",
                                             "created": 1633657298547,
                                             "layout": null,
-                                            "expandState": "expand"
+                                            "expandState": "collapse"
                                         },
                                         "children": [
                                             {
@@ -1245,7 +1245,7 @@
                                                     "text": "attribute_info{\r\n  u2 attribute_name_index;\r\n  u4 attribute_length;\r\n  u1 info[attribute_length];\r\n}",
                                                     "created": 1633657298547,
                                                     "layout": null,
-                                                    "expandState": "expand"
+                                                    "expandState": "collapse"
                                                 },
                                                 "children": [
                                                     {
@@ -1274,7 +1274,7 @@
                     "text": "03. 类模型",
                     "created": 1633657298547,
                     "layout": null,
-                    "expandState": "collapse"
+                    "expandState": "expand"
                 },
                 "children": [
                     {
@@ -1310,7 +1310,7 @@
                             "created": 1633747842716,
                             "text": "Klass",
                             "layout": null,
-                            "expandState": "collapse"
+                            "expandState": "expand"
                         },
                         "children": [
                             {
@@ -1319,7 +1319,7 @@
                                     "created": 1633748031119,
                                     "text": "意义",
                                     "layout": null,
-                                    "expandState": "collapse"
+                                    "expandState": "expand"
                                 },
                                 "children": [
                                     {
@@ -1348,7 +1348,7 @@
                                     "id": "ceujt7rcxnk0",
                                     "created": 1633749353508,
                                     "text": "属性",
-                                    "expandState": "collapse",
+                                    "expandState": "expand",
                                     "layout": null
                                 },
                                 "children": [
@@ -2081,7 +2081,7 @@
                                                                     "id": "cevrmeydbow0",
                                                                     "created": 1633872949457,
                                                                     "text": "修饰符",
-                                                                    "expandState": "expand",
+                                                                    "expandState": "collapse",
                                                                     "layout": null
                                                                 },
                                                                 "children": [
@@ -2112,7 +2112,7 @@
                                                                     "id": "cevrmvgvx540",
                                                                     "created": 1633872985405,
                                                                     "text": "父类",
-                                                                    "expandState": "expand",
+                                                                    "expandState": "collapse",
                                                                     "layout": null
                                                                 },
                                                                 "children": [
@@ -2156,7 +2156,7 @@
                                                             "id": "cevr9g7ukwg0",
                                                             "created": 1633871933472,
                                                             "text": "JVM-Klass",
-                                                            "expandState": "collapse",
+                                                            "expandState": "expand",
                                                             "layout": null
                                                         },
                                                         "children": [

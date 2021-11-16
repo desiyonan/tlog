@@ -1,0 +1,648 @@
+{
+    "root": {
+        "data": {
+            "id": "cfnw9a2y88o0",
+            "created": 1636729704452,
+            "text": "数据库"
+        },
+        "children": [
+            {
+                "data": {
+                    "id": "cfnw9ep5slk0",
+                    "created": 1636729714502,
+                    "text": "1. 主流",
+                    "expandState": "collapse"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cfoaltlnixc0",
+                            "created": 1636770182850,
+                            "text": "mysql"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "cfoalw8tfsw0",
+                            "created": 1636770188604,
+                            "text": "postgres"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "cfob9nfafuo0",
+                            "created": 1636772050145,
+                            "text": "Oracle"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "cfnwaobshoo0",
+                    "created": 1636729813825,
+                    "text": "2. 分类",
+                    "expandState": "collapse"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cfoam9sy4nk0",
+                            "created": 1636770218120,
+                            "text": "关系型数据库"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "cfoamf7tvhs0",
+                            "created": 1636770229904,
+                            "text": "非关系型数据库"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "cfoamqnihr40",
+                    "created": 1636770254797,
+                    "text": "语言",
+                    "expandState": "collapse"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cfoamu8rcps0",
+                            "created": 1636770262612,
+                            "text": "定义语言 DDL"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "cfoan856pso0",
+                            "created": 1636770292870,
+                            "text": "控制语言 DCL"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "cfoanexlzmw0",
+                            "created": 1636770307650,
+                            "text": "操作语言 DML"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "cfoangqfco80",
+                            "created": 1636770311569,
+                            "text": "查询语言"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "cfnwkjhhaf40",
+                    "created": 1636730586927,
+                    "text": "查询",
+                    "expandState": "collapse"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cfoapryfgl40",
+                            "created": 1636770492726,
+                            "text": "单表查询"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "cfoapuyy92o0",
+                            "created": 1636770499288,
+                            "text": "多表查询",
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cfoaqu7w9y80",
+                                    "created": 1636770576016,
+                                    "text": "连接",
+                                    "expandState": "collapse"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cfoaudw4smw0",
+                                            "created": 1636770853933,
+                                            "text": "内连接（自然连接）",
+                                            "expandState": "collapse"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cfoavghm2ns0",
+                                                    "created": 1636770937949,
+                                                    "text": "取出两张表中匹配到的数据，匹配不到的不保留"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cfoawlep93s0",
+                                                    "created": 1636771027021,
+                                                    "text": "[inner] join"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cfoax1amufk0",
+                                                    "created": 1636771061604,
+                                                    "text": ", = "
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cfoaufuggt40",
+                                            "created": 1636770858185,
+                                            "text": "外连接",
+                                            "expandState": "collapse"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cfoaulzqdpk0",
+                                                    "created": 1636770871565,
+                                                    "text": "left join"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cfoauq48i3k0",
+                                                    "created": 1636770880544,
+                                                    "text": "right join"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cfoausdil4g0",
+                                                    "created": 1636770885459,
+                                                    "text": "full join"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cfoavi9nheo0",
+                                            "created": 1636770941822,
+                                            "text": "其他",
+                                            "expandState": "collapse"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cfoavj7gwmw0",
+                                                    "created": 1636770943866,
+                                                    "text": "自连接"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cfoaqwb7czs0",
+                                    "created": 1636770580570,
+                                    "text": "嵌套(子查询)",
+                                    "expandState": "collapse"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cfob1givuwg0",
+                                            "created": 1636771408211,
+                                            "text": "分类",
+                                            "expandState": "collapse"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cfoayc1e5vk0",
+                                                    "created": 1636771163354,
+                                                    "text": "[not] in"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cfoepqcp3co0",
+                                                            "created": 1636781773675,
+                                                            "text": "外大表，里小表"
+                                                        },
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cfoepyjhzts0",
+                                                            "created": 1636781791500,
+                                                            "text": "先执行，只会查询一次"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cfoaykhigdc0",
+                                                    "created": 1636771181743,
+                                                    "text": "[not] exists"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cfoep49520o0",
+                                                            "created": 1636781725570,
+                                                            "text": "都会走索引"
+                                                        },
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cfoeq8gujds0",
+                                                            "created": 1636781813108,
+                                                            "text": "外表循环"
+                                                        },
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "data": {
+                                                            "id": "cfoepjm7vps0",
+                                                            "created": 1636781759013,
+                                                            "text": "适合外小表，里大表"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cfob1qzd1ls0",
+                                            "created": 1636771430975,
+                                            "text": "求解方法",
+                                            "expandState": "collapse"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cfob1t9rd740",
+                                                    "created": 1636771435958,
+                                                    "text": "不相关子查询",
+                                                    "expandState": "collapse"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cfob2agr6c00",
+                                                            "created": 1636771473386,
+                                                            "text": "子查询不依赖父查询"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "data": {
+                                                                    "id": "cfob2h75y5s0",
+                                                                    "created": 1636771488044,
+                                                                    "text": "由里到外"
+                                                                },
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cfob20nd11k0",
+                                                    "created": 1636771452018,
+                                                    "text": "相关子查询",
+                                                    "expandState": "collapse"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cfob2mg9pv40",
+                                                            "created": 1636771499478,
+                                                            "text": "子查询依赖父查询",
+                                                            "expandState": "expand"
+                                                        },
+                                                        "children": [
+                                                            {
+                                                                "data": {
+                                                                    "id": "cfob33eqpm00",
+                                                                    "created": 1636771536391,
+                                                                    "text": "由外到里"
+                                                                },
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cfoaqya49xs0",
+                                    "created": 1636770584857,
+                                    "text": "集合",
+                                    "expandState": "collapse"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cfoazdgfs6w0",
+                                            "created": 1636771244805,
+                                            "text": "并",
+                                            "expandState": "collapse"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cfoazl69ebs0",
+                                                    "created": 1636771261604,
+                                                    "text": "union [all]"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cfoazgy88ts0",
+                                            "created": 1636771252411,
+                                            "text": "交",
+                                            "expandState": "collapse"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cfoazt8oyvs0",
+                                                    "created": 1636771279165,
+                                                    "text": "intersect"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cfoazivpl0o0",
+                                            "created": 1636771256612,
+                                            "text": "差",
+                                            "expandState": "collapse"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cfob053np1s0",
+                                                    "created": 1636771304983,
+                                                    "text": "except"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "cfog6p1cfbk0",
+                    "created": 1636785924112,
+                    "text": "事务"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cfnwaxmmqds0",
+                            "created": 1636729834072,
+                            "text": "特性 ACID",
+                            "expandState": "expand",
+                            "hyperlink": "https://www.jianshu.com/p/2a77146e70b4",
+                            "hyperlinkTitle": ""
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cfoero8dv8w0",
+                                    "created": 1636781925789,
+                                    "text": "原子性"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cfoerrp7fmg0",
+                                    "created": 1636781933336,
+                                    "text": "一致性"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cfoersy1ei80",
+                                    "created": 1636781936047,
+                                    "text": "隔离性"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cfoghezjqxs0",
+                                            "created": 1636786764241,
+                                            "text": "事务间影响",
+                                            "hyperlink": "https://zhuanlan.zhihu.com/p/117476959",
+                                            "hyperlinkTitle": ""
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cfogibee0qw0",
+                                                    "created": 1636786834796,
+                                                    "text": "脏读"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cfogvyso99c0",
+                                                            "created": 1636787904461,
+                                                            "text": "两个事务A&B，B读了A未提交的数据，但之后A失败回滚"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cfogifydalk0",
+                                                    "created": 1636786844711,
+                                                    "text": "不可重复读"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cfogwwuzxfs0",
+                                                            "created": 1636787978611,
+                                                            "text": "事务A，多次读取同一数据，但前后读取到的结果不同，主要原因为其他事务更新数据"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cfogiitgdjc0",
+                                                    "created": 1636786850944,
+                                                    "text": "幻读"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cfogxhj42a00",
+                                                            "created": 1636788023605,
+                                                            "text": "主要插入问题，多次读取，后续读取到新插入数据"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cfogim0li5c0",
+                                                    "created": 1636786857906,
+                                                    "text": "丢失更新"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cfog8vuprgw0",
+                                            "created": 1636786095677,
+                                            "text": "隔离级别",
+                                            "expandState": "expand"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "cfog9eac29s0",
+                                                    "created": 1636786135804,
+                                                    "text": "读未提交"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "data": {
+                                                            "id": "cfojvesbt1c0",
+                                                            "created": 1636796324233,
+                                                            "text": "相当于没有锁"
+                                                        },
+                                                        "children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cfoggrbu6bs0",
+                                                    "created": 1636786712742,
+                                                    "text": "读提交"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cfoggwf9udc0",
+                                                    "created": 1636786723833,
+                                                    "text": "可重复读"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "cfogh1j4ihs0",
+                                                    "created": 1636786734950,
+                                                    "text": "序列化"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cfoes0k8umo0",
+                                    "created": 1636781952627,
+                                    "text": "持久性"
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "cfnwbhhn80g0",
+                    "created": 1636729877306,
+                    "text": "优化",
+                    "expandState": "expand"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cfog4ppk5sg0",
+                            "created": 1636785768848,
+                            "text": "执行计划"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "cfnwb9sceao0",
+                            "created": 1636729860539,
+                            "text": "索引"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    "template": "default",
+    "theme": "fresh-blue",
+    "version": "1.4.43"
+}
