@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://zone.dnfn.tech/</loc>
+    <lastmod>2021-11-16T19:30:43+08:00</lastmod>
+  </url><url>
+    <loc>https://zone.dnfn.tech/photo/</loc>
+    <lastmod>2021-11-16T19:30:43+08:00</lastmod>
+  </url><url>
+    <loc>https://zone.dnfn.tech/photo/376f72a0f58de1dac0fd42a647ec3463/</loc>
+    <lastmod>2021-11-16T19:30:43+08:00</lastmod>
+  </url><url>
     <loc>https://zone.dnfn.tech/tags/application/</loc>
     <lastmod>2021-08-18T14:57:55+08:00</lastmod>
   </url><url>
@@ -15,9 +24,6 @@
     <lastmod>2021-08-18T14:57:55+08:00</lastmod>
   </url><url>
     <loc>https://zone.dnfn.tech/categories/develop/</loc>
-    <lastmod>2021-08-18T14:57:55+08:00</lastmod>
-  </url><url>
-    <loc>https://zone.dnfn.tech/</loc>
     <lastmod>2021-08-18T14:57:55+08:00</lastmod>
   </url><url>
     <loc>https://zone.dnfn.tech/tags/idea/</loc>
