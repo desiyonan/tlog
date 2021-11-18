@@ -1274,7 +1274,7 @@
                     "text": "03. 类模型",
                     "created": 1633657298547,
                     "layout": null,
-                    "expandState": "expand"
+                    "expandState": "collapse"
                 },
                 "children": [
                     {
@@ -2324,7 +2324,7 @@
                                                                     "id": "cevrvdhsqzk0",
                                                                     "created": 1633873651555,
                                                                     "text": "加载链",
-                                                                    "expandState": "collapse",
+                                                                    "expandState": "expand",
                                                                     "layout": null
                                                                 },
                                                                 "children": [
@@ -2421,7 +2421,7 @@
                                     "created": 1633748099393,
                                     "text": "重点",
                                     "layout": null,
-                                    "expandState": "collapse"
+                                    "expandState": "expand"
                                 },
                                 "children": [
                                     {
@@ -2511,7 +2511,7 @@
                                             "id": "cewpmmjssn40",
                                             "created": 1633968883728,
                                             "text": "全部属性",
-                                            "expandState": "expand",
+                                            "expandState": "collapse",
                                             "layout": null
                                         },
                                         "children": [
@@ -4603,7 +4603,7 @@
                                                     "id": "cewkaqna68w0",
                                                     "created": 1633953846725,
                                                     "text": "链接",
-                                                    "expandState": "collapse",
+                                                    "expandState": "expand",
                                                     "layout": null
                                                 },
                                                 "children": [
@@ -4728,7 +4728,7 @@
                                                     "id": "cewkb0c7pfc0",
                                                     "created": 1633953867823,
                                                     "text": "初始化",
-                                                    "expandState": "collapse",
+                                                    "expandState": "expand",
                                                     "layout": null
                                                 },
                                                 "children": [
@@ -4737,7 +4737,7 @@
                                                             "id": "cez1coef5tk0",
                                                             "created": 1634205077347,
                                                             "text": "初始化内容",
-                                                            "expandState": "collapse"
+                                                            "expandState": "expand"
                                                         },
                                                         "children": [
                                                             {
@@ -4764,7 +4764,7 @@
                                                             "created": 1633954371744,
                                                             "text": "初始化顺序",
                                                             "layout": null,
-                                                            "expandState": "collapse"
+                                                            "expandState": "expand"
                                                         },
                                                         "children": [
                                                             {
@@ -4888,7 +4888,7 @@
                                     "id": "ceytl3zze2g0",
                                     "created": 1634183169335,
                                     "text": "子类",
-                                    "expandState": "collapse"
+                                    "expandState": "expand"
                                 },
                                 "children": [
                                     {
@@ -4968,7 +4968,7 @@
                                     "id": "cewgllaxbq80",
                                     "created": 1633943412660,
                                     "text": "相关",
-                                    "expandState": "expand",
+                                    "expandState": "collapse",
                                     "layout": null
                                 },
                                 "children": [
@@ -4986,7 +4986,7 @@
                                             "id": "ceyt7b5jiag0",
                                             "created": 1634182087810,
                                             "text": "方法",
-                                            "expandState": "collapse"
+                                            "expandState": "expand"
                                         },
                                         "children": [
                                             {
@@ -5291,7 +5291,7 @@
                                                                             "id": "ceyw9srhw9k0",
                                                                             "created": 1634190746201,
                                                                             "text": "层次",
-                                                                            "expandState": "collapse"
+                                                                            "expandState": "expand"
                                                                         },
                                                                         "children": [
                                                                             {
@@ -5343,7 +5343,7 @@
                                                                     "id": "ceyyuhs1vh40",
                                                                     "created": 1634198010158,
                                                                     "text": "栈上替换",
-                                                                    "expandState": "collapse"
+                                                                    "expandState": "expand"
                                                                 },
                                                                 "children": [
                                                                     {
@@ -5369,7 +5369,7 @@
                                                                     "id": "ceyw5nwsbjc0",
                                                                     "created": 1634190422181,
                                                                     "text": "实际应用",
-                                                                    "expandState": "collapse"
+                                                                    "expandState": "expand"
                                                                 },
                                                                 "children": [
                                                                     {
@@ -5385,7 +5385,7 @@
                                                                             "id": "ceyt8z6ep400",
                                                                             "created": 1634182218470,
                                                                             "text": "逃逸分析",
-                                                                            "expandState": "collapse"
+                                                                            "expandState": "expand"
                                                                         },
                                                                         "children": [
                                                                             {
@@ -5489,7 +5489,7 @@
                                             "id": "ceyt7vhkdl40",
                                             "created": 1634182132073,
                                             "text": "接口函数表",
-                                            "expandState": "collapse"
+                                            "expandState": "expand"
                                         },
                                         "children": [
                                             {
@@ -5512,7 +5512,7 @@
                             "created": 1633747726758,
                             "text": "ArrayKlass",
                             "layout": null,
-                            "expandState": "collapse"
+                            "expandState": "expand"
                         },
                         "children": [
                             {
@@ -5790,7 +5790,7 @@
                             "id": "cez1onkv8gw0",
                             "created": 1634206015929,
                             "text": "对象继承体系",
-                            "expandState": "collapse"
+                            "expandState": "expand"
                         },
                         "children": [
                             {
@@ -5814,7 +5814,7 @@
                             "id": "cez0ov4hc8o0",
                             "created": 1634203211242,
                             "text": "对象组成",
-                            "expandState": "collapse"
+                            "expandState": "expand"
                         },
                         "children": [
                             {
@@ -5822,7 +5822,7 @@
                                     "id": "cez1juwivuo0",
                                     "created": 1634205640050,
                                     "text": "对象头",
-                                    "expandState": "collapse"
+                                    "expandState": "expand"
                                 },
                                 "children": [
                                     {
@@ -5830,7 +5830,7 @@
                                             "id": "cez9708s2tc0",
                                             "created": 1634227201820,
                                             "text": "Mark Word",
-                                            "expandState": "collapse"
+                                            "expandState": "expand"
                                         },
                                         "children": [
                                             {
@@ -5874,7 +5874,7 @@
                                                     "id": "cez9g7vy5vc0",
                                                     "created": 1634227923736,
                                                     "text": "组成",
-                                                    "expandState": "collapse"
+                                                    "expandState": "expand"
                                                 },
                                                 "children": [
                                                     {
@@ -6018,7 +6018,7 @@
                                                     "id": "cez9ubk9j6w0",
                                                     "created": 1634229028835,
                                                     "text": "布局",
-                                                    "expandState": "collapse"
+                                                    "expandState": "expand"
                                                 },
                                                 "children": [
                                                     {
@@ -6026,7 +6026,7 @@
                                                             "id": "cf5txqr0yo80",
                                                             "created": 1634895078926,
                                                             "text": "32位",
-                                                            "expandState": "collapse"
+                                                            "expandState": "expand"
                                                         },
                                                         "children": [
                                                             {
@@ -6150,7 +6150,7 @@
                                     "id": "cez1jwxch3k0",
                                     "created": 1634205644453,
                                     "text": "实例数据",
-                                    "expandState": "collapse"
+                                    "expandState": "expand"
                                 },
                                 "children": [
                                     {
@@ -6565,7 +6565,7 @@
                                     "id": "cez1jzyt6nc0",
                                     "created": 1634205651072,
                                     "text": "对齐填充",
-                                    "expandState": "collapse"
+                                    "expandState": "expand"
                                 },
                                 "children": [
                                     {
@@ -6586,7 +6586,7 @@
                             "created": 1633657535887,
                             "text": "对象布局",
                             "layout": null,
-                            "expandState": "collapse"
+                            "expandState": "expand"
                         },
                         "children": [
                             {
@@ -6612,7 +6612,7 @@
                             "id": "cf1dcec1mjc0",
                             "created": 1634442028666,
                             "text": "锁标志位",
-                            "expandState": "collapse"
+                            "expandState": "expand"
                         },
                         "children": [
                             {
@@ -6620,7 +6620,7 @@
                                     "id": "ceza0w5u59c0",
                                     "created": 1634229543860,
                                     "text": "状态值",
-                                    "expandState": "collapse"
+                                    "expandState": "expand"
                                 },
                                 "children": [
                                     {
@@ -6628,7 +6628,7 @@
                                             "id": "ceza16xmf3s0",
                                             "created": 1634229567308,
                                             "text": "无锁",
-                                            "expandState": "collapse"
+                                            "expandState": "expand"
                                         },
                                         "children": [
                                             {
@@ -6646,7 +6646,7 @@
                                             "id": "ceza1cprbyw0",
                                             "created": 1634229579893,
                                             "text": "偏向锁",
-                                            "expandState": "collapse"
+                                            "expandState": "expand"
                                         },
                                         "children": [
                                             {
@@ -6664,7 +6664,7 @@
                                             "id": "ceza1f0ffj40",
                                             "created": 1634229584892,
                                             "text": "轻量级锁",
-                                            "expandState": "collapse"
+                                            "expandState": "expand"
                                         },
                                         "children": [
                                             {
@@ -6682,7 +6682,7 @@
                                             "id": "ceza1ofm99k0",
                                             "created": 1634229605401,
                                             "text": "重锁",
-                                            "expandState": "collapse"
+                                            "expandState": "expand"
                                         },
                                         "children": [
                                             {
@@ -6700,7 +6700,7 @@
                                             "id": "ceza1tecptk0",
                                             "created": 1634229616209,
                                             "text": "可GC",
-                                            "expandState": "collapse"
+                                            "expandState": "expand"
                                         },
                                         "children": [
                                             {
@@ -6741,7 +6741,7 @@
                             "id": "cfe68ntpeh40",
                             "created": 1635742267537,
                             "text": "类加载器",
-                            "expandState": "collapse"
+                            "expandState": "expand"
                         },
                         "children": [
                             {
@@ -6749,7 +6749,7 @@
                                     "id": "cfe6c9628s00",
                                     "created": 1635742549088,
                                     "text": "作用",
-                                    "expandState": "collapse"
+                                    "expandState": "expand"
                                 },
                                 "children": [
                                     {
@@ -6767,7 +6767,7 @@
                                     "id": "cfe6d5z12200",
                                     "created": 1635742620497,
                                     "text": "分类",
-                                    "expandState": "collapse"
+                                    "expandState": "expand"
                                 },
                                 "children": [
                                     {
@@ -6929,7 +6929,7 @@
                             "id": "cfe69y98xc00",
                             "created": 1635742368608,
                             "text": "加载机制",
-                            "expandState": "collapse"
+                            "expandState": "expand"
                         },
                         "children": [
                             {
@@ -6937,7 +6937,7 @@
                                     "id": "cfe9z6o9yqo0",
                                     "created": 1635752809365,
                                     "text": "双亲委派模式",
-                                    "expandState": "collapse"
+                                    "expandState": "expand"
                                 },
                                 "children": [
                                     {
@@ -6961,7 +6961,7 @@
                                             "id": "cfeb5aorkxc0",
                                             "created": 1635756109396,
                                             "text": "优点",
-                                            "expandState": "collapse"
+                                            "expandState": "expand"
                                         },
                                         "children": [
                                             {
@@ -6989,7 +6989,7 @@
                                     "id": "cfe9zkttyo00",
                                     "created": 1635752840175,
                                     "text": "web容器加载模式",
-                                    "expandState": "collapse"
+                                    "expandState": "expand"
                                 },
                                 "children": [
                                     {
@@ -7017,7 +7017,7 @@
                             "id": "cfeb6x1xsww0",
                             "created": 1635756236446,
                             "text": "破坏委派模式",
-                            "expandState": "collapse"
+                            "expandState": "expand"
                         },
                         "children": [
                             {
@@ -7025,7 +7025,7 @@
                                     "id": "cfeb9fovhlc0",
                                     "created": 1635756433743,
                                     "text": "目的",
-                                    "expandState": "collapse"
+                                    "expandState": "expand"
                                 },
                                 "children": [
                                     {
@@ -7043,7 +7043,7 @@
                                     "id": "cfeb9oi27dk0",
                                     "created": 1635756452922,
                                     "text": "场景",
-                                    "expandState": "collapse"
+                                    "expandState": "expand"
                                 },
                                 "children": [
                                     {
@@ -7069,7 +7069,7 @@
                                     "id": "cfefwwjngjc0",
                                     "created": 1635769557248,
                                     "text": "实例",
-                                    "expandState": "collapse"
+                                    "expandState": "expand"
                                 },
                                 "children": [
                                     {
@@ -7145,7 +7145,7 @@
                             "id": "cfeb1ok6b3c0",
                             "created": 1635755826137,
                             "text": "加载时机/方法",
-                            "expandState": "collapse"
+                            "expandState": "expand"
                         },
                         "children": [
                             {
@@ -7153,7 +7153,7 @@
                                     "id": "cfedghq3dso0",
                                     "created": 1635762628940,
                                     "text": "静态加载",
-                                    "expandState": "collapse"
+                                    "expandState": "expand"
                                 },
                                 "children": [
                                     {
@@ -7187,7 +7187,7 @@
                                     "id": "cfedgmshp140",
                                     "created": 1635762639968,
                                     "text": "动态加载",
-                                    "expandState": "collapse"
+                                    "expandState": "expand"
                                 },
                                 "children": [
                                     {
@@ -7215,7 +7215,7 @@
                             "id": "cfe690ojqw80",
                             "created": 1635742295522,
                             "text": "加载过程",
-                            "expandState": "collapse"
+                            "expandState": "expand"
                         },
                         "children": [
                             {
@@ -7231,7 +7231,7 @@
                                     "id": "cewkaqna68w0",
                                     "created": 1633953846725,
                                     "text": "链接",
-                                    "expandState": "collapse",
+                                    "expandState": "expand",
                                     "layout": null
                                 },
                                 "children": [
@@ -7302,7 +7302,7 @@
                                             "created": 1633954165099,
                                             "text": "准备",
                                             "layout": null,
-                                            "expandState": "collapse"
+                                            "expandState": "expand"
                                         },
                                         "children": [
                                             {
@@ -7329,7 +7329,7 @@
                                             "created": 1633954169636,
                                             "text": "解析",
                                             "layout": null,
-                                            "expandState": "collapse"
+                                            "expandState": "expand"
                                         },
                                         "children": [
                                             {
@@ -7366,7 +7366,7 @@
                                     "id": "cewkb0c7pfc0",
                                     "created": 1633953867823,
                                     "text": "初始化",
-                                    "expandState": "collapse",
+                                    "expandState": "expand",
                                     "layout": null
                                 },
                                 "children": [
@@ -7519,7 +7519,7 @@
                     "text": "07. 方法调用",
                     "created": 1633657298547,
                     "layout": null,
-                    "expandState": "collapse"
+                    "expandState": "expand"
                 },
                 "children": [
                     {
@@ -7527,7 +7527,7 @@
                             "id": "ceyah1wshko0",
                             "created": 1634129250244,
                             "text": "JIT",
-                            "expandState": "collapse"
+                            "expandState": "expand"
                         },
                         "children": [
                             {
@@ -7535,7 +7535,7 @@
                                     "id": "ceyah67k3nk0",
                                     "created": 1634129259602,
                                     "text": "优化",
-                                    "expandState": "collapse"
+                                    "expandState": "expand"
                                 },
                                 "children": [
                                     {

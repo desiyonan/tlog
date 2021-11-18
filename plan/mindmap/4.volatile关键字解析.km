@@ -11,7 +11,7 @@
                     "id": "cf995makir40",
                     "created": 1635242692656,
                     "text": "1. 具体含义作用",
-                    "expandState": "collapse"
+                    "expandState": "expand"
                 },
                 "children": [
                     {
@@ -65,7 +65,7 @@
                     "id": "cf995v2of2w0",
                     "created": 1635242711770,
                     "text": "2. 并发编程概念",
-                    "expandState": "collapse"
+                    "expandState": "expand"
                 },
                 "children": [
                     {
@@ -73,7 +73,7 @@
                             "id": "cfa0qcn7vmo0",
                             "created": 1635320487268,
                             "text": "原子性",
-                            "expandState": "collapse"
+                            "expandState": "expand"
                         },
                         "children": [
                             {
@@ -89,7 +89,7 @@
                                     "id": "cfa0x4eyck80",
                                     "created": 1635321017903,
                                     "text": "例子",
-                                    "expandState": "collapse"
+                                    "expandState": "expand"
                                 },
                                 "children": [
                                     {
@@ -125,7 +125,7 @@
                             "id": "cfa0qjwd67c0",
                             "created": 1635320503059,
                             "text": "可见性",
-                            "expandState": "collapse"
+                            "expandState": "expand"
                         },
                         "children": [
                             {
@@ -159,7 +159,7 @@
                                     "id": "cfa0ydq49540",
                                     "created": 1635321116533,
                                     "text": "指令重排",
-                                    "expandState": "collapse"
+                                    "expandState": "expand"
                                 },
                                 "children": [
                                     {
@@ -181,7 +181,7 @@
                     "id": "cf9t8evs3so0",
                     "created": 1635299333815,
                     "text": "3. 物理硬件架构",
-                    "expandState": "collapse"
+                    "expandState": "expand"
                 },
                 "children": [
                     {
@@ -241,7 +241,7 @@
                             "id": "cfa12wmnb0g0",
                             "created": 1635321471139,
                             "text": "概念",
-                            "expandState": "collapse"
+                            "expandState": "expand"
                         },
                         "children": [
                             {
@@ -973,7 +973,7 @@
                             "id": "cfaq9viybts0",
                             "created": 1635392545036,
                             "text": "影响",
-                            "expandState": "collapse"
+                            "expandState": "expand"
                         },
                         "children": [
                             {
@@ -981,7 +981,7 @@
                                     "id": "cfat13fmsyo0",
                                     "created": 1635400320301,
                                     "text": "缓存一致性",
-                                    "expandState": "collapse"
+                                    "expandState": "expand"
                                 },
                                 "children": [
                                     {
@@ -999,7 +999,7 @@
                                     "id": "cfaqa4w7mls0",
                                     "created": 1635392565428,
                                     "text": "指令重排",
-                                    "expandState": "collapse"
+                                    "expandState": "expand"
                                 },
                                 "children": [
                                     {
@@ -1023,7 +1023,7 @@
                                                     "id": "cfauk8j4zaw0",
                                                     "created": 1635404641426,
                                                     "text": "主动的",
-                                                    "expandState": "collapse"
+                                                    "expandState": "expand"
                                                 },
                                                 "children": [
                                                     {
@@ -1065,7 +1065,7 @@
                             "id": "cfauah76fs80",
                             "created": 1635403876653,
                             "text": "处理",
-                            "expandState": "collapse"
+                            "expandState": "expand"
                         },
                         "children": [
                             {
@@ -1073,7 +1073,7 @@
                                     "id": "cfdgpq7065k0",
                                     "created": 1635670256027,
                                     "text": "总线锁",
-                                    "expandState": "collapse"
+                                    "expandState": "expand"
                                 },
                                 "children": [
                                     {
@@ -1091,7 +1091,7 @@
                                     "id": "cfauht8jf8g0",
                                     "created": 1635404451405,
                                     "text": "缓存一致性协议",
-                                    "expandState": "collapse"
+                                    "expandState": "expand"
                                 },
                                 "children": [
                                     {
@@ -1357,7 +1357,7 @@
                                     "id": "cfaup8cfi000",
                                     "created": 1635405032842,
                                     "text": "内存屏障",
-                                    "expandState": "collapse"
+                                    "expandState": "expand"
                                 },
                                 "children": [
                                     {
@@ -1686,7 +1686,7 @@
                     "id": "cf996qjzel40",
                     "created": 1635242780296,
                     "text": "4. JVM内存模型",
-                    "expandState": "collapse"
+                    "expandState": "expand"
                 },
                 "children": [
                     {
@@ -1694,7 +1694,7 @@
                             "id": "cfbnxao9hq00",
                             "created": 1635487477011,
                             "text": "图例",
-                            "expandState": "collapse"
+                            "expandState": "expand"
                         },
                         "children": [
                             {
@@ -1746,7 +1746,7 @@
                             "id": "cfdl6archy00",
                             "created": 1635682839059,
                             "text": "意义",
-                            "expandState": "collapse"
+                            "expandState": "expand"
                         },
                         "children": [
                             {
@@ -1772,7 +1772,7 @@
                             "id": "cfdl7l8rjzs0",
                             "created": 1635682940244,
                             "text": "抽象结构",
-                            "expandState": "collapse"
+                            "expandState": "expand"
                         },
                         "children": [
                             {
@@ -1780,7 +1780,7 @@
                                     "id": "cfdl7wog5cw0",
                                     "created": 1635682965137,
                                     "text": "主内存",
-                                    "expandState": "collapse"
+                                    "expandState": "expand"
                                 },
                                 "children": [
                                     {
@@ -1806,7 +1806,7 @@
                                     "id": "cfdl80k9o3k0",
                                     "created": 1635682973591,
                                     "text": "工作内存",
-                                    "expandState": "collapse"
+                                    "expandState": "expand"
                                 },
                                 "children": [
                                     {
@@ -1842,7 +1842,7 @@
                             "id": "cfdl9nqe7i80",
                             "created": 1635683102392,
                             "text": "happen-before规则",
-                            "expandState": "collapse",
+                            "expandState": "expand",
                             "note": "前面一个操作的结果对后续操作必须是可见的"
                         },
                         "children": [
@@ -1997,7 +1997,7 @@
                             "id": "cfe3id87ntc0",
                             "created": 1635734564780,
                             "text": "线程工作内存与主内存的动作交互",
-                            "expandState": "collapse"
+                            "expandState": "expand"
                         },
                         "children": [
                             {
@@ -2023,7 +2023,7 @@
                     "id": "cf9taejycvs0",
                     "created": 1635299489828,
                     "text": "5. JVM实现原理",
-                    "expandState": "collapse"
+                    "expandState": "expand"
                 },
                 "children": [
                     {
@@ -2031,7 +2031,7 @@
                             "id": "cfe2ga2kkxc0",
                             "created": 1635731580071,
                             "text": "Lock前缀指令",
-                            "expandState": "collapse"
+                            "expandState": "expand"
                         },
                         "children": [
                             {
@@ -2039,7 +2039,7 @@
                                     "id": "cfe2om6dbug0",
                                     "created": 1635732233335,
                                     "text": "总线锁",
-                                    "expandState": "collapse"
+                                    "expandState": "expand"
                                 },
                                 "children": [
                                     {
@@ -2063,7 +2063,7 @@
                                             "id": "cfe2xo9dxqw0",
                                             "created": 1635732943149,
                                             "text": "主要使用场景",
-                                            "expandState": "collapse"
+                                            "expandState": "expand"
                                         },
                                         "children": [
                                             {
@@ -2099,7 +2099,7 @@
                                     "id": "cfe2gqfeqhs0",
                                     "created": 1635731615676,
                                     "text": "缓存锁",
-                                    "expandState": "collapse"
+                                    "expandState": "expand"
                                 },
                                 "children": [
                                     {
@@ -2123,7 +2123,7 @@
                                             "id": "cfdluqsutuw0",
                                             "created": 1635684754718,
                                             "text": "大致过程",
-                                            "expandState": "collapse"
+                                            "expandState": "expand"
                                         },
                                         "children": [
                                             {
@@ -2187,7 +2187,7 @@
                     "id": "cf9taphp5fc0",
                     "created": 1635299513636,
                     "text": "6. 相关实际应用",
-                    "expandState": "collapse"
+                    "expandState": "expand"
                 },
                 "children": [
                     {
@@ -2195,7 +2195,7 @@
                             "id": "cf9tb2t1db40",
                             "created": 1635299542620,
                             "text": "1. 双重校验锁定模式 - 单例模式",
-                            "expandState": "collapse"
+                            "expandState": "expand"
                         },
                         "children": [
                             {
