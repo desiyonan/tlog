@@ -89,8 +89,8 @@
   "keywords": [
     
   ],
-  "articleBody": "思维导图  mybatis  1.接口扫描流程 2.接口动态代理 3.接口方法映射 4.接口方法执行     Mybatis 接口代理映射流程 @startuml @enduml Mybatis 接口方法执行流程 @startuml @enduml ",
-  "wordCount" : "59",
+  "articleBody": "思维导图  mybatis  1.接口扫描流程 2.接口动态代理 3.接口方法映射 4.接口方法执行     Mybatis 接口代理映射流程 @startuml start :service调用mapper接口; :访问具体MapperProxy代理实例; :调用invoke方法; :从cachedMethods中找到缓存的MapperMethod实例; end @enduml Mybatis 接口方法执行流程 @startuml @enduml ",
+  "wordCount" : "149",
   "inLanguage": "zh",
   "datePublished": "2021-11-19T09:20:47+08:00",
   "dateModified": "2021-11-19T09:20:47+08:00",
@@ -267,7 +267,12 @@
 
 <h2 id="mybatis-接口代理映射流程">Mybatis 接口代理映射流程<a hidden class="anchor" aria-hidden="true" href="#mybatis-接口代理映射流程">#</a></h2>
 <pre><code class="language-plantuml" data-lang="plantuml">@startuml
-
+start
+:service调用mapper接口;
+:访问具体MapperProxy代理实例;
+:调用invoke方法;
+:从cachedMethods中找到缓存的MapperMethod实例;
+end
 @enduml
 </code></pre><h2 id="mybatis-接口方法执行流程">Mybatis 接口方法执行流程<a hidden class="anchor" aria-hidden="true" href="#mybatis-接口方法执行流程">#</a></h2>
 <pre><code class="language-puml" data-lang="puml">@startuml
