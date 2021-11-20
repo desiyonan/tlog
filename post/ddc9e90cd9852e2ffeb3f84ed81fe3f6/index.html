@@ -22,7 +22,22 @@
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
 <meta name="generator" content="Hugo 0.83.1" />
-
+<script src="https://cdn.jsdelivr.net/gh/jmnote/plantuml-encoder@1.2.4/dist/plantuml-encoder.min.js"
+    integrity="sha256-Qsk2KRBCN5qVZX7B+8+2IvQl1Aqc723qV1tBCQaVoqo=" crossorigin="anonymous"></script>
+<script>
+    window.onload= function () {
+        let es1 = document.querySelectorAll("[class^=language-plantuml]");
+        let es2 = document.querySelectorAll("[class^=language-puml]");
+        Array.prototype.forEach.call([...es1, ...es2],
+            function (code) {
+                let image = document.createElement("IMG");
+                image.loading = 'lazy'; 
+                image.src = 'https://www.plantuml.com/plantuml/svg/~1' + plantumlEncoder.encode(code.innerText) +'#center';
+                code.parentNode.parentNode.insertBefore(image, code.parentNode);
+                code.style.display = 'none';
+            });
+    };
+</script>
 
 
 
@@ -74,8 +89,8 @@
   "keywords": [
     
   ],
-  "articleBody": "思维导图  mybatis  1.接口扫描流程 2.接口动态代理 3.接口方法映射 4.接口方法执行     Mybatis 接口代理映射流程 @startuml \"oop集成体系\" class oopDesc { markOop _mark; union _metadata { Klass* _klass; narrowKlass _compressed_klass; }; } oopDesc   (function(){ let plantumlPrefix = \"language-plantuml\"; Array.prototype.forEach.call(document.querySelectorAll(\"[class^=\" + plantumlPrefix + \"]\"), function(code){ let image = document.createElement(\"IMG\"); image.loading = 'lazy'; // Lazy loading image.src = 'http://www.plantuml.com/plantuml/svg/~1' + plantumlEncoder.encode(code.innerText); code.parentNode.parentNode.insertBefore(image, code.parentNode); code.style.display = 'none'; }); })();  Mybatis 接口方法执行流程 @startuml @enduml ",
-  "wordCount" : "137",
+  "articleBody": "思维导图  mybatis  1.接口扫描流程 2.接口动态代理 3.接口方法映射 4.接口方法执行     Mybatis 接口代理映射流程 @startuml @enduml Mybatis 接口方法执行流程 @startuml @enduml ",
+  "wordCount" : "59",
   "inLanguage": "zh",
   "datePublished": "2021-11-19T09:20:47+08:00",
   "dateModified": "2021-11-19T09:20:47+08:00",
@@ -238,7 +253,7 @@
 </div>
 
   <div class="post-content"><h2 id="思维导图">思维导图<a hidden class="anchor" aria-hidden="true" href="#思维导图">#</a></h2>
-<div id="" class="mindmap mindmap-md"><ul>
+<div id="mk-0" class='mindmap mindmap-md'><ul>
 <li>mybatis
 <ul>
 <li>1.接口扫描流程</li>
@@ -249,40 +264,13 @@
 </li>
 </ul>
 </div>
+
 <h2 id="mybatis-接口代理映射流程">Mybatis 接口代理映射流程<a hidden class="anchor" aria-hidden="true" href="#mybatis-接口代理映射流程">#</a></h2>
-<pre><code class="language-plantuml" data-lang="plantuml">@startuml &quot;oop集成体系&quot;
-
-class oopDesc {
-  markOop _mark;
-  union _metadata {
-    Klass* _klass;
-    narrowKlass _compressed_klass;
-  };
-}
-
-oopDesc &lt;|-- instanceOopDesc
-oopDesc &lt;|-- arrayOopDesc
-
-arrayOopDesc &lt;|-- ObjArrayOopDesc
-arrayOopDesc &lt;|-- TypeArrayOopDesc
+<pre><code class="language-plantuml" data-lang="plantuml">@startuml
 
 @enduml
-</code></pre><script src="https://cdn.jsdelivr.net/gh/jmnote/plantuml-encoder@1.2.4/dist/plantuml-encoder.min.js" integrity="sha256-Qsk2KRBCN5qVZX7B+8+2IvQl1Aqc723qV1tBCQaVoqo=" crossorigin="anonymous"></script>
-<script>
-(function(){
-  let plantumlPrefix = "language-plantuml";
-  Array.prototype.forEach.call(document.querySelectorAll("[class^=" + plantumlPrefix + "]"), function(code){
-    let image = document.createElement("IMG");
-    image.loading = 'lazy'; // Lazy loading
-    image.src = 'http://www.plantuml.com/plantuml/svg/~1' + plantumlEncoder.encode(code.innerText);
-    code.parentNode.parentNode.insertBefore(image, code.parentNode);
-    code.style.display = 'none';
-  });
-})();
-</script>
-<h2 id="mybatis-接口方法执行流程">Mybatis 接口方法执行流程<a hidden class="anchor" aria-hidden="true" href="#mybatis-接口方法执行流程">#</a></h2>
+</code></pre><h2 id="mybatis-接口方法执行流程">Mybatis 接口方法执行流程<a hidden class="anchor" aria-hidden="true" href="#mybatis-接口方法执行流程">#</a></h2>
 <pre><code class="language-puml" data-lang="puml">@startuml
-
 
 @enduml
 </code></pre><!-- ## 延伸 -->
