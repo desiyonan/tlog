@@ -89,8 +89,8 @@
   "keywords": [
     
   ],
-  "articleBody": "思维导图  mybatis  1.接口扫描流程 2.接口动态代理 3.接口方法映射 4.接口方法执行     Mybatis 接口代理映射流程 @startuml start :service调用mapper接口; :访问具体MapperProxy代理实例; :调用invoke方法; :从cachedMethods中找到缓存的MapperMethod实例; end @enduml Mybatis 接口方法执行流程 @startuml @enduml ",
-  "wordCount" : "149",
+  "articleBody": "思维导图  mybatis  1.接口扫描流程 2.接口动态代理 3.接口方法映射 4.接口方法执行     Mybatis 接口代理映射流程 @startuml start :service调用mapper接口; :访问具体MapperProxy代理实例; :调用invoke方法; :从cachedMethods中找到缓存的MapperMethod实例; end @enduml Mybatis 接口方法执行流程 @startuml !theme plain annotation Service class XXService { - mapper:IMapper } interface IMapper { + Object doSomething() } class MapperProxy  { - SqlSession sqlSession - Class mapperInterface - MapmethodCache } class MapperMethod { - SqlCommand command - MethodSignature method + Object execute(SqlSession sqlSession, Object[] args) - Object rowCountResult(int rowCount) } class SqlCommand{ - String name - SqlCommandType type } class MethodSignature { - boolean returnsMany - boolean returnsMap - boolean returnsVoid - Class returnType - String mapKey - Integer resultHandlerIndex - Integer rowBoundsIndex - SortedMapparams - boolean hasNamedParameters + Object convertArgsToSqlCommandParam(Object[] args) + RowBounds extractRowBounds(Object[] args) + ResultHandler extractResultHandler(Object[] args) } interface SqlSession { - void select(...) - List selectList(...) } class DefaultSqlSession { - Executor executor } interface Executor { + List query(MappedStatement var1, Object var2, RowBounds var3, ResultHandler var4) + List query(...) } abstract class BaseExecutor implements Executor { - PerpetualCache localCache - List queryFromDatabase(MappedStatement ms, Object parameter, RowBounds rowBounds, ResultHandler resultHandler, CacheKey key, BoundSql boundSql) # abstract List doQuery(MappedStatement var1, Object var2, RowBounds var3, ResultHandler var4, BoundSql var5) } class SimpleExecutor extends BaseExecutor{ + List doQuery(MappedStatement var1, Object var2, RowBounds var3, ResultHandler var4, BoundSql var5) } interface StatementHandler { + List query(Statement var1, ResultHandler var2) } class RoutingStatementHandler { - StatementHandler delegate } class Configuration { - InterceptorChain interceptorChain + StatementHandler newStatementHandler(...) } class InterceptorChain{ - List interceptors + Object pluginAll(Object target) + void addInterceptor(Interceptor interceptor) } interface Interceptor { + Object intercept(Invocation var1) throws Throwable + Object plugin(Object var1) + void setProperties(Properties var1) } class Plugin  { - Object target - Intercepor interceptor - Map, Set signatureMap + Object wrap(Object target, Interceptor interceptor) } interface ResultHandler { + List handleResultSets(Statement var1) } interface PreparedStatement { + void execute() } XXService . Service XXService SqlCommand MapperMethod - MethodSignature MapperMethod Executor SimpleExecutor SimpleExecutor Configuration Plugin InterceptorChain .[hidden] StatementHandler Plugin = RoutingStatementHandler : JDK动态代理 RoutingStatementHandler -- PreparedStatementHandler: 静态代理 PreparedStatement . PreparedStatementHandler PreparedStatementHandler @startuml @enduml ",
+  "wordCount" : "628",
   "inLanguage": "zh",
   "datePublished": "2021-11-19T09:20:47+08:00",
   "dateModified": "2021-11-19T09:20:47+08:00",
@@ -276,6 +276,121 @@ end
 @enduml
 </code></pre><h2 id="mybatis-接口方法执行流程">Mybatis 接口方法执行流程<a hidden class="anchor" aria-hidden="true" href="#mybatis-接口方法执行流程">#</a></h2>
 <pre><code class="language-puml" data-lang="puml">@startuml
+!theme plain
+annotation Service
+class XXService {
+  - mapper:IMapper
+}
+interface IMapper {
+    + Object doSomething()
+}
+class MapperProxy &lt;&lt;InvocationHandler&gt;&gt; {
+  - SqlSession sqlSession
+  - Class&lt;T&gt; mapperInterface
+  - Map&lt;Method, MapperMethod&gt; methodCache
+}
+class MapperMethod {
+  - SqlCommand command
+  - MethodSignature method
+  + Object execute(SqlSession sqlSession, Object[] args)
+  - Object rowCountResult(int rowCount)
+}
+class SqlCommand{
+  - String name
+  - SqlCommandType type
+}
+class MethodSignature {
+  - boolean returnsMany
+  - boolean returnsMap
+  - boolean returnsVoid
+  - Class&lt;?&gt; returnType
+  - String mapKey
+  - Integer resultHandlerIndex
+  - Integer rowBoundsIndex
+  - SortedMap&lt;Integer, String&gt; params
+  - boolean hasNamedParameters
+  + Object convertArgsToSqlCommandParam(Object[] args)
+  + RowBounds extractRowBounds(Object[] args)
+  + ResultHandler extractResultHandler(Object[] args)
+}
+interface SqlSession {
+  - void select(...)
+  - List selectList(...)
+}
+class DefaultSqlSession {
+  - Executor executor
+}
+interface Executor {
+  + List query(MappedStatement var1, Object var2, RowBounds var3, ResultHandler var4)
+  + List query(...)
+}
+abstract class BaseExecutor implements Executor {
+  - PerpetualCache localCache
+  - List queryFromDatabase(MappedStatement ms, Object parameter, RowBounds rowBounds, ResultHandler resultHandler, CacheKey key, BoundSql boundSql)
+  # abstract List doQuery(MappedStatement var1, Object var2, RowBounds var3, ResultHandler var4, BoundSql var5)
+}
+class SimpleExecutor extends BaseExecutor{
+  + List doQuery(MappedStatement var1, Object var2, RowBounds var3, ResultHandler var4, BoundSql var5)
+}
+interface StatementHandler {
+  + List query(Statement var1, ResultHandler var2)
+}
+class RoutingStatementHandler {
+  - StatementHandler delegate
+}
+class Configuration {
+  - InterceptorChain interceptorChain
+  + StatementHandler newStatementHandler(...)
+}
+class InterceptorChain{
+  - List&lt;Interceptor&gt; interceptors
+  + Object pluginAll(Object target)
+  + void addInterceptor(Interceptor interceptor)
+}
+interface Interceptor {
+  + Object intercept(Invocation var1) throws Throwable
+  + Object plugin(Object var1)
+  + void setProperties(Properties var1)
+}
+class Plugin &lt;&lt;InvocationHandler&gt;&gt; {
+  - Object target
+  - Intercepor interceptor
+  - Map&lt;Class&lt;?&gt;, Set&lt;Method&gt;&gt; signatureMap
+  + Object wrap(Object target, Interceptor interceptor)
+}
+interface ResultHandler {
+  + List handleResultSets(Statement var1)
+}
+interface PreparedStatement {
+  + void execute()
+}
+
+XXService .&gt; Service
+XXService &lt;-- IMapper : 成员变量
+XXService &lt;-- MapperProxy : spring容器注入实例
+MapperProxy -left- IMapper : JDK动态代理
+MapperProxy o-- MapperMethod : Map缓存
+MapperMethod -left&gt; SqlCommand
+MapperMethod -&gt; MethodSignature
+MapperMethod &lt;.. SqlSession : execute参数调用
+SqlSession &lt;|-- DefaultSqlSession
+DefaultSqlSession -&gt; Executor
+SimpleExecutor &lt;.. StatementHandler : Plugin层层代理过后的实例
+StatementHandler &lt;|--- RoutingStatementHandler
+StatementHandler &lt;|--- PreparedStatementHandler
+Configuration &lt;.... RoutingStatementHandler : 构建并应用插件链
+Configuration .&gt; SimpleExecutor
+Configuration &lt;-- InterceptorChain
+InterceptorChain o.. Interceptor: pluginAll层层包装target(JDK动态代理)
+Interceptor &lt;.. Plugin : Plugin.warp 包装成代理类
+Interceptor --&gt; Plugin
+InterceptorChain .[hidden] StatementHandler
+Plugin = RoutingStatementHandler : JDK动态代理
+RoutingStatementHandler -- PreparedStatementHandler: 静态代理
+PreparedStatement .&gt; PreparedStatementHandler
+PreparedStatementHandler &lt;. ResultHandler
+@enduml
+</code></pre><pre><code class="language-puml" data-lang="puml">@startuml
 
 @enduml
 </code></pre><!-- ## 延伸 -->
