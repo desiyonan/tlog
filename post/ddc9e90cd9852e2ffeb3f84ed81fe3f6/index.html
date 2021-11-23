@@ -23,20 +23,26 @@
 <meta name="msapplication-TileColor" content="#2e2e33">
 <meta name="generator" content="Hugo 0.83.1" />
 <script src="https://cdn.jsdelivr.net/gh/jmnote/plantuml-encoder@1.2.4/dist/plantuml-encoder.min.js"
-    integrity="sha256-Qsk2KRBCN5qVZX7B+8+2IvQl1Aqc723qV1tBCQaVoqo=" crossorigin="anonymous"></script>
+  integrity="sha256-Qsk2KRBCN5qVZX7B+8+2IvQl1Aqc723qV1tBCQaVoqo=" crossorigin="anonymous"></script>
 <script>
-    window.onload= function () {
-        let es1 = document.querySelectorAll("[class^=language-plantuml]");
-        let es2 = document.querySelectorAll("[class^=language-puml]");
-        Array.prototype.forEach.call([...es1, ...es2],
-            function (code) {
-                let image = document.createElement("IMG");
-                image.loading = 'lazy'; 
-                image.src = 'https://www.plantuml.com/plantuml/svg/~1' + plantumlEncoder.encode(code.innerText) +'#center';
-                code.parentNode.parentNode.insertBefore(image, code.parentNode);
-                code.style.display = 'none';
-            });
+  (function () {
+    function initPuml() {
+      let es1 = document.querySelectorAll("[class^=language-plantuml]");
+      let es2 = document.querySelectorAll("[class^=language-puml]");
+      Array.prototype.forEach.call([...es1, ...es2],
+        function (code) {
+          let image = document.createElement("IMG");
+          image.loading = 'lazy'; 
+          image.src = 'https://www.plantuml.com/plantuml/svg/~1' + plantumlEncoder.encode(code.innerText) +
+            '#center';
+          code.parentNode.parentNode.insertBefore(image, code.parentNode);
+          code.style.display = 'none';
+        });
     };
+    if (document.addEventListener) {
+      document.addEventListener("DOMContentLoaded", initPuml, false);
+    }
+  })()
 </script>
 
 
@@ -442,13 +448,25 @@ PreparedStatementHandler &lt;. ResultHandler
 </div>
 
   </footer><div id="utter-container"></div>
-    <script src="https://utteranc.es/client.js"
-        repo= 'desiyonan/zone'
-        issue-term= "title"
-        theme= 'github-light'
-        crossorigin= "anonymous"
-        async>
-    </script>
+<script async type="text/javascript">
+  (function () {
+    function initUtter() {
+      var utterances = document.createElement('script');
+      utterances.type = 'text/javascript';
+      utterances.async = true;
+      utterances.setAttribute('issue-term', 'title');
+      utterances.setAttribute('theme', 'github-light');
+      utterances.setAttribute('repo', 'desiyonan\/zone');
+      utterances.crossorigin = 'anonymous';
+      utterances.src = 'https://utteranc.es/client.js';
+      
+      document.getElementById('utter-container').appendChild(utterances);
+    }
+    if (document.addEventListener) {
+      document.addEventListener("DOMContentLoaded", initUtter, false);
+    }
+  })()
+</script>
 </article>
     </main>
     <footer class="footer">
