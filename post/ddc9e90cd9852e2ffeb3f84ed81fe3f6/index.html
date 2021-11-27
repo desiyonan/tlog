@@ -95,8 +95,8 @@
   "keywords": [
     
   ],
-  "articleBody": "思维导图  mybatis  1.配置阶段  1.自动装配过程 2.接口扫描过程 3.接口动态代理 4.接口方法映射   2.运行阶段  1.接口方法执行 2.插件链的处理       配置阶段 自动装配过程 基于spring-autoconfig，SPI思想动态扩展\n@startuml class \"MybatisAutoConfiguration\" as mc { - MybatisProperties properties - Interceptor[] interceptors - ResourceLoader resourceLoader + SqlSessionFactory sqlSessionFactory(DataSource dataSource) + SqlSessionTemplate sqlSessionTemplate(SqlSessionFactory sqlSessionFactory) } note left: 通过spring.factories文件配置，\\n类似java的SPI机制 class \"MybatisProperties\" as mp{ - String configLocation - String[] mapperLocations - String typeAliasesPackage - String typeHandlersPackage - boolean checkConfigLocation - ExecutorType executorType - Properties configurationProperties - Configuration configuration + Resource[] resolveMapperLocations() } note right: yml配置文件中前缀为`mybatis`的配置项 class \"AutoConfiguredMapperScannerRegistrar\" as msr { - BeanFactory beanFactory - ResourceLoader resourceLoader + void registerBeanDefinitions(AnnotationMetadata, BeanDefinitionRegistry) } class \"ClassPathMapperScanner\" as cms { + setAnnotationClass(Class) + void registerFilters() + void doScan(String... packages) } mc Mybatis 接口代理映射流程 @startuml start :service调用mapper接口; :访问具体MapperProxy代理实例; :调用invoke方法; :从cachedMethods中找到缓存的MapperMethod实例; end @enduml Mybatis 接口方法执行流程 @startuml !theme plain annotation Service class XXService { - mapper:IMapper } interface IMapper { + Object doSomething() } class MapperProxy  { - SqlSession sqlSession - Class mapperInterface - MapmethodCache } class MapperMethod { - SqlCommand command - MethodSignature method + Object execute(SqlSession sqlSession, Object[] args) - Object rowCountResult(int rowCount) } class SqlCommand{ - String name - SqlCommandType type } class MethodSignature { - boolean returnsMany - boolean returnsMap - boolean returnsVoid - Class returnType - String mapKey - Integer resultHandlerIndex - Integer rowBoundsIndex - SortedMapparams - boolean hasNamedParameters + Object convertArgsToSqlCommandParam(Object[] args) + RowBounds extractRowBounds(Object[] args) + ResultHandler extractResultHandler(Object[] args) } interface SqlSession { - void select(...) - List selectList(...) } class DefaultSqlSession { - Executor executor } interface Executor { + List query(MappedStatement var1, Object var2, RowBounds var3, ResultHandler var4) + List query(...) } abstract class BaseExecutor implements Executor { - PerpetualCache localCache - List queryFromDatabase(MappedStatement ms, Object parameter, RowBounds rowBounds, ResultHandler resultHandler, CacheKey key, BoundSql boundSql) # abstract List doQuery(MappedStatement var1, Object var2, RowBounds var3, ResultHandler var4, BoundSql var5) } class SimpleExecutor extends BaseExecutor{ + List doQuery(MappedStatement var1, Object var2, RowBounds var3, ResultHandler var4, BoundSql var5) } interface StatementHandler { + List query(Statement var1, ResultHandler var2) } class RoutingStatementHandler { - StatementHandler delegate } class Configuration { - InterceptorChain interceptorChain + StatementHandler newStatementHandler(...) } class InterceptorChain{ - List interceptors + Object pluginAll(Object target) + void addInterceptor(Interceptor interceptor) } interface Interceptor { + Object intercept(Invocation var1) throws Throwable + Object plugin(Object var1) + void setProperties(Properties var1) } class Plugin  { - Object target - Intercepor interceptor - Map, Set signatureMap + Object wrap(Object target, Interceptor interceptor) } interface ResultHandler { + List handleResultSets(Statement var1) } interface PreparedStatement { + void execute() } XXService . Service XXService SqlCommand MapperMethod - MethodSignature MapperMethod Executor SimpleExecutor SimpleExecutor Configuration Plugin InterceptorChain .[hidden] StatementHandler Plugin = RoutingStatementHandler : JDK动态代理 RoutingStatementHandler -- PreparedStatementHandler: 静态代理 PreparedStatement . PreparedStatementHandler PreparedStatementHandler @startuml @enduml ",
-  "wordCount" : "883",
+  "articleBody": "思维导图  mybatis  1.配置阶段  1.自动装配过程 2.接口扫描过程 3.接口动态代理 4.接口方法映射   2.运行阶段  1.接口方法执行 2.插件链的处理       配置阶段 源码版本：\n org.mybatis.spring.boot mybatis-spring-boot 2.2.1-SNAPSHOT 自动装配过程 基于spring-autoconfig，SPI动态扩展\n@startuml class \"MybatisAutoConfiguration\" as mac { - MybatisProperties properties - Interceptor[] interceptors - ResourceLoader resourceLoader + SqlSessionFactory sqlSessionFactory(DataSource dataSource) + SqlSessionTemplate sqlSessionTemplate(SqlSessionFactory sqlSessionFactory) } note left of mac 通过spring.factories文件 配置，类似java的SPI机制 主要功能： 1. 声明Bean: SqlSessionFactory 2. 声明Bean: SqlSessionTemplate 3. 创建Configuration 4. 配置Mapper扫描 end note class \"MybatisProperties\" as mp{ - String configLocation - String[] mapperLocations - String typeAliasesPackage - String typeHandlersPackage - boolean checkConfigLocation - ExecutorType executorType - Properties configurationProperties - Configuration configuration + Resource[] resolveMapperLocations() } note top of mp yml配置文件中前缀为`mybatis`的配置项 声明config文件位置，还有yml中的配置 end note class \"AutoConfiguredMapperScannerRegistrar\" as msr  { - BeanFactory beanFactory + void registerBeanDefinitions(AnnotationMetadata, BeanDefinitionRegistry) } note left of msr 实现ImportBeanDefinitionRegistrar接口 注入MapperScannerConfigurer实例，用于 配置扫描Mapper end note interface \"BeanDefinitionRegistry\" as bdr { ... + void registerBeanDefinition(String beanName, BeanDefinition) } class \"DefaultListableBeanFactory\" as dlbf { - MapbeanDefinitionMap - volatile List beanDefinitionNames } interface \"BeanDefinitionRegistryPostProcessor\" as bdrpp { + void postProcessBeanFactory(ConfigurableListableBeanFactory) + void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry) } class \"MapperScannerConfigurer\" as msc { - ClassannotationClass - String basePackage - 其他属性.. + void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry) } class \"ClassPathBeanDefinitionScanner\" as cpbds{ - BeanDefinitionRegistry registry + int scan(String... basePackages) # Set doScan(String... basePackages) } class \"ClassPathMapperScanner\" as cpms{ - ClassannotationClass - ClassmapperFactoryBeanClass = MapperFactoryBean.class + void registerFilters() + Set doScan(String... basePackages) - void processBeanDefinitions(Set) } note left of cpms::registerFilters 设置过滤，扫描Mapper注解 this.addIncludeFilter(new AnnotationTypeFilter(this.annotationClass)); end note note left of cpms::processBeanDefinitions 核心处理方法,将扫描到的类设置为MapperFactoryBean.class definition.setBeanClass(this.mapperFactoryBeanClass) 设置依赖sqlSessionFactory等 end note interface \"FactoryBean\" as fb { + String OBJECT_TYPE_ATTRIBUTE = \"factoryBeanObjectType\" + T getObject() + Class getObjectType() + boolean isSingleton() } note left of fb::getObject 最终生成实例代理类 end note class \"DaoSupport\" as ds  { + void afterPropertiesSet() + void checkDaoConfig() + void initeDao() } note right of ds::afterPropertiesSet 调用checkDaoConfig，最终通 过Configuration.addMapper 添加mapper end note class \"SqlSessionDaoSupport\" as ssds extends ds { + void checkDaoConfig() } class \"MapperFactoryBean\" as mfb extends ssds implements fb { - boolean addToConfig = true - Class mapperInterface - SqlSessionTemplate sqlSessionTemplate + void checkDaoConfig() + T getObject() } note left of mfb::mapperInterface 业务代码定义的类，注解Mapper修饰 end note note right of mfb::sqlSessionTemplate 通过模板获取到之前生成的configuration 配置 end note note right of mfb::checkDaoConfig 重写，调用Configuration.addMapper添加 end note note left of mfb::getObject 通过Configuration生成过去代理类 end note class \"Configuration\" as cfg{ - MapperRegistry mapperRegistry + bool hasMapper(Class) + void addMapper(Class) } note left of cfg MybatisProperties声明的文件位置， MybatisAutoConfigurtion创建的配置 end note class \"MapperRegistry\" as mr { - Map, MapperProxyFactory knownMappers + boolean hasMapper(Class) + void addMapper(Class) + void getMapper(Class, SqlSession) } note left of mr 注册Mapper，和生成Mapper代理工厂， 通过Mapper代理工厂最终生成代理类提供给 Spring容器 end note class \"MapperProxyFactory\" as mpf{ - Class mapperInterface - MapmethodCache + T newInstance(SqlSession) } class \"MapperProxy\" as mproxy  { - SqlSession sqlSession - Class mapperInterface - MapmethodCache } note left of mproxy 最终注入容器的JDK代理类， 解析定义的Mapper接口方法并缓存句柄 运行时执行 end note mac::properties 运行阶段 Mybatis 接口方法执行流程 源码版本:\nJDK8和JDK9之后稍有不同，之后版本方法通过方法句柄实现，功能一致，没有太大区别\n@startuml annotation Service class XXService { - mapper:IMapper } interface IMapper { + Object doSomething() } class MapperProxy  { - SqlSession sqlSession - Class mapperInterface - MapmethodCache } class MapperMethod { - SqlCommand command - MethodSignature method + Object execute(SqlSession sqlSession, Object[] args) - Object rowCountResult(int rowCount) } class SqlCommand{ - String name - SqlCommandType type } class MethodSignature { - boolean returnsMany - boolean returnsMap - boolean returnsVoid - Class returnType - String mapKey - Integer resultHandlerIndex - Integer rowBoundsIndex - SortedMapparams - boolean hasNamedParameters + Object convertArgsToSqlCommandParam(Object[] args) + RowBounds extractRowBounds(Object[] args) + ResultHandler extractResultHandler(Object[] args) } interface SqlSession { - void select(...) - List selectList(...) } class DefaultSqlSession { - Executor executor } interface Executor { + List query(MappedStatement var1, Object var2, RowBounds var3, ResultHandler var4) + List query(...) } abstract class BaseExecutor implements Executor { - PerpetualCache localCache - List queryFromDatabase(MappedStatement ms, Object parameter, RowBounds rowBounds, ResultHandler resultHandler, CacheKey key, BoundSql boundSql) # abstract List doQuery(MappedStatement var1, Object var2, RowBounds var3, ResultHandler var4, BoundSql var5) } class SimpleExecutor extends BaseExecutor{ + List doQuery(MappedStatement var1, Object var2, RowBounds var3, ResultHandler var4, BoundSql var5) } interface StatementHandler { + List query(Statement var1, ResultHandler var2) } class RoutingStatementHandler { - StatementHandler delegate } class Configuration { - InterceptorChain interceptorChain + StatementHandler newStatementHandler(...) } class InterceptorChain{ - List interceptors + Object pluginAll(Object target) + void addInterceptor(Interceptor interceptor) } interface Interceptor { + Object intercept(Invocation var1) throws Throwable + Object plugin(Object var1) + void setProperties(Properties var1) } class Plugin  { - Object target - Intercepor interceptor - Map, Set signatureMap + Object wrap(Object target, Interceptor interceptor) } interface ResultHandler { + List handleResultSets(Statement var1) } interface PreparedStatement { + void execute() } XXService . Service XXService SqlCommand MapperMethod - MethodSignature MapperMethod Executor SimpleExecutor SimpleExecutor Configuration Plugin InterceptorChain .[hidden] StatementHandler Plugin = RoutingStatementHandler : JDK动态代理 RoutingStatementHandler -- PreparedStatementHandler: 静态代理 PreparedStatement . PreparedStatementHandler PreparedStatementHandler ",
+  "wordCount" : "1707",
   "inLanguage": "zh",
   "datePublished": "2021-11-19T09:20:47+08:00",
   "dateModified": "2021-11-19T09:20:47+08:00",
@@ -255,10 +255,13 @@
                     <a href="#%e8%87%aa%e5%8a%a8%e8%a3%85%e9%85%8d%e8%bf%87%e7%a8%8b" aria-label="自动装配过程">自动装配过程</a></li></ul>
                 </li>
                 <li>
-                    <a href="#mybatis-%e6%8e%a5%e5%8f%a3%e4%bb%a3%e7%90%86%e6%98%a0%e5%b0%84%e6%b5%81%e7%a8%8b" aria-label="Mybatis 接口代理映射流程">Mybatis 接口代理映射流程</a></li>
+                    <a href="#%e8%bf%90%e8%a1%8c%e9%98%b6%e6%ae%b5" aria-label="运行阶段">运行阶段</a><ul>
+                        
                 <li>
                     <a href="#mybatis-%e6%8e%a5%e5%8f%a3%e6%96%b9%e6%b3%95%e6%89%a7%e8%a1%8c%e6%b5%81%e7%a8%8b" aria-label="Mybatis 接口方法执行流程">Mybatis 接口方法执行流程</a>
                 </li>
+            </ul>
+            </li>
             </ul>
         </div>
     </details>
@@ -288,17 +291,30 @@
 </div>
 
 <h2 id="配置阶段">配置阶段<a hidden class="anchor" aria-hidden="true" href="#配置阶段">#</a></h2>
-<h3 id="自动装配过程">自动装配过程<a hidden class="anchor" aria-hidden="true" href="#自动装配过程">#</a></h3>
-<p>基于spring-autoconfig，SPI思想动态扩展</p>
+<p>源码版本：</p>
+<div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="c">&lt;!-- pom.xml --&gt;</span>
+<span class="nt">&lt;groupId&gt;</span>org.mybatis.spring.boot<span class="nt">&lt;/groupId&gt;</span>
+<span class="nt">&lt;artifactId&gt;</span>mybatis-spring-boot<span class="nt">&lt;/artifactId&gt;</span>
+<span class="nt">&lt;version&gt;</span>2.2.1-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+</code></pre></div><h3 id="自动装配过程">自动装配过程<a hidden class="anchor" aria-hidden="true" href="#自动装配过程">#</a></h3>
+<p>基于spring-autoconfig，SPI动态扩展</p>
 <pre><code class="language-puml" data-lang="puml">@startuml
-class &quot;MybatisAutoConfiguration&quot; as mc {
+class &quot;MybatisAutoConfiguration&quot; as mac {
   - MybatisProperties properties
   - Interceptor[] interceptors
   - ResourceLoader resourceLoader
   + SqlSessionFactory sqlSessionFactory(DataSource dataSource)
   + SqlSessionTemplate sqlSessionTemplate(SqlSessionFactory sqlSessionFactory)
 }
-note left: 通过spring.factories文件配置，\n类似java的SPI机制
+note left of mac
+通过spring.factories文件
+配置，类似java的SPI机制
+主要功能：
+1. 声明Bean: SqlSessionFactory
+2. 声明Bean: SqlSessionTemplate
+3. 创建Configuration
+4. 配置Mapper扫描
+end note
 
 class &quot;MybatisProperties&quot; as mp{
   - String configLocation
@@ -311,38 +327,171 @@ class &quot;MybatisProperties&quot; as mp{
   - Configuration configuration
   + Resource[] resolveMapperLocations()
 }
-note right: yml配置文件中前缀为`mybatis`的配置项
+note top of mp
+yml配置文件中前缀为`mybatis`的配置项
+声明config文件位置，还有yml中的配置
+end note
 
-class &quot;AutoConfiguredMapperScannerRegistrar&quot; as msr {
+class &quot;AutoConfiguredMapperScannerRegistrar&quot; as msr &lt;&lt;ImportBeanDefinitionRegistrar&gt;&gt; {
   - BeanFactory beanFactory
-  - ResourceLoader resourceLoader
   + void registerBeanDefinitions(AnnotationMetadata, BeanDefinitionRegistry)
 }
+note left of msr
+实现ImportBeanDefinitionRegistrar接口
+注入MapperScannerConfigurer实例，用于
+配置扫描Mapper
+end note
 
-class &quot;ClassPathMapperScanner&quot; as cms {
-
-  + setAnnotationClass(Class&lt;? extends Annotation&gt;)
-  + void registerFilters()
-  + void doScan(String... packages)
+interface &quot;BeanDefinitionRegistry&quot; as bdr {
+  ...
+  + void registerBeanDefinition(String beanName, BeanDefinition)
+}
+class &quot;DefaultListableBeanFactory&quot; as dlbf {
+  - Map&lt;String, BeanDefinition&gt; beanDefinitionMap
+  - volatile List&lt;String&gt; beanDefinitionNames
 }
 
+interface &quot;BeanDefinitionRegistryPostProcessor&quot; as bdrpp &lt;&lt;BeanFactoryPostProcessor&gt;&gt;{
+  + void postProcessBeanFactory(ConfigurableListableBeanFactory)
+  + void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry)
+}
 
-mc &lt;- mp: 构造器注入\n必要的参数
-mc &lt;-- msr
-msr::registerBeanDefinitons &lt;-- cms: 指定扫描Mapper注解
+class &quot;MapperScannerConfigurer&quot; as msc &lt;&lt;BeanDefinitionRegistryPostProcessor&gt;&gt;{
+  - Class&lt;? extends Annotation&gt; annotationClass
+  - String basePackage
+  - 其他属性..
+  + void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry)
+}
+
+class &quot;ClassPathBeanDefinitionScanner&quot; as cpbds{
+  - BeanDefinitionRegistry registry
+  + int scan(String... basePackages)
+  # Set&lt;BeanDefinitionHolder&gt; doScan(String... basePackages)
+}
+
+class &quot;ClassPathMapperScanner&quot; as cpms{
+  - Class&lt;? extends Annotation&gt; annotationClass
+  - Class&lt;? extends MapperFactoryBean&gt; mapperFactoryBeanClass = MapperFactoryBean.class
+  + void registerFilters()
+  + Set&lt;BeanDefinitionHolder&gt; doScan(String... basePackages)
+  - void processBeanDefinitions(Set&lt;BeanDefinitionHolder&gt;)
+}
+note left of cpms::registerFilters
+设置过滤，扫描Mapper注解
+this.addIncludeFilter(new AnnotationTypeFilter(this.annotationClass));
+end note
+note left of cpms::processBeanDefinitions
+核心处理方法,将扫描到的类设置为MapperFactoryBean.class
+definition.setBeanClass(this.mapperFactoryBeanClass)
+设置依赖sqlSessionFactory等
+end note
+
+interface &quot;FactoryBean&lt;T&gt;&quot; as fb {
+  + String OBJECT_TYPE_ATTRIBUTE = &quot;factoryBeanObjectType&quot;
+  + T getObject()
+  + Class&lt;?&gt; getObjectType()
+  + boolean isSingleton()
+}
+note left of fb::getObject
+最终生成实例代理类
+end note
+
+class &quot;DaoSupport&quot; as ds &lt;InitializingBean&gt; {
+  + void afterPropertiesSet()
+  + void checkDaoConfig()
+  + void initeDao()
+}
+note right of ds::afterPropertiesSet
+调用checkDaoConfig，最终通
+过Configuration.addMapper
+添加mapper
+end note
+
+class &quot;SqlSessionDaoSupport&quot; as ssds extends ds {
+  + void checkDaoConfig()
+}
+class &quot;MapperFactoryBean&quot; as mfb extends ssds implements fb {
+  - boolean addToConfig = true
+  - Class&lt;T&gt; mapperInterface
+  - SqlSessionTemplate sqlSessionTemplate
+  + void checkDaoConfig()
+  + T getObject()
+}
+note left of mfb::mapperInterface
+业务代码定义的类，注解Mapper修饰
+end note
+note right of mfb::sqlSessionTemplate
+通过模板获取到之前生成的configuration
+配置
+end note
+note right of mfb::checkDaoConfig
+重写，调用Configuration.addMapper添加
+end note
+note left of mfb::getObject
+通过Configuration生成过去代理类
+end note
+
+class &quot;Configuration&quot; as cfg{
+  - MapperRegistry mapperRegistry
+  + bool hasMapper(Class)
+  + void addMapper(Class)
+}
+note left of cfg
+MybatisProperties声明的文件位置，
+MybatisAutoConfigurtion创建的配置
+end note
+
+class &quot;MapperRegistry&quot; as mr {
+  - Map&lt;Class&lt;?&gt;, MapperProxyFactory&lt;?&gt;&gt; knownMappers
+  + boolean hasMapper(Class&lt;T&gt;)
+  + void addMapper(Class&lt;T&gt;)
+  + void getMapper(Class&lt;T&gt;, SqlSession)
+}
+note left of mr
+注册Mapper，和生成Mapper代理工厂，
+通过Mapper代理工厂最终生成代理类提供给
+Spring容器
+end note
+
+class &quot;MapperProxyFactory&lt;T&gt;&quot; as mpf{
+  - Class mapperInterface
+  - Map&lt;Method, MapperMethodInvoker&gt; methodCache
+  + T newInstance(SqlSession)
+}
+class &quot;MapperProxy&quot; as mproxy &lt;&lt;InvocationHandler&gt;&gt; {
+  - SqlSession sqlSession
+  - Class&lt;T&gt; mapperInterface
+  - Map&lt;Method, MapperProxy.MapperMethodInvoker&gt; methodCache
+}
+note left of mproxy
+最终注入容器的JDK代理类，
+解析定义的Mapper接口方法并缓存句柄
+运行时执行
+end note
+
+
+mac::properties &lt;- mp
+mac &lt;-- msr : @Import导入配置
+msr::registerBeanDefinitions &lt;- bdr
+bdr &lt;|.. dlbf: 注册信息保存在Map中
+msr &lt;-- msc
+bdrpp &lt;|.. msc
+bdrpp .[hidden] (msr, msc)
+msc &lt;-- cpms
+cpbds &lt;|.. cpms
+cpms &lt;--- mfb
+fb .[hidden] (cpms, mfb)
+mfb &lt;-- cfg
+cfg &lt;-- mr
+mr &lt;-- mpf
+mpf &lt;-- mproxy
+
 @enduml
-</code></pre><h2 id="mybatis-接口代理映射流程">Mybatis 接口代理映射流程<a hidden class="anchor" aria-hidden="true" href="#mybatis-接口代理映射流程">#</a></h2>
-<pre><code class="language-plantuml" data-lang="plantuml">@startuml
-start
-:service调用mapper接口;
-:访问具体MapperProxy代理实例;
-:调用invoke方法;
-:从cachedMethods中找到缓存的MapperMethod实例;
-end
-@enduml
-</code></pre><h2 id="mybatis-接口方法执行流程">Mybatis 接口方法执行流程<a hidden class="anchor" aria-hidden="true" href="#mybatis-接口方法执行流程">#</a></h2>
+</code></pre><h2 id="运行阶段">运行阶段<a hidden class="anchor" aria-hidden="true" href="#运行阶段">#</a></h2>
+<h3 id="mybatis-接口方法执行流程">Mybatis 接口方法执行流程<a hidden class="anchor" aria-hidden="true" href="#mybatis-接口方法执行流程">#</a></h3>
+<p>源码版本:</p>
+<p>JDK8和JDK9之后稍有不同，之后版本方法通过方法句柄实现，功能一致，没有太大区别</p>
 <pre><code class="language-puml" data-lang="puml">@startuml
-!theme plain
 annotation Service
 class XXService {
   - mapper:IMapper
@@ -455,9 +604,6 @@ Plugin = RoutingStatementHandler : JDK动态代理
 RoutingStatementHandler -- PreparedStatementHandler: 静态代理
 PreparedStatement .&gt; PreparedStatementHandler
 PreparedStatementHandler &lt;. ResultHandler
-@enduml
-</code></pre><pre><code class="language-puml" data-lang="puml">@startuml
-
 @enduml
 </code></pre><!-- ## 延伸 -->
 
