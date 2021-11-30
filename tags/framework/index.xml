@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>framework on DnF&#39;s Zone</title>
+    <link>https://zone.dnfn.tech/tags/framework/</link>
+    <description>Recent content in framework on DnF&#39;s Zone</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 30 Nov 2021 10:05:50 +0800</lastBuildDate><atom:link href="https://zone.dnfn.tech/tags/framework/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>提纲挈领 Spring</title>
+      <link>https://zone.dnfn.tech/post/c7b86b2ba56d9f263bba0e1d89ac436f/</link>
+      <pubDate>Tue, 30 Nov 2021 10:05:50 +0800</pubDate>
+      
+      <guid>https://zone.dnfn.tech/post/c7b86b2ba56d9f263bba0e1d89ac436f/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>提纲挈领-Mybatis</title>
+      <link>https://zone.dnfn.tech/post/ddc9e90cd9852e2ffeb3f84ed81fe3f6/</link>
+      <pubDate>Fri, 19 Nov 2021 09:20:47 +0800</pubDate>
+      
+      <guid>https://zone.dnfn.tech/post/ddc9e90cd9852e2ffeb3f84ed81fe3f6/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

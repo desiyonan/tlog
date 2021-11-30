@@ -2,25 +2,52 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://zone.dnfn.tech/categories/</loc>
+    <lastmod>2021-11-30T10:05:50+08:00</lastmod>
+  </url><url>
     <loc>https://zone.dnfn.tech/</loc>
-    <lastmod>2021-11-19T09:20:47+08:00</lastmod>
+    <lastmod>2021-11-30T10:05:50+08:00</lastmod>
+  </url><url>
+    <loc>https://zone.dnfn.tech/tags/framework/</loc>
+    <lastmod>2021-11-30T10:05:50+08:00</lastmod>
+  </url><url>
+    <loc>https://zone.dnfn.tech/categories/framework/</loc>
+    <lastmod>2021-11-30T10:05:50+08:00</lastmod>
+  </url><url>
+    <loc>https://zone.dnfn.tech/tags/java/</loc>
+    <lastmod>2021-11-30T10:05:50+08:00</lastmod>
   </url><url>
     <loc>https://zone.dnfn.tech/post/</loc>
+    <lastmod>2021-11-30T10:05:50+08:00</lastmod>
+  </url><url>
+    <loc>https://zone.dnfn.tech/series/</loc>
+    <lastmod>2021-11-30T10:05:50+08:00</lastmod>
+  </url><url>
+    <loc>https://zone.dnfn.tech/tags/spring/</loc>
+    <lastmod>2021-11-30T10:05:50+08:00</lastmod>
+  </url><url>
+    <loc>https://zone.dnfn.tech/tags/</loc>
+    <lastmod>2021-11-30T10:05:50+08:00</lastmod>
+  </url><url>
+    <loc>https://zone.dnfn.tech/series/%E6%8F%90%E7%BA%B2%E6%8C%88%E9%A2%86/</loc>
+    <lastmod>2021-11-30T10:05:50+08:00</lastmod>
+  </url><url>
+    <loc>https://zone.dnfn.tech/post/c7b86b2ba56d9f263bba0e1d89ac436f/</loc>
+    <lastmod>2021-11-30T10:05:50+08:00</lastmod>
+  </url><url>
+    <loc>https://zone.dnfn.tech/tags/mindmap/</loc>
+    <lastmod>2021-11-19T09:20:47+08:00</lastmod>
+  </url><url>
+    <loc>https://zone.dnfn.tech/tags/mybatis/</loc>
+    <lastmod>2021-11-19T09:20:47+08:00</lastmod>
+  </url><url>
+    <loc>https://zone.dnfn.tech/tags/uml/</loc>
     <lastmod>2021-11-19T09:20:47+08:00</lastmod>
   </url><url>
     <loc>https://zone.dnfn.tech/post/ddc9e90cd9852e2ffeb3f84ed81fe3f6/</loc>
     <lastmod>2021-11-19T09:20:47+08:00</lastmod>
   </url><url>
     <loc>https://zone.dnfn.tech/tags/hashmap/</loc>
-    <lastmod>2021-11-18T11:44:18+08:00</lastmod>
-  </url><url>
-    <loc>https://zone.dnfn.tech/tags/java/</loc>
-    <lastmod>2021-11-18T11:44:18+08:00</lastmod>
-  </url><url>
-    <loc>https://zone.dnfn.tech/tags/mindmap/</loc>
-    <lastmod>2021-11-18T11:44:18+08:00</lastmod>
-  </url><url>
-    <loc>https://zone.dnfn.tech/tags/</loc>
     <lastmod>2021-11-18T11:44:18+08:00</lastmod>
   </url><url>
     <loc>https://zone.dnfn.tech/post/cca5741dfd7b1c01379bf6722f388bf3/</loc>
@@ -42,9 +69,6 @@
     <lastmod>2021-08-18T14:57:55+08:00</lastmod>
   </url><url>
     <loc>https://zone.dnfn.tech/tags/auto-build/</loc>
-    <lastmod>2021-08-18T14:57:55+08:00</lastmod>
-  </url><url>
-    <loc>https://zone.dnfn.tech/categories/</loc>
     <lastmod>2021-08-18T14:57:55+08:00</lastmod>
   </url><url>
     <loc>https://zone.dnfn.tech/categories/develop/</loc>
@@ -78,9 +102,6 @@
     <lastmod>2021-08-11T18:57:10+08:00</lastmod>
   </url><url>
     <loc>https://zone.dnfn.tech/tags/markdown/</loc>
-    <lastmod>2021-08-11T18:57:10+08:00</lastmod>
-  </url><url>
-    <loc>https://zone.dnfn.tech/series/</loc>
     <lastmod>2021-08-11T18:57:10+08:00</lastmod>
   </url><url>
     <loc>https://zone.dnfn.tech/tags/web/</loc>
@@ -123,9 +144,6 @@
     <lastmod>2021-06-16T16:13:33+08:00</lastmod>
   </url><url>
     <loc>https://zone.dnfn.tech/categories/network/</loc>
-    <lastmod>2021-06-16T16:13:33+08:00</lastmod>
-  </url><url>
-    <loc>https://zone.dnfn.tech/tags/spring/</loc>
     <lastmod>2021-06-16T16:13:33+08:00</lastmod>
   </url><url>
     <loc>https://zone.dnfn.tech/post/202106161641333/</loc>
