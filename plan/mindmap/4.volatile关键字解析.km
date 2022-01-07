@@ -12,7 +12,7 @@
                     "id": "cf995makir40",
                     "created": 1635242692656,
                     "text": "1. 具体含义作用",
-                    "expandState": "collapse"
+                    "expandState": "expand"
                 },
                 "children": [
                     {
@@ -69,7 +69,7 @@
                     "id": "cf995v2of2w0",
                     "created": 1635242711770,
                     "text": "2. 并发编程概念",
-                    "expandState": "collapse"
+                    "expandState": "expand"
                 },
                 "children": [
                     {
@@ -192,7 +192,7 @@
                     "id": "cf9t8evs3so0",
                     "created": 1635299333815,
                     "text": "3. 物理硬件架构",
-                    "expandState": "collapse"
+                    "expandState": "expand"
                 },
                 "children": [
                     {
@@ -200,7 +200,7 @@
                             "id": "cfa12lqj85c0",
                             "created": 1635321447429,
                             "text": "图例",
-                            "expandState": "expand"
+                            "expandState": "collapse"
                         },
                         "children": [
                             {
@@ -272,7 +272,7 @@
                                     "id": "cfa192rci880",
                                     "created": 1635321954669,
                                     "text": "CPU高速缓存",
-                                    "expandState": "expand"
+                                    "expandState": "collapse"
                                 },
                                 "children": [
                                     {
@@ -501,7 +501,7 @@
                                             "id": "cfa1ml8kjwg0",
                                             "created": 1635323013627,
                                             "text": "定义",
-                                            "expandState": "expand"
+                                            "expandState": "collapse"
                                         },
                                         "children": [
                                             {
@@ -520,7 +520,7 @@
                                             "id": "cfa21p7befs0",
                                             "created": 1635324197720,
                                             "text": "大小",
-                                            "expandState": "expand"
+                                            "expandState": "collapse"
                                         },
                                         "children": [
                                             {
@@ -609,7 +609,7 @@
                                     "id": "cfauqi1mqrs0",
                                     "created": 1635405132321,
                                     "text": "Store Buffer",
-                                    "expandState": "expand"
+                                    "expandState": "collapse"
                                 },
                                 "children": [
                                     {
@@ -643,7 +643,7 @@
                                                     "id": "cfauuog3na80",
                                                     "created": 1635405459713,
                                                     "text": "将写非本CPU的独享变量与同步通知其他CPU把缓存置为无效的过程通过异步处理",
-                                                    "expandState": "expand"
+                                                    "expandState": "collapse"
                                                 },
                                                 "children": [
                                                     {
@@ -708,7 +708,7 @@
                                                     "id": "cfawpt1mz0g0",
                                                     "created": 1635410720121,
                                                     "text": "单个CPU内的指令乱序",
-                                                    "expandState": "expand"
+                                                    "expandState": "collapse"
                                                 },
                                                 "children": [
                                                     {
@@ -716,7 +716,7 @@
                                                             "id": "cfawvfkmkwo0",
                                                             "created": 1635411160979,
                                                             "text": "现象",
-                                                            "expandState": "expand"
+                                                            "expandState": "collapse"
                                                         },
                                                         "children": [
                                                             {
@@ -750,7 +750,7 @@
                                                             "id": "cfb63coqdqw0",
                                                             "created": 1635437171600,
                                                             "text": "原因",
-                                                            "expandState": "expand"
+                                                            "expandState": "collapse"
                                                         },
                                                         "children": [
                                                             {
@@ -769,7 +769,7 @@
                                                             "id": "cfawwisik0w0",
                                                             "created": 1635411246351,
                                                             "text": "解决",
-                                                            "expandState": "expand"
+                                                            "expandState": "collapse"
                                                         },
                                                         "children": [
                                                             {
@@ -927,7 +927,7 @@
                                     "id": "cfauqj5iwfs0",
                                     "created": 1635405134733,
                                     "text": "Invalid Queue",
-                                    "expandState": "expand"
+                                    "expandState": "collapse"
                                 },
                                 "children": [
                                     {
@@ -944,7 +944,7 @@
                                             "id": "cfav1rxori00",
                                             "created": 1635406015856,
                                             "text": "作用",
-                                            "expandState": "expand"
+                                            "expandState": "collapse"
                                         },
                                         "children": [
                                             {
@@ -1130,7 +1130,7 @@
                             "id": "cfauah76fs80",
                             "created": 1635403876653,
                             "text": "处理",
-                            "expandState": "expand"
+                            "expandState": "collapse"
                         },
                         "children": [
                             {
@@ -1138,7 +1138,7 @@
                                     "id": "cfdgpq7065k0",
                                     "created": 1635670256027,
                                     "text": "总线锁",
-                                    "expandState": "expand"
+                                    "expandState": "collapse"
                                 },
                                 "children": [
                                     {
@@ -1157,7 +1157,7 @@
                                     "id": "cfauht8jf8g0",
                                     "created": 1635404451405,
                                     "text": "缓存一致性协议",
-                                    "expandState": "expand"
+                                    "expandState": "collapse"
                                 },
                                 "children": [
                                     {
@@ -1165,7 +1165,7 @@
                                             "id": "cfauamfxpaw0",
                                             "created": 1635403888066,
                                             "text": "分类",
-                                            "expandState": "expand"
+                                            "expandState": "collapse"
                                         },
                                         "children": [
                                             {
@@ -1173,7 +1173,7 @@
                                                     "id": "cfauc88gcso0",
                                                     "created": 1635404013867,
                                                     "text": "MESI",
-                                                    "expandState": "expand"
+                                                    "expandState": "collapse"
                                                 },
                                                 "children": [
                                                     {
@@ -1181,7 +1181,7 @@
                                                             "id": "cfauatf2zio0",
                                                             "created": 1635403903252,
                                                             "text": "状态",
-                                                            "expandState": "expand"
+                                                            "expandState": "collapse"
                                                         },
                                                         "children": [
                                                             {
@@ -1307,7 +1307,7 @@
                                                             "id": "cfaue82knsw0",
                                                             "created": 1635404170240,
                                                             "text": "转换",
-                                                            "expandState": "expand"
+                                                            "expandState": "collapse"
                                                         },
                                                         "children": [
                                                             {
@@ -1402,7 +1402,7 @@
                                                     "id": "cfaulpchcco0",
                                                     "created": 1635404756393,
                                                     "text": "指令乱序",
-                                                    "expandState": "expand"
+                                                    "expandState": "collapse"
                                                 },
                                                 "children": [
                                                     {
@@ -1442,7 +1442,7 @@
                                             "id": "cfbo7hnvxls0",
                                             "created": 1635488275868,
                                             "text": "现象",
-                                            "expandState": "expand"
+                                            "expandState": "collapse"
                                         },
                                         "children": [
                                             {
@@ -1496,7 +1496,7 @@
                                                     "id": "cfbjbgzpaw80",
                                                     "created": 1635474482312,
                                                     "text": "写屏障",
-                                                    "expandState": "expand"
+                                                    "expandState": "collapse"
                                                 },
                                                 "children": [
                                                     {
@@ -1548,7 +1548,7 @@
                                                                             "id": "cfbjo9vnm5s0",
                                                                             "created": 1635475485564,
                                                                             "text": "实现写的可见性，写数据顺序的可见性",
-                                                                            "expandState": "expand"
+                                                                            "expandState": "collapse"
                                                                         },
                                                                         "children": [
                                                                             {
@@ -1565,7 +1565,7 @@
                                                                                     "id": "cfbk6k3sbvc0",
                                                                                     "created": 1635476918379,
                                                                                     "text": "2. 写本地缓存数据",
-                                                                                    "expandState": "expand"
+                                                                                    "expandState": "collapse"
                                                                                 },
                                                                                 "children": [
                                                                                     {
@@ -1595,7 +1595,7 @@
                                                                             "id": "cfbjp7plrso0",
                                                                             "created": 1635475559209,
                                                                             "text": "解决的问题",
-                                                                            "expandState": "expand"
+                                                                            "expandState": "collapse"
                                                                         },
                                                                         "children": [
                                                                             {
@@ -1787,7 +1787,7 @@
                     "id": "cf996qjzel40",
                     "created": 1635242780296,
                     "text": "4. JVM内存模型",
-                    "expandState": "collapse"
+                    "expandState": "expand"
                 },
                 "children": [
                     {
@@ -1795,7 +1795,7 @@
                             "id": "cfbnxao9hq00",
                             "created": 1635487477011,
                             "text": "图例",
-                            "expandState": "expand"
+                            "expandState": "collapse"
                         },
                         "children": [
                             {
@@ -1953,7 +1953,7 @@
                             "id": "cfdl9nqe7i80",
                             "created": 1635683102392,
                             "text": "happen-before规则",
-                            "expandState": "expand",
+                            "expandState": "collapse",
                             "note": "前面一个操作的结果对后续操作必须是可见的"
                         },
                         "children": [
@@ -2143,7 +2143,7 @@
                     "id": "cf9taejycvs0",
                     "created": 1635299489828,
                     "text": "5. JVM实现原理",
-                    "expandState": "collapse"
+                    "expandState": "expand"
                 },
                 "children": [
                     {
@@ -2320,7 +2320,7 @@
                     "id": "cf9taphp5fc0",
                     "created": 1635299513636,
                     "text": "6. 相关实际应用",
-                    "expandState": "collapse"
+                    "expandState": "expand"
                 },
                 "children": [
                     {
