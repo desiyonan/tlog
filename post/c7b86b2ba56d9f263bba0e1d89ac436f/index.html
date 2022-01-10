@@ -96,8 +96,8 @@
   "keywords": [
     "java", "framework", "spring"
   ],
-  "articleBody": "思维导图  Spring  容器启动的过程 FactoryBean原理 Bean的生命周期 Bean的创建过程     流程类图 容器启动过程 @startuml 'spring boot启动过程' class \"SpringApplication\" as sapp { - Set primarySources - Set sources - ConfigurableEnvironment environment - WebApplicationType webApplicationType - List initializers - List listeners - ApplicationContextFactory applicationContextFactory - Class mainApplicationClass + SpringApplication(Class... primarySources) + SpringApplication(ResourceLoader, Class... primarySources) + Collection getSpringFactoriesInstances(Class type) - DefaultBootstrapContext createBootstrapContext() # ConfigurableApplicationContext createApplicationContext() - void prepareContext(DefaultBootstrapContext,ConfigurableApplicationContext,...) # void applyInitializers(ConfigurableApplicationContext) - void refreshContext(ConfigurableApplicationContext) + {static} ConfigurableApplicationContext run(Class primarySource, String... args) + {static} ConfigurableApplicationContext run(Class[] primarySources, String[] args) + ConfigurableApplicationContext run(String... args) } note left of sapp::getSpringFactoriesInstances 类似JavaSPI机制，提供拓展功能 BootstrapRegistryInitializer与 ApplicationContextInitializer还 有ApplicationListener可以通过这 种方式直接优先配置 end note note left of sapp::createBootstrapContext 创建DefaultBootstrapContext 并应用BootstrapRegistryInitializer end note note left of sapp::createApplicationContext 通过applicationContextFactory创 建应用上下文 end note note left of sapp::prepareContext 应用上下文的处理： 1.注册一些启动特殊单例bean 2.加载应用主类primarySources end note note left of sapp::applyInitializers 对应用上下文调用 ApplicationContextInitializer初始化方法 end note note left of sapp::refreshContext 1.调用shutdownhook 2.最后实际调用applicationContext.refresh end note note left of sapp::run 常用启动方式，静态方法，返回容器 上下文，核心调用refreshContext 最后callRunner end note interface \"ApplicationContextFactory\" as acf { + ApplicationContextFactory DEFAULT + ConfigurableApplicationContext create(WebApplicationType) } note right of acf::DEFAULT 根据不同的应用类型创建对应 的上下文实例 end note interface \"ConfigurableApplicationContext\" as cacxt { + void refresh() + ConfigurableListableBeanFactory getBeanFactory() } note left of cacxt::refresh 核心接口方法声明 end note abstract class \"AbstractApplicationContext\" as aac{ - List beanFactoryPostProcessors - ResourcePatternResolver resourcePatternResolver - LifecycleProcessor lifecycleProcessor - ApplicationEventMulticaster applicationEventMulticaster - final Set applicationListeners - Set earlyApplicationListeners - Set earlyApplicationEvents + void refresh() } note left of aac::refresh 实现核心方法 end note class \"GenericApplicationContext\" as gac { } note left of gac BeanDefinitionRegistry接口 提供注册bean的功能 end note class \"AnnotationConfigServletWebServerApplicationContext\" as acswsac { } sapp::applicationContextFactory acf:工厂创建 cacxt FactoryBean注入原理 @startuml 'FactoryBean原理' interface \"FactoryBean\" as fb { + String OBJECT_TYPE_ATTRIBUTE = \"factoryBeanObjectType\" + T getObject() + Class getObjectType() + boolean isSingleton() } class \"ClassPathBeanDefinitionScanner\" as cpbds{ - BeanDefinitionRegistry registry + int scan(String... basePackages) # Set doScan(String... basePackages) } class \"ClassPathMapperScanner\" as cpms implements cpbds { - ClassannotationClass - ClassmapperFactoryBeanClass = MapperFactoryBean.class + void registerFilters() + Set doScan(String... basePackages) - void processBeanDefinitions(Set) } class \"MapperFactoryBean\" as mfb implements fb { - boolean addToConfig = true - Class mapperInterface - SqlSessionTemplate sqlSessionTemplate + void checkDaoConfig() + T getObject() } interface \"BeanDefinitionRegistry\" as bdr { ... + void registerBeanDefinition(String beanName, BeanDefinition) } interface \"BeanFactory\" as bf { + Object getBean(String name,...) + Object getBean(Class,...) } interface \"HierarchicalBeanFactory\" as hbf extends bf{ + BeanFactory getParentBeanFactory() } interface \"ConfigurableBeanFactory\" as cbf extends hbf{ + BeanDefinition getMergedBeanDefinition(String name) + boolean isFactoryBean(String name) } class \"AbstractBeanFactory\" as abf  implements cbf { + Object getBean(String name,...) # T doGetBean(String name,Class,Object[] args,typeCheckOnly) # Object getObjectForBeanInstance(beanInstance,name,beanName,RootBeanDefinition ) } note bottom of abf 方法内判断beanInstance是否为FactoryBean 如果是则通过FactoryBeanRegistrySupport获取 end note class \"DefaultListableBeanFactory\" as dlbf{ - MapbeanDefinitionMap - volatile List beanDefinitionNames + void registerBeanDefinition(String beanName, BeanDefinition) + Object getBean(...) } cpms abf::getObjectForBeanInstance @enduml ",
-  "wordCount" : "1063",
+  "articleBody": "思维导图  Spring  容器启动的过程 FactoryBean原理 Bean的生命周期 Bean的创建过程 Spring boot 自动装配原理     流程类图 容器启动过程 @startuml 'spring boot启动过程' class \"SpringApplication\" as sapp { - Set primarySources - Set sources - ConfigurableEnvironment environment - WebApplicationType webApplicationType - List initializers - List listeners - ApplicationContextFactory applicationContextFactory - Class mainApplicationClass + SpringApplication(Class... primarySources) + SpringApplication(ResourceLoader, Class... primarySources) + Collection getSpringFactoriesInstances(Class type) - DefaultBootstrapContext createBootstrapContext() # ConfigurableApplicationContext createApplicationContext() - void prepareContext(DefaultBootstrapContext,ConfigurableApplicationContext,...) # void applyInitializers(ConfigurableApplicationContext) - void refreshContext(ConfigurableApplicationContext) + {static} ConfigurableApplicationContext run(Class primarySource, String... args) + {static} ConfigurableApplicationContext run(Class[] primarySources, String[] args) + ConfigurableApplicationContext run(String... args) } note left of sapp::getSpringFactoriesInstances 类似JavaSPI机制，提供拓展功能 BootstrapRegistryInitializer与 ApplicationContextInitializer还 有ApplicationListener可以通过这 种方式直接优先配置 end note note left of sapp::createBootstrapContext 创建DefaultBootstrapContext 并应用BootstrapRegistryInitializer end note note left of sapp::createApplicationContext 通过applicationContextFactory创 建应用上下文 end note note left of sapp::prepareContext 应用上下文的处理： 1.注册一些启动特殊单例bean 2.加载应用主类primarySources end note note left of sapp::applyInitializers 对应用上下文调用 ApplicationContextInitializer初始化方法 end note note left of sapp::refreshContext 1.调用shutdownhook 2.最后实际调用applicationContext.refresh end note note left of sapp::run 常用启动方式，静态方法，返回容器 上下文，核心调用refreshContext 最后callRunner end note interface \"ApplicationContextFactory\" as acf { + ApplicationContextFactory DEFAULT + ConfigurableApplicationContext create(WebApplicationType) } note right of acf::DEFAULT 根据不同的应用类型创建对应 的上下文实例 end note interface \"ConfigurableApplicationContext\" as cacxt { + void refresh() + ConfigurableListableBeanFactory getBeanFactory() } note left of cacxt::refresh 核心接口方法声明 end note abstract class \"AbstractApplicationContext\" as aac{ - List beanFactoryPostProcessors - ResourcePatternResolver resourcePatternResolver - LifecycleProcessor lifecycleProcessor - ApplicationEventMulticaster applicationEventMulticaster - final Set applicationListeners - Set earlyApplicationListeners - Set earlyApplicationEvents + void refresh() } note left of aac::refresh 实现核心方法 end note class \"GenericApplicationContext\" as gac { } note left of gac BeanDefinitionRegistry接口 提供注册bean的功能 end note class \"AnnotationConfigServletWebServerApplicationContext\" as acswsac { } sapp::applicationContextFactory acf:工厂创建 cacxt FactoryBean注入原理 @startuml 'FactoryBean原理' interface \"FactoryBean\" as fb { + String OBJECT_TYPE_ATTRIBUTE = \"factoryBeanObjectType\" + T getObject() + Class getObjectType() + boolean isSingleton() } class \"ClassPathBeanDefinitionScanner\" as cpbds{ - BeanDefinitionRegistry registry + int scan(String... basePackages) # Set doScan(String... basePackages) } class \"ClassPathMapperScanner\" as cpms implements cpbds { - ClassannotationClass - ClassmapperFactoryBeanClass = MapperFactoryBean.class + void registerFilters() + Set doScan(String... basePackages) - void processBeanDefinitions(Set) } class \"MapperFactoryBean\" as mfb implements fb { - boolean addToConfig = true - Class mapperInterface - SqlSessionTemplate sqlSessionTemplate + void checkDaoConfig() + T getObject() } interface \"BeanDefinitionRegistry\" as bdr { ... + void registerBeanDefinition(String beanName, BeanDefinition) } interface \"BeanFactory\" as bf { + Object getBean(String name,...) + Object getBean(Class,...) } interface \"HierarchicalBeanFactory\" as hbf extends bf{ + BeanFactory getParentBeanFactory() } interface \"ConfigurableBeanFactory\" as cbf extends hbf{ + BeanDefinition getMergedBeanDefinition(String name) + boolean isFactoryBean(String name) } class \"AbstractBeanFactory\" as abf  implements cbf { + Object getBean(String name,...) # T doGetBean(String name,Class,Object[] args,typeCheckOnly) # Object getObjectForBeanInstance(beanInstance,name,beanName,RootBeanDefinition ) } note bottom of abf 方法内判断beanInstance是否为FactoryBean 如果是则通过FactoryBeanRegistrySupport获取 end note class \"DefaultListableBeanFactory\" as dlbf{ - MapbeanDefinitionMap - volatile List beanDefinitionNames + void registerBeanDefinition(String beanName, BeanDefinition) + Object getBean(...) } cpms abf::getObjectForBeanInstance @enduml Spring Boot 自动装配原理 源码版本：2.7.0-SNAPSHOT\n入口类：\n @org.springframework.boot.autoconfigure.EnableAutoConfiguration @org.springframework.context.annotation.Configuration @org.springframework.context.annotation.Conditional  核心类:\n org.springframework.boot.autoconfigureAutoConfigurationImportSelector org.springframework.core.io.support.SpringFactoriesLoader org.springframework.boot.autoconfigure.AutoConfigurationImportFilter  @startuml title: Spring Boot 自动装配原理 annotation \"EnableAutoConfiguration\" as eac { Class exclude() String[] excludeName() } package \"获取配置类名过程\"  { class \"AutoConfigurationImportSelector\" as acis  { + String[] selectImports(AnnotationMetadata) # AutoConfigurationEntry getAutoConfigurationEntry(AnnotationMetadata) # List getCandidateConfigurations(...) - ConfigurationClassFilter getConfigurationClassFilter() } class \"SpringFactoriesLoader\" as sfl { + {static} List loadFactories(Class factoryType, ClassLoader) + {static} List loadFactoryNames(Class factoryType, ClassLoader) } interface \"AutoConfigurationImportFilter\" as acif { + boolean[] match(String[] configClassName, AutoConfigurationMetadata) } note bottom of acif 顶层过滤接口， ConditionalOnBean, ConditionalOnMissingBean, ConditionalOnClass 等条件注解通过其子类实现功能， 具体实现先略过 end note entity \"META-INF/spring.factories\" as file{ configClass=classA,classB... ... --- e.g： MybatisAutoConfiguration } hide file circle } eac ",
+  "wordCount" : "1375",
   "inLanguage": "zh",
   "datePublished": "2021-11-30T10:05:50+08:00",
   "dateModified": "2021-11-30T10:05:50+08:00",
@@ -250,6 +250,7 @@
 <li>FactoryBean原理</li>
 <li>Bean的生命周期</li>
 <li>Bean的创建过程</li>
+<li>Spring boot 自动装配原理</li>
 </ul>
 </li>
 </ul>
@@ -435,6 +436,80 @@ cpbds &lt;- bdr
 bdr &lt;.... dlbf
 abf &lt;|-- dlbf
 fb -&gt; abf::getObjectForBeanInstance
+@enduml
+</code></pre><h3 id="spring-boot-自动装配原理">Spring Boot 自动装配原理<a hidden class="anchor" aria-hidden="true" href="#spring-boot-自动装配原理">#</a></h3>
+<p>源码版本：<code>2.7.0-SNAPSHOT</code></p>
+<p>入口类：</p>
+<ol>
+<li><code>@org.springframework.boot.autoconfigure.EnableAutoConfiguration</code></li>
+<li><code>@org.springframework.context.annotation.Configuration</code></li>
+<li><code>@org.springframework.context.annotation.Conditional</code></li>
+</ol>
+<p>核心类:</p>
+<ol>
+<li><code>org.springframework.boot.autoconfigureAutoConfigurationImportSelector</code></li>
+<li><code>org.springframework.core.io.support.SpringFactoriesLoader</code></li>
+<li><code>org.springframework.boot.autoconfigure.AutoConfigurationImportFilter</code></li>
+</ol>
+<pre><code class="language-puml" data-lang="puml">@startuml
+title: Spring Boot 自动装配原理
+
+annotation &quot;EnableAutoConfiguration&quot; as eac {
+  Class&lt;?&gt; exclude()
+  String[] excludeName()
+}
+package &quot;获取配置类名过程&quot; &lt;&lt;Frame&gt;&gt; {
+  class &quot;AutoConfigurationImportSelector&quot; as acis &lt;&lt;DeferredImportSelector&gt;&gt; {
+
+    + String[] selectImports(AnnotationMetadata)
+    # AutoConfigurationEntry getAutoConfigurationEntry(AnnotationMetadata)
+    # List&lt;String&gt; getCandidateConfigurations(...)
+    - ConfigurationClassFilter getConfigurationClassFilter()
+  }
+
+  class &quot;SpringFactoriesLoader&quot; as sfl {
+    + {static} List&lt;T&gt; loadFactories(Class&lt;T&gt; factoryType, ClassLoader)
+    + {static} List&lt;String&gt; loadFactoryNames(Class&lt;?&gt; factoryType, ClassLoader)
+  }
+
+  interface &quot;AutoConfigurationImportFilter&quot; as acif {
+    + boolean[] match(String[] configClassName, AutoConfigurationMetadata)
+  }
+  note bottom of acif
+  顶层过滤接口，
+  ConditionalOnBean,
+  ConditionalOnMissingBean,
+  ConditionalOnClass
+  等条件注解通过其子类实现功能，
+  具体实现先略过
+  end note
+
+
+  entity &quot;META-INF/spring.factories&quot; as file{
+    configClass=classA,classB...
+    ...
+    ---
+    e.g：
+    MybatisAutoConfiguration
+  }
+  hide file circle
+}
+
+eac &lt;-- acis: 通过Spring的@Import注解\n方式导入容器,详细另出
+acis &lt;- acif
+acis &lt;-- sfl: 只是获取配置类名
+sfl &lt;-- file
+note right on link
+ 通过ClassLoader加载所有
+ jar包下的相应文件，解析
+ 并缓存。
+ 这里获取所有Key为
+ EnableAutoConfiguration
+ 的类名，可以参考
+ MybatisAutoConfiguration
+ 的具体配置
+end note
+
 @enduml
 </code></pre><!-- ## 延伸 -->
 
