@@ -1,20 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>source code on DnF&#39;s Zone</title>
-    <link>https://zone.dnfn.tech/categories/source-code/</link>
-    <description>Recent content in source code on DnF&#39;s Zone</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 24 Jun 2021 22:41:34 +0800</lastBuildDate><atom:link href="https://zone.dnfn.tech/categories/source-code/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>ThreadGroup 线程池</title>
-      <link>https://zone.dnfn.tech/post/2021062424104134/</link>
-      <pubDate>Thu, 24 Jun 2021 22:41:34 +0800</pubDate>
-      
-      <guid>https://zone.dnfn.tech/post/2021062424104134/</guid>
-      <description>&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
-&lt;p&gt;本文记录了&lt;code&gt;ThreadGroup&lt;/code&gt;的作用和特性，它和线程池的区别。&lt;/p&gt;</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>source code on DnF's Zone</title><link>https://zone.dnfn.tech/categories/source-code/</link><description>Recent content in source code on DnF's Zone</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 24 Jun 2021 22:41:34 +0800</lastBuildDate><atom:link href="https://zone.dnfn.tech/categories/source-code/index.xml" rel="self" type="application/rss+xml"/><item><title>ThreadGroup 线程池</title><link>https://zone.dnfn.tech/post/2021062424104134/</link><pubDate>Thu, 24 Jun 2021 22:41:34 +0800</pubDate><guid>https://zone.dnfn.tech/post/2021062424104134/</guid><description>&lt;h2 id="简介">简介&lt;/h2>
+&lt;p>本文记录了&lt;code>ThreadGroup&lt;/code>的作用和特性，它和线程池的区别。&lt;/p></description></item></channel></rss>

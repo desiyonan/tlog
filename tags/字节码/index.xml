@@ -1,21 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>字节码 on DnF&#39;s Zone</title>
-    <link>https://zone.dnfn.tech/tags/%E5%AD%97%E8%8A%82%E7%A0%81/</link>
-    <description>Recent content in 字节码 on DnF&#39;s Zone</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 08 Jun 2021 19:52:10 +0800</lastBuildDate><atom:link href="https://zone.dnfn.tech/tags/%E5%AD%97%E8%8A%82%E7%A0%81/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Java Class 文件解析</title>
-      <link>https://zone.dnfn.tech/post/20210608875210/</link>
-      <pubDate>Tue, 08 Jun 2021 19:52:10 +0800</pubDate>
-      
-      <guid>https://zone.dnfn.tech/post/20210608875210/</guid>
-      <description>&lt;!-- TOC off --&gt;
-&lt;h2 id=&#34;简介----omit-in-toc---&#34;&gt;简介 &lt;!-- omit in toc --&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;.java&lt;/code&gt; 文件编译后的 &lt;code&gt;.class&lt;/code&gt; 文件内容究竟是怎样的？&lt;code&gt;JVM&lt;/code&gt; 又是如果识别并加载 &lt;code&gt;.class&lt;/code&gt; 文件的。&lt;/p&gt;</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>字节码 on DnF's Zone</title><link>https://zone.dnfn.tech/tags/%E5%AD%97%E8%8A%82%E7%A0%81/</link><description>Recent content in 字节码 on DnF's Zone</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 08 Jun 2021 19:52:10 +0800</lastBuildDate><atom:link href="https://zone.dnfn.tech/tags/%E5%AD%97%E8%8A%82%E7%A0%81/index.xml" rel="self" type="application/rss+xml"/><item><title>Java Class 文件解析</title><link>https://zone.dnfn.tech/post/20210608875210/</link><pubDate>Tue, 08 Jun 2021 19:52:10 +0800</pubDate><guid>https://zone.dnfn.tech/post/20210608875210/</guid><description>&lt;!-- TOC off -->
+&lt;h2 id="简介----omit-in-toc---">简介 &lt;!-- omit in toc -->&lt;/h2>
+&lt;p>&lt;code>.java&lt;/code> 文件编译后的 &lt;code>.class&lt;/code> 文件内容究竟是怎样的？&lt;code>JVM&lt;/code> 又是如果识别并加载 &lt;code>.class&lt;/code> 文件的。&lt;/p></description></item></channel></rss>
